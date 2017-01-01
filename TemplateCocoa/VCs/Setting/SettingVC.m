@@ -9,6 +9,7 @@
 #import "SettingVC.h"
 
 // VC
+#import "SettingDetailVC.h"
 #import "NotifyListVC.h"
 
 @interface SettingVC ()
@@ -35,10 +36,10 @@
     WEAKSELF
     _cellUser = [TCell_Image tcell:self.tableView reuse:NO];
     _cellUser.icon = [UIImage imageNamed:@"s_info"];
-    _cellUser.title = @"昵称";
-    _cellUser.value = @"turkey";
+    _cellUser.title = @"设置";
+    _cellUser.value = @"详情";
     _cellUser.click = ^(NSIndexPath *indexPath, BaseTCell *cell) {
-        
+        [weakSelf gotoSettingDetailVC];
     };
     _cellVersion = [TCell_Image tcell:self.tableView reuse:NO];
     _cellVersion.icon = [UIImage imageNamed:@"s_setting"];
@@ -62,6 +63,12 @@
 #pragma mark - 消息列表
 - (void)gotoNotifyListVC {
     NotifyListVC *vc = [[NotifyListVC alloc] init];
+    vc.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:vc animated:YES];
+}
+#pragma mark - 设置详情
+- (void)gotoSettingDetailVC {
+    SettingDetailVC *vc = [[SettingDetailVC alloc] init];
     vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
 }

@@ -40,6 +40,10 @@
 		A046BB441EE792BD006CD36C /* AppPreference.m in Sources */ = {isa = PBXBuildFile; fileRef = A046BB431EE792BD006CD36C /* AppPreference.m */; };
 		A046BB461EE793E3006CD36C /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A046BB451EE793E3006CD36C /* libsqlite3.tbd */; };
 		A04893841F99D75600CAD676 /* TCell_Image.m in Sources */ = {isa = PBXBuildFile; fileRef = A04893831F99D75600CAD676 /* TCell_Image.m */; };
+		A054EB7B1F9B545700F3E160 /* BaseWebVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A054EB791F9B545600F3E160 /* BaseWebVC.m */; };
+		A054EB7E1F9B552300F3E160 /* BaseSwipeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A054EB7D1F9B552300F3E160 /* BaseSwipeVC.m */; };
+		A054EB811F9B557300F3E160 /* BaseNavSwipeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A054EB801F9B557300F3E160 /* BaseNavSwipeVC.m */; };
+		A054EB841F9B664A00F3E160 /* SettingDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A054EB831F9B664A00F3E160 /* SettingDetailVC.m */; };
 		A060125F1EEA7DFA00F54150 /* CartCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A060125E1EEA7DFA00F54150 /* CartCell.m */; };
 		A06012621EEA7FB800F54150 /* GoodsDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A06012611EEA7FB800F54150 /* GoodsDetailVC.m */; };
 		A06012661EEA7FCE00F54150 /* CollectionNotify.m in Sources */ = {isa = PBXBuildFile; fileRef = A06012651EEA7FCE00F54150 /* CollectionNotify.m */; };
@@ -186,6 +190,14 @@
 		A046BB451EE793E3006CD36C /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		A04893821F99D75600CAD676 /* TCell_Image.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TCell_Image.h; sourceTree = "<group>"; };
 		A04893831F99D75600CAD676 /* TCell_Image.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TCell_Image.m; sourceTree = "<group>"; };
+		A054EB791F9B545600F3E160 /* BaseWebVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseWebVC.m; sourceTree = "<group>"; };
+		A054EB7A1F9B545600F3E160 /* BaseWebVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseWebVC.h; sourceTree = "<group>"; };
+		A054EB7C1F9B552300F3E160 /* BaseSwipeVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseSwipeVC.h; sourceTree = "<group>"; };
+		A054EB7D1F9B552300F3E160 /* BaseSwipeVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseSwipeVC.m; sourceTree = "<group>"; };
+		A054EB7F1F9B557300F3E160 /* BaseNavSwipeVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseNavSwipeVC.h; sourceTree = "<group>"; };
+		A054EB801F9B557300F3E160 /* BaseNavSwipeVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseNavSwipeVC.m; sourceTree = "<group>"; };
+		A054EB821F9B664A00F3E160 /* SettingDetailVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingDetailVC.h; sourceTree = "<group>"; };
+		A054EB831F9B664A00F3E160 /* SettingDetailVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingDetailVC.m; sourceTree = "<group>"; };
 		A060125D1EEA7DFA00F54150 /* CartCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CartCell.h; sourceTree = "<group>"; };
 		A060125E1EEA7DFA00F54150 /* CartCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CartCell.m; sourceTree = "<group>"; };
 		A06012601EEA7FB800F54150 /* GoodsDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoodsDetailVC.h; sourceTree = "<group>"; };
@@ -562,6 +574,8 @@
 				A0B309C31F9AE3B300AB6E51 /* SettingVC.m */,
 				A0B309C71F9AEC9E00AB6E51 /* NotifyListVC.h */,
 				A0B309C81F9AEC9E00AB6E51 /* NotifyListVC.m */,
+				A054EB821F9B664A00F3E160 /* SettingDetailVC.h */,
+				A054EB831F9B664A00F3E160 /* SettingDetailVC.m */,
 				A0B309C51F9AE7AA00AB6E51 /* Setting.xcassets */,
 			);
 			path = Setting;
@@ -859,6 +873,12 @@
 			children = (
 				8A4673511F7DFBB30089670E /* BaseFormGroupTC.h */,
 				8A4673521F7DFBB30089670E /* BaseFormGroupTC.m */,
+				A054EB7A1F9B545600F3E160 /* BaseWebVC.h */,
+				A054EB791F9B545600F3E160 /* BaseWebVC.m */,
+				A054EB7C1F9B552300F3E160 /* BaseSwipeVC.h */,
+				A054EB7D1F9B552300F3E160 /* BaseSwipeVC.m */,
+				A054EB7F1F9B557300F3E160 /* BaseNavSwipeVC.h */,
+				A054EB801F9B557300F3E160 /* BaseNavSwipeVC.m */,
 				8A4673531F7DFBB30089670E /* BaseFormTC.h */,
 				8A4673541F7DFBB30089670E /* BaseFormTC.m */,
 				A0EF53B51E025CC400DE645C /* BaseLoadTC.h */,
@@ -1128,6 +1148,7 @@
 				A0A3A13B1EE79A8C005611DB /* NetworkMonitor.m in Sources */,
 				A0F9EE2A1EE67D02009CF3B7 /* FoodInfo.m in Sources */,
 				A0EF53A11E025BD300DE645C /* BaseRestApi.m in Sources */,
+				A054EB7E1F9B552300F3E160 /* BaseSwipeVC.m in Sources */,
 				A04442951E2DE26900B4A5E9 /* DSTabItemView.m in Sources */,
 				A0A3A13E1EE79A9A005611DB /* SQLiteHelper.m in Sources */,
 				A046BB311EE791A2006CD36C /* FmdbHelper.m in Sources */,
@@ -1170,6 +1191,7 @@
 				A0DF02621EDE910600507F31 /* MainCell.m in Sources */,
 				A009B58F1EE833C900CC3946 /* LoginNotify.m in Sources */,
 				8A4673591F7DFC000089670E /* BaseNavView.m in Sources */,
+				A054EB841F9B664A00F3E160 /* SettingDetailVC.m in Sources */,
 				A0DF02741EDEAE5200507F31 /* NSString+Utils.m in Sources */,
 				A046BB401EE7924B006CD36C /* ActionHelper.m in Sources */,
 				A009B5851EE82AA900CC3946 /* LogOutView.m in Sources */,
@@ -1177,9 +1199,11 @@
 				A0DF02731EDEAE5200507F31 /* NSString+JudgeString.m in Sources */,
 				A0F9EE261EE67C7E009CF3B7 /* UserInfoVC.m in Sources */,
 				A0DF02721EDEAE5200507F31 /* NSObject+Property.m in Sources */,
+				A054EB811F9B557300F3E160 /* BaseNavSwipeVC.m in Sources */,
 				8A46734E1F7DFB930089670E /* TPKeyboardAvoidingTableView.m in Sources */,
 				A060125F1EEA7DFA00F54150 /* CartCell.m in Sources */,
 				A0EF53D11E025DB900DE645C /* Workspace.m in Sources */,
+				A054EB7B1F9B545700F3E160 /* BaseWebVC.m in Sources */,
 				A0EF53BC1E025CC500DE645C /* BaseTC.m in Sources */,
 				8A46734C1F7DFB930089670E /* TPKeyboardAvoidingCollectionView.m in Sources */,
 				A0F9EE361EE67E47009CF3B7 /* Foods_Get.m in Sources */,

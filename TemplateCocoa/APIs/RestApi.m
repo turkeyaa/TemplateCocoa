@@ -125,11 +125,7 @@ static NSTimeInterval kNetworkTimeout = 10;
     if (block) {
         _task = [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
             
-//            [weakSelf doHttpResonse:response error:error block:^(id data) {
-//                block(data);
-//            }];
-            
-            id obj = [self doHttpResonse:response error:error];
+            id obj = [weakSelf doHttpResonse:response error:error];
             dispatch_async(dispatch_get_main_queue(), ^{
                 block(obj);
             });

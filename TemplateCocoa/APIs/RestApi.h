@@ -28,7 +28,7 @@ typedef NS_ENUM(NSInteger, HttpMethods) {
 - (id)initWithURL:(NSString *)url httpMethods:(HttpMethods)httpMethod;
 
 - (void)call;
-- (void)callWithTimeout:(NSTimeInterval)timeout;
+//- (void)callWithTimeout:(NSTimeInterval)timeout;
 - (void)callWithAsync:(BlockJsonData)result;
 
 /**

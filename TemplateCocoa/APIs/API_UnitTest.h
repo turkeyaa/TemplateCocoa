@@ -10,4 +10,6 @@
 
 @interface API_UnitTest : NSObject
 
++ (void)test;
+
 @end

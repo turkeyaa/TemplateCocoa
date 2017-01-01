@@ -30,10 +30,14 @@ typedef NS_ENUM(NSInteger, MockType) {
 @property (nonatomic, copy) NSString *message;      // 状态提示
 @property (nonatomic, copy) NSString *errorMessage; // 错误提示
 
+/* 数据源 */
+@property (nonatomic, strong) NSMutableArray *dataSource;
+
 #pragma mark - Subclassing methods
 - (BOOL)parseResponseJson:(NSDictionary *)json;
 - (id)queryObjData;
 
+/* 参数，字典类型：POST方法请求数据 */
 - (id)prepareRequestData;
 
 #pragma mark - Mock

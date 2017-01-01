@@ -10,6 +10,5 @@
 
 @interface Activity_Get : BaseRestApi
     
-@property (nonatomic, strong) NSMutableArray *dataSource;
 
 @end

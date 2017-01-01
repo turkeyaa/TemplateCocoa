@@ -9,8 +9,7 @@
 #import "BaseRestApi.h"
 
 @interface Foods_Get : BaseRestApi
-    
-@property (nonatomic, strong) NSMutableArray *dataSource;
+
 
 
 @end

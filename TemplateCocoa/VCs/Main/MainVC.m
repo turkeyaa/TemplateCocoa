@@ -110,13 +110,14 @@
     
     // 异步
     [GCDUtil runInGlobalQueue:^{
-        
+
         Main_Get *mainApi = [[Main_Get alloc] init];
         [mainApi callWithAsync:^(id data) {
             self.dataSource = data;
             [self.tableView reloadData];
         }];
     }];
+    
 }
 
 #pragma mark -

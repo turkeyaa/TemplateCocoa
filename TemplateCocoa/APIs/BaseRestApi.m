@@ -74,11 +74,16 @@
                 [weakSelf raiseException:@"应答数据不能为nil, responseData==nil"];
             }
             
-            id obj = [self doHttpResonse:responseData error:nil];
-            
-            dispatch_async(dispatch_get_main_queue(), ^{
-                block(obj);
-            });
+            if (block) {
+                id obj = [self doHttpResonse:responseData error:nil];
+                
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    block(obj);
+                });
+            }
+            else {
+                [self doSuccess:responseData];
+            }
         };
         
         simulateBlock();
@@ -86,8 +91,8 @@
 }
 
 - (void)doSuccess:(id)responseObject {
-    NSLog(@"RestApi :[%@]",self.class);
-    NSLog(@"RestApi Response:[%@]",[[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding]);
+//    NSLog(@"RestApi :[%@]",self.class);
+//    NSLog(@"RestApi Response:[%@]",[[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding]);
     
     @try {
         NSError *error;
@@ -125,8 +130,12 @@
 }
 
 - (id)queryObjData {
-    NSAssert(NO, @"子类必须重写该方法");
-    return nil;
+    return self.dataSource;
+//    NSAssert(NO, @"子类必须重写该方法");
+//    return nil;
+}
+- (BOOL)parseResponseJson:(NSDictionary *)json {
+    return NO;
 }
 
 - (NSDictionary *)errorCodeMessage {

@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 
 #import "UncaughtExceptionHandler.h"
+#import "API_UnitTest.h"
 
 @interface AppDelegate ()
 
@@ -23,6 +24,9 @@
     
     // 1. 异常处理
     InstallUncaughtExceptionHandler();
+    
+    // 2. API test
+//    [API_UnitTest test];
     
     self.tabbarVC = [[DSTabbarVC alloc] init];
     

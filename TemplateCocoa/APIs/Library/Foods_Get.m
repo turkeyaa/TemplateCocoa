@@ -14,7 +14,7 @@
     
 - (id)init {
     if (self = [super initWithURL:@"food/list" httpMethods:HttpMethods_Get]) {
-        _dataSource = [[NSMutableArray alloc] init];
+        self.dataSource = [[NSMutableArray alloc] init];
     }
     return self;
 }
@@ -37,6 +37,10 @@
         }
     }
     return self.dataSource && self.dataSource.count > 0;
+}
+
+- (id)queryObjData {
+    return self.dataSource;
 }
 
 - (MockType)mockType {

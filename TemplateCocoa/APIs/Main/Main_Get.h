@@ -10,8 +10,6 @@
 
 @interface Main_Get : BaseRestApi
 
-@property (nonatomic, strong) NSMutableArray *dataSource;
-
 - (id)init;
 - (id)initWithPageNum:(NSInteger)pageNum
              pageSize:(NSInteger)pageSize;

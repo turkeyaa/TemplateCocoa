@@ -19,7 +19,7 @@
              pageSize:(NSInteger)pageSize {
     
     if (self = [super initWithURL:[BaseRestApi getRestApiURL:@"curefun/main/user"] httpMethods:HttpMethods_Get]) {
-        _dataSource = [[NSMutableArray alloc] init];
+        self.dataSource = [[NSMutableArray alloc] init];
     }
     return self;
 }
