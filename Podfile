@@ -9,5 +9,6 @@ pod 'YYModel'
 pod 'FMDB'
 pod 'FDFullscreenPopGesture'
 pod 'SVProgressHUD'
+pod 'Masonry'
 
 end

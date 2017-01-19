@@ -20,8 +20,10 @@
     
     self.tabbarVC = [[DSTabbarVC alloc] init];
     
-    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:self.tabbarVC];
-    self.window.rootViewController = nav;
+    self.window.rootViewController = self.tabbarVC;
+    
+    [[UINavigationBar appearance] setBarTintColor:Color_Nav];
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor], NSFontAttributeName:[UIFont boldSystemFontOfSize:18]}];
     
     [self.window makeKeyAndVisible];
     return YES;

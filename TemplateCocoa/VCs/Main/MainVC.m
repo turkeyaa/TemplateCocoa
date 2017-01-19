@@ -8,6 +8,9 @@
 
 #import "MainVC.h"
 
+#import "LoginVC.h"
+#import "RegisterVC.h"
+
 @interface MainVC ()
 
 @end
@@ -17,7 +20,21 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.view.backgroundColor = [UIColor whiteColor];
+    
+    self.leftTitle = @"登录";
+    self.rightTitle = @"注册";
+    self.title = @"首页";
+}
+
+- (void)goBack {
+    LoginVC *vc = [[LoginVC alloc] init];
+    vc.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:vc animated:YES];
+}
+- (void)goNext {
+    RegisterVC *vc = [[RegisterVC alloc] init];
+    vc.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

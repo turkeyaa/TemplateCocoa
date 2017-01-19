@@ -8,12 +8,19 @@
 
 #import "DSTabbarVC.h"
 
+// VC
 #import "LibraryVC.h"
 #import "MainVC.h"
 #import "MineVC.h"
+// View
+#import "DSTabbarView.h"
 
 
-@interface DSTabbarVC ()
+@interface DSTabbarVC () <DSTabbarDelegate,DSTabbarDataSource>
+
+{
+    NSArray *_models;
+}
 
 @end
 
@@ -28,14 +35,77 @@
 }
 
 - (void)initVC {
-    MainVC *mainVc = [[MainVC alloc] init];
-    mainVc.title = @"首页";
-    LibraryVC *libraryVc = [[LibraryVC alloc] init];
-    libraryVc.title = @"病例库";
-    MineVC *mineVc = [[MineVC alloc] init];
-    mineVc.title = @"我的";
     
-    self.viewControllers = @[mainVc,libraryVc,mineVc];
+#if 1
+    
+    // 默认 tabbar
+    MainVC *mainVc = [[MainVC alloc] init];
+    LibraryVC *libraryVc = [[LibraryVC alloc] init];
+    MineVC *mineVc = [[MineVC alloc] init];
+    
+    UITabBarItem *mainItem = [[UITabBarItem alloc] initWithTitle:@"首页" image:[UIImage imageNamed:@"main"] selectedImage:[UIImage imageNamed:@"mainHigh"]];
+    mainVc.tabBarItem = mainItem;
+    
+    UITabBarItem *libraryItem = [[UITabBarItem alloc] initWithTitle:@"病例库" image:[UIImage imageNamed:@"library"] selectedImage:[UIImage imageNamed:@"libraryHigh"]];
+    libraryVc.tabBarItem = libraryItem;
+    
+    UITabBarItem *mineItem = [[UITabBarItem alloc] initWithTitle:@"我的" image:[UIImage imageNamed:@"mine"] selectedImage:[UIImage imageNamed:@"mineHigh"]];
+    mineVc.tabBarItem = mineItem;
+    
+    UINavigationController *mainNav = [[UINavigationController alloc] initWithRootViewController:mainVc];
+    UINavigationController *libraryNav = [[UINavigationController alloc] initWithRootViewController:libraryVc];
+    UINavigationController *mineNav = [[UINavigationController alloc] initWithRootViewController:mineVc];
+    
+    self.viewControllers = @[mainNav,libraryNav,mineNav];
+    
+    
+#else
+    
+    // 自定义 tabbar
+    MainVC *mainVc = [[MainVC alloc] init];
+    LibraryVC *libraryVc = [[LibraryVC alloc] init];
+    MineVC *mineVc = [[MineVC alloc] init];
+    
+    UINavigationController *mainNav = [[UINavigationController alloc] initWithRootViewController:mainVc];
+    UINavigationController *libraryNav = [[UINavigationController alloc] initWithRootViewController:libraryVc];
+    UINavigationController *mineNav = [[UINavigationController alloc] initWithRootViewController:mineVc];
+    
+    self.viewControllers = @[mainNav,libraryNav,mineNav];
+    
+    self.tabBar.alpha = 0.0;
+    self.selectedIndex = 0;
+    
+    /**
+     *  配置
+     */
+    _models = @[[DSTabItemModel modelWithTitle:@"首页" image:@"main" selectedImage:@"mainHigh"],
+                [DSTabItemModel modelWithTitle:@"病例库" image:@"library" selectedImage:@"libraryHigh"],
+                [DSTabItemModel modelWithTitle:@"我的" image:@"mine" selectedImage:@"mineHigh"]
+                ];
+    
+
+    self.dsTabbar = [[DSTabbarView alloc] initWithFrame:CGRectMake(0, DEVICE_HEIGHT-TAB_HEIGHT, DEVICE_WIDTH, TAB_HEIGHT)];
+    self.dsTabbar.delegate = self;
+    self.dsTabbar.dataSource = self;
+    [self.view addSubview:self.dsTabbar];
+    [self.dsTabbar setupViews];
+
+#endif
+    
+}
+
+#pragma mark - delegate or dataSource methods
+- (NSUInteger)numberOfItemsInTabbar:(DSTabbarView *)tabbar {
+    return _models.count;
+}
+- (DSTabItemModel *)tabbar:(DSTabbarView *)tabbar itemModelAtIndex:(NSUInteger)index {
+    return _models[index];
+}
+- (void)tabbar:(DSTabbarView *)tabbar clickAtIndex:(NSUInteger)index {
+    self.selectedIndex = index;
+}
+- (BOOL)tabbar:(DSTabbarView *)tabbar canSelectedAtIndex:(NSUInteger)index {
+    return YES;
 }
 
 - (void)didReceiveMemoryWarning {

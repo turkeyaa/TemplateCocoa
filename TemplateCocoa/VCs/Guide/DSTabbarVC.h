@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+#import "DSTabbarView.h"
+
 @interface DSTabbarVC : UITabBarController
+
+@property (nonatomic, strong) DSTabbarView *dsTabbar;
 
 @end

@@ -8,6 +8,11 @@
 
 #import "LoginVC.h"
 
+// Api
+#import "Login_Post.h"
+// Util
+#import "GCDUtil.h"
+
 @interface LoginVC ()
 
 @end
@@ -17,6 +22,25 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    self.title = @"登录";
+    self.rightTitle = @"提交";
+    self.leftImage = [UIImage imageNamed:@"app_back"];
+}
+
+#pragma mark - 登录
+- (void)goNext {
+    
+    [GCDUtil runInGlobalQueue:^{
+        
+        Login_Post *loginApi = [[Login_Post alloc] initWithAccount:@"18668089860" password:@"123456"];
+        [loginApi call];
+        
+        [GCDUtil runInMainQueue:^{
+            
+        }];
+    }];
+    
 }
 
 - (void)didReceiveMemoryWarning {
