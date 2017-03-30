@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A02529E81E8CD73B00AB49E0 /* login.json in Resources */ = {isa = PBXBuildFile; fileRef = A02529E71E8CD73B00AB49E0 /* login.json */; };
+		A02529E91E8CD73B00AB49E0 /* login.json in Resources */ = {isa = PBXBuildFile; fileRef = A02529E71E8CD73B00AB49E0 /* login.json */; };
+		A02529EA1E8CD73B00AB49E0 /* login.json in Resources */ = {isa = PBXBuildFile; fileRef = A02529E71E8CD73B00AB49E0 /* login.json */; };
 		A03E46DC1E0263FC0013AD24 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A03E46DB1E0263FC0013AD24 /* Main.storyboard */; };
 		A04442921E2DE13D00B4A5E9 /* DSTabItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A04442911E2DE13D00B4A5E9 /* DSTabItemModel.m */; };
 		A04442951E2DE26900B4A5E9 /* DSTabItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = A04442941E2DE26900B4A5E9 /* DSTabItemView.m */; };
@@ -64,6 +67,7 @@
 		53126889A48A2F4D92DBE689 /* libPods-TemplateCocoa.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TemplateCocoa.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		711E8E9C51665DD06224824D /* Pods-TemplateCocoa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TemplateCocoa.release.xcconfig"; path = "Pods/Target Support Files/Pods-TemplateCocoa/Pods-TemplateCocoa.release.xcconfig"; sourceTree = "<group>"; };
 		9DF5DDB6C508D638FA3E5FBD /* Pods-TemplateCocoa.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TemplateCocoa.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TemplateCocoa/Pods-TemplateCocoa.debug.xcconfig"; sourceTree = "<group>"; };
+		A02529E71E8CD73B00AB49E0 /* login.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = login.json; sourceTree = "<group>"; };
 		A03E46DB1E0263FC0013AD24 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		A04442901E2DE13D00B4A5E9 /* DSTabItemModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSTabItemModel.h; sourceTree = "<group>"; };
 		A04442911E2DE13D00B4A5E9 /* DSTabItemModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSTabItemModel.m; sourceTree = "<group>"; };
@@ -179,6 +183,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		A02529E61E8CD72F00AB49E0 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				A02529E71E8CD73B00AB49E0 /* login.json */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
 		A044428E1E2DE10D00B4A5E9 /* model */ = {
 			isa = PBXGroup;
 			children = (
@@ -251,7 +263,7 @@
 				A0EF538E1E0259C000DE645C /* Images */,
 				A0EF538F1E0259C000DE645C /* Macro */,
 				A0EF53901E0259C000DE645C /* Model */,
-				A0EF53911E0259C000DE645C /* Resource */,
+				A02529E61E8CD72F00AB49E0 /* Resource */,
 				A0EF53CE1E025DAB00DE645C /* Service */,
 				A0EF53981E0259C000DE645C /* Vendors */,
 				A0EF53921E0259C000DE645C /* VCs */,
@@ -346,13 +358,6 @@
 				A0EF53CC1E025D7C00DE645C /* UserModel.m */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		A0EF53911E0259C000DE645C /* Resource */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Resource;
 			sourceTree = "<group>";
 		};
 		A0EF53921E0259C000DE645C /* VCs */ = {
@@ -622,6 +627,7 @@
 				A0EF53661E0258D500DE645C /* Assets.xcassets in Resources */,
 				A0AB5D301E306D4900FFF956 /* Auth.xcassets in Resources */,
 				A044429B1E2DEEE800B4A5E9 /* Tabbar.xcassets in Resources */,
+				A02529E81E8CD73B00AB49E0 /* login.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -629,6 +635,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A02529E91E8CD73B00AB49E0 /* login.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -636,6 +643,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A02529EA1E8CD73B00AB49E0 /* login.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

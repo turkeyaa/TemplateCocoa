@@ -8,7 +8,11 @@
 
 #import "BaseRestApi.h"
 
+#import "UserModel.h"
+
 @interface Login_Post : BaseRestApi
+
+@property (nonatomic, strong) UserModel *userInfo;
 
 - (id)initWithAccount:(NSString *)account
              password:(NSString *)password;

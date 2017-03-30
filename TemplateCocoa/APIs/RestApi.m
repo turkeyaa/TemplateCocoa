@@ -15,10 +15,11 @@
 {
     NSString *_url;
     HttpMethods _httpMethod;
-    AFHTTPSessionManager *_manager;
     
     BOOL _isCancel;
 }
+
+@property (nonatomic, strong) NSURLSessionDataTask *task;
 
 @end
 
@@ -38,6 +39,10 @@
     [self cancel];
 }
 
+- (void)raiseException:(NSString *)exception {
+    [NSException raise:exception format:@"Exception"];
+}
+
 - (void)call {
     [self callWithTimeout:10.0];
 }
@@ -45,13 +50,91 @@
 - (void)callWithTimeout:(CGFloat)timeout {
     
     if ([NSThread isMainThread]) {
-        NSAssert(NO, @"主线程不允许同步调用");
+        [self raiseException:@"主线程不允许同步调用"];
         return;
     }
     
-    // TODO:
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
     
     
+    if (_httpMethod == HttpMethods_Get) {
+        
+        NSMutableString *strUrl = [[NSMutableString alloc] initWithString:_url];
+        
+        @try {
+            NSDictionary *params = [self queryGetParameters];
+            if (params) {
+                
+                // Get 参数
+                NSArray *keys = params.allKeys;
+                
+                for (int i = 0; i< keys.count; i++) {
+                    NSString* key = [keys objectAtIndex:i];
+                    NSString* value = [params valueForKey:key];
+                    
+                    if (i == 0) {
+                        [strUrl appendString:@"?"];
+                    } else {
+                        [strUrl appendString:@"&"];
+                    }
+                    [strUrl appendString:key];
+                    [strUrl appendString:@"="];
+                    [strUrl appendString:[NSString stringWithFormat:@"%@", value]];
+                }
+            }
+            
+            [request setURL:[NSURL URLWithString:strUrl]];
+            [request setHTTPMethod:@"GET"];
+            [request setTimeoutInterval:timeout];
+            
+        } @catch (NSException *exception) {
+            
+        } @finally {
+            
+        }
+    }
+    
+    else if (_httpMethod == HttpMethods_Post) {
+        [request setURL:[NSURL URLWithString:_url]];
+        [request setHTTPMethod:@"POST"];
+        [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+        NSData *postData = [self queryPostData];
+        [request setHTTPBody:postData];
+    }
+    else {
+        NSAssert(NO, @"目前只支持 GET、POST 请求方式");
+    }
+    
+    NSLog(@"url = %@",_url);
+    
+    __weak RestApi *weakSelf = self;
+    
+    NSCondition *condition = [[NSCondition alloc] init];
+    
+    NSURLSession *session = [NSURLSession sharedSession];
+    
+    _task = [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        
+        if (error) {
+            
+            [weakSelf doFailure:error];
+        }
+        else {
+            [weakSelf doSuccess:data];
+        }
+        
+        [condition lock];
+        [condition signal];
+        [condition unlock];
+    }];
+    
+    [_task resume];
+    
+    if (condition) {
+        [condition lock];
+        [condition wait];
+        [condition unlock];
+    }
 }
 
 - (void)cancel {

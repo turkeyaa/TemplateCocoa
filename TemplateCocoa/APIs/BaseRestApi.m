@@ -30,12 +30,9 @@
     if ([requestData isKindOfClass:NSDictionary.class]) {
         NSMutableDictionary* dict = [NSMutableDictionary dictionaryWithDictionary:requestData];
         NSData * jsondata=[NSJSONSerialization dataWithJSONObject:dict options:NSJSONWritingPrettyPrinted error:nil];
-//        _requestIsJson = YES;
         return jsondata;
     }
     if ([requestData isKindOfClass:NSArray.class]) {
-        
-//        _requestIsJson = YES;
         
         NSMutableArray *array = [NSMutableArray arrayWithArray:requestData];
         NSData *jsondata = [NSJSONSerialization dataWithJSONObject:array options:NSJSONWritingPrettyPrinted error:nil];
@@ -47,19 +44,104 @@
     return nil;
 }
 
+- (void)callWithTimeout:(CGFloat)timeout {
+    if ([NSThread isMainThread]) {
+        [self raiseException:@"主线程不允许同步调用"];
+        return;
+    }
+    
+    if ([self mockType] == MockNone) {
+        [super callWithTimeout:timeout];
+    }
+    else {
+        /*
+         * 模拟本地登录, 从本地 .json 文件中读取数据
+         */
+        __weak BaseRestApi *weakSelf = self;
+        
+        __block void(^ simulateBlock)() = ^{
+            
+            NSData *responseData = nil;
+            
+            NSString *mockFile = [self mockFile];
+            if (mockFile) {
+                NSString *filePath = [[NSBundle mainBundle] pathForResource:mockFile ofType:@"json"];
+                responseData = [NSData dataWithContentsOfFile:filePath];
+            }
+            
+            if (responseData == nil) {
+                [weakSelf raiseException:@"应答数据不能为nil, responseData==nil"];
+            }
+            
+            [self doSuccess:responseData];
+        };
+        
+        simulateBlock();
+    }
+}
+
 - (void)doSuccess:(id)responseObject {
     NSLog(@"RestApi :[%@]",self.class);
     NSLog(@"RestApi Response:[%@]",[[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding]);
     
-    
+    @try {
+        NSError *error;
+        NSDictionary *json = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingAllowFragments error:&error];
+        self.code = [json[@"status"] integerValue];
+        self.message = json[@"message"];
+        
+        if (self.code == RestApi_OK && [self parseResponseJson:json]) {
+            [self onSuccessed];
+        }
+        else {
+            if (self.code == RestApi_OK) {
+                
+                [self onSuccessed];
+            }
+            else {
+                [self onFailed];
+            }
+        }
+        
+    } @catch (NSException *exception) {
+        [self onError:nil];
+    } @finally {
+        
+    }
 }
 
+- (NSDictionary *)errorCodeMessage {
+    return @{
+             [NSString stringWithFormat:@"%@",@(RestApi_NoUserId)]:@"无用户ID信息,请先登录",
+             [NSString stringWithFormat:@"%@",@(RestApi_UnkownError)]:@"系统错误"
+             };
+}
+
+- (void)onSuccessed {
+    [super onSuccessed];
+}
+
+- (void)onFailed {
+    [super onFailed];
+}
+
+- (void)onTimeout {
+    [super onTimeout];
+}
+- (void)onCancelled {
+    [super onCancelled];
+}
+- (void)onError:(NSError *)error {
+    
+    self.code = RestApi_UnkownError;
+    [super onError:error];
+}
 
 - (MockType)mockType {
     return MockNone;
 }
 - (NSString *)mockFile {
-    return @"";
+    return @"login";
 }
 
 

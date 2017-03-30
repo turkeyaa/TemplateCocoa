@@ -27,8 +27,6 @@ typedef NS_ENUM(NSInteger, HttpMethods) {
  */
 - (id)initWithURL:(NSString *)url httpMethods:(HttpMethods)httpMethod;
 
-// TODO: form表单格式上传文件
-//- (id)initWithURL:(NSString *)url formData:
 
 - (void)call;
 - (void)callWithTimeout:(CGFloat)timeout;
@@ -39,7 +37,11 @@ typedef NS_ENUM(NSInteger, HttpMethods) {
 
 - (void)doSuccess:(id)responseObject;
 
+- (void)raiseException:(NSString*)exception;
+
+/* POST方式参数 */
 - (NSData *)queryPostData;
+/* GET方式参数 */
 - (NSDictionary *)queryGetParameters;
 
 - (void)onSuccessed;

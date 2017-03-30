@@ -8,6 +8,7 @@
 
 #import "RestApi.h"
 
+
 typedef NS_ENUM(NSInteger, RestApiCode) {
     RestApi_OK = 0,                     // 成功
     RestApi_NoUserId = 0001,            // 无用户ID信息 （请登录）
@@ -27,7 +28,8 @@ typedef NS_ENUM(NSInteger, MockType) {
 
 + (NSString *)getRestApiURL:(NSString *)relativeURL;
 
-@property (nonatomic, assign) RestApiCode code;     // 错误码
+@property (nonatomic, assign) RestApiCode code;     // 状态码
+@property (nonatomic, copy) NSString *message;      // 状态提示
 @property (nonatomic, copy) NSString *errorMessage; // 错误提示
 
 #pragma mark - Subclassing methods
