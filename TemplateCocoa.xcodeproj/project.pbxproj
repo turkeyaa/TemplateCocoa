@@ -20,6 +20,7 @@
 		A0AB5D331E306ED000FFF956 /* Login_Post.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AB5D321E306ED000FFF956 /* Login_Post.m */; };
 		A0AB5D371E3076F300FFF956 /* URLHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AB5D361E3076F300FFF956 /* URLHelper.m */; };
 		A0AB5D3B1E3078F600FFF956 /* URLUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AB5D3A1E3078F600FFF956 /* URLUtil.m */; };
+		A0BD328D1E948D370035D1DC /* UncaughtExceptionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = A0BD328C1E948D370035D1DC /* UncaughtExceptionHandler.m */; };
 		A0EF535B1E0258D500DE645C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A0EF535A1E0258D500DE645C /* main.m */; };
 		A0EF535E1E0258D500DE645C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A0EF535D1E0258D500DE645C /* AppDelegate.m */; };
 		A0EF53661E0258D500DE645C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0EF53651E0258D500DE645C /* Assets.xcassets */; };
@@ -86,6 +87,8 @@
 		A0AB5D361E3076F300FFF956 /* URLHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = URLHelper.m; sourceTree = "<group>"; };
 		A0AB5D391E3078F600FFF956 /* URLUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URLUtil.h; sourceTree = "<group>"; };
 		A0AB5D3A1E3078F600FFF956 /* URLUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = URLUtil.m; sourceTree = "<group>"; };
+		A0BD328B1E948D370035D1DC /* UncaughtExceptionHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UncaughtExceptionHandler.h; sourceTree = "<group>"; };
+		A0BD328C1E948D370035D1DC /* UncaughtExceptionHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UncaughtExceptionHandler.m; sourceTree = "<group>"; };
 		A0EF53561E0258D500DE645C /* TemplateCocoa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TemplateCocoa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0EF535A1E0258D500DE645C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A0EF535C1E0258D500DE645C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -258,6 +261,8 @@
 			children = (
 				A0EF535C1E0258D500DE645C /* AppDelegate.h */,
 				A0EF535D1E0258D500DE645C /* AppDelegate.m */,
+				A0BD328B1E948D370035D1DC /* UncaughtExceptionHandler.h */,
+				A0BD328C1E948D370035D1DC /* UncaughtExceptionHandler.m */,
 				A0EF538C1E0259C000DE645C /* APIs */,
 				A0EF538D1E0259C000DE645C /* Common */,
 				A0EF538E1E0259C000DE645C /* Images */,
@@ -704,6 +709,7 @@
 			files = (
 				A0EF53C31E025D0800DE645C /* BaseView.m in Sources */,
 				A0EF53A11E025BD300DE645C /* BaseRestApi.m in Sources */,
+				A0BD328D1E948D370035D1DC /* UncaughtExceptionHandler.m in Sources */,
 				A04442951E2DE26900B4A5E9 /* DSTabItemView.m in Sources */,
 				A0AB5D2D1E305EB400FFF956 /* RegisterVC.m in Sources */,
 				A04442981E2DE28F00B4A5E9 /* DSTabbarView.m in Sources */,

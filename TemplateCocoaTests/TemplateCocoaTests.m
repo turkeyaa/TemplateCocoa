@@ -8,6 +8,12 @@
 
 #import <XCTest/XCTest.h>
 
+//
+#import "GCDUtil.h"
+
+// 接口
+#import "Login_Post.h"
+
 @interface TemplateCocoaTests : XCTestCase
 
 @end
@@ -34,6 +40,19 @@
     [self measureBlock:^{
         // Put the code you want to measure the time of here.
     }];
+}
+
+- (void)testLoginApi {
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        Login_Post *loginApi = [[Login_Post alloc] initWithAccount:@"18668089860" password:@"123456"];
+        [loginApi call];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            NSAssert(NO, @"sdsd");
+        });
+    });
+    
 }
 
 @end
