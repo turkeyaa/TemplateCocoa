@@ -8,10 +8,21 @@
 
 #import "MainVC.h"
 
+// VC
 #import "LoginVC.h"
 #import "RegisterVC.h"
+// Model
+#import "MainInfo.h"
+// API
+#import "Main_Get.h"
+// Cell
+#import "MainCell.h"
 
-@interface MainVC ()
+
+@interface MainVC () <UITableViewDelegate,UITableViewDataSource>
+
+@property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, strong) NSMutableArray *dataSource;
 
 @end
 
@@ -24,6 +35,12 @@
     self.leftTitle = @"登录";
     self.rightTitle = @"注册";
     self.title = @"首页";
+    
+    // 初始化界面
+    [self setupUI];
+    
+    // 加载数据
+    [self loadData];
 }
 
 - (void)goBack {
@@ -36,6 +53,76 @@
     vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
 }
+
+- (void)setupUI {
+    [self.view addSubview:self.tableView];
+}
+
+- (UITableView *)tableView {
+    if (!_tableView) {
+        _tableView = ({
+            UITableView *table = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
+            table.delegate = self;
+            table.dataSource = self;
+            table.tableHeaderView = [[UIView alloc] init];
+            table.tableFooterView = [[UIView alloc] init];
+            table;
+        });
+    }
+    return _tableView;
+}
+
+
+#pragma mark - 加载数据
+- (void)loadData {
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        
+        Main_Get *mainApi = [[Main_Get alloc] init];
+        [mainApi call];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            if (mainApi.code == RestApi_OK) {
+                self.dataSource = mainApi.dataSource;
+                [self.tableView reloadData];
+            }
+            else {
+                [self showErrorMessage:@"加载失败"];
+            }
+        });
+    });
+}
+
+#pragma mark -
+#pragma mark - UITableView delegate and dataSource
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.dataSource.count;
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 100.0;
+}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    static NSString *CellIdentifier = @"MainCell";
+    MainCell *cell = (MainCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (!cell) {
+        cell = [[MainCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    }
+    MainInfo *info = self.dataSource[indexPath.row];
+    cell.mainInfo = info;
+    
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
