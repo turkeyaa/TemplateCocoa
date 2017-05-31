@@ -20,18 +20,11 @@
 
 @implementation MainCell
 
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
-    if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
-        
-        [self setupUI];
-    }
-    return self;
++ (CGFloat)classCellHeight {
+    return 100.0;
 }
 
-
-
-- (void)setupUI {
-    
+- (void)setupSubViews {
     [self addSubview:self.nameLabel];
     [self addSubview:self.spellLabel];
     [self addSubview:self.iconView];

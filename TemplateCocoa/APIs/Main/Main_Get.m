@@ -17,8 +17,8 @@
 }
 - (id)initWithPageNum:(NSInteger)pageNum
              pageSize:(NSInteger)pageSize {
-    if (self = [super init]) {
-        
+    
+    if (self = [super initWithURL:[BaseRestApi getRestApiURL:@"curefun/main/user"] httpMethods:HttpMethods_Get]) {
         _dataSource = [[NSMutableArray alloc] init];
     }
     return self;
@@ -29,7 +29,14 @@
     if (array) {
         
         for (NSDictionary *dict in array) {
-            MainInfo *info = [MainInfo yy_modelWithDictionary:dict];
+            /** JSON转化成model
+             * 可以使用YYModel、MJExtension... 等库.
+             * 目前使用基类JSONModel中的初始化方法即可实现自动转化
+             */
+            
+//            MainInfo *info = [MainInfo yy_modelWithDictionary:dict];
+            
+            MainInfo *info = [[MainInfo alloc] initWithDictionary:dict];
             [self.dataSource addObject:info];
         }
     }

@@ -14,7 +14,7 @@ typedef void(^ClickEventBlock)(NSIndexPath *indexPath, BaseTCell *cell);
 
 @interface BaseTCell : UITableViewCell
 
-+ (NSUInteger)classCellHeight;
++ (CGFloat)classCellHeight;
 
 + (instancetype)tcell:(UITableView *)tableView reuse:(BOOL)reuse;
 
@@ -22,8 +22,11 @@ typedef void(^ClickEventBlock)(NSIndexPath *indexPath, BaseTCell *cell);
 @property (nonatomic, assign) BOOL showIndicator;
 @property (nonatomic, strong) ClickEventBlock click;
 
-- (NSInteger)height;
+- (CGFloat)height;
 
 - (void)setupUI;
+
+#pragma mark - Subclass
+- (void)setupSubViews;
 
 @end

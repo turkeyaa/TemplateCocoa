@@ -8,6 +8,15 @@
 
 #import <Foundation/Foundation.h>
 
-@interface JSONModel : NSObject
+/*
+ * JSONModel 基类
+ * 支持JSON自动转化为Model模型
+ * 支持自动化编码和解码
+ */
+
+
+@interface JSONModel : NSObject <NSCopying,NSCoding,NSMutableCopying>
+
+- (id)initWithDictionary:(NSDictionary *)jsonDict;
 
 @end

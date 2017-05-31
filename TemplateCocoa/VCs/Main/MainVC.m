@@ -32,12 +32,11 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    // 初始化界面
     self.leftTitle = @"登录";
     self.rightTitle = @"注册";
     self.title = @"首页";
-    
-    // 初始化界面
-    [self setupUI];
+    [self.view addSubview:self.tableView];
     
     // 加载数据
     [self loadData];
@@ -52,10 +51,6 @@
     RegisterVC *vc = [[RegisterVC alloc] init];
     vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
-}
-
-- (void)setupUI {
-    [self.view addSubview:self.tableView];
 }
 
 - (UITableView *)tableView {
@@ -103,17 +98,14 @@
     return self.dataSource.count;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 100.0;
+    return [MainCell classCellHeight];
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    static NSString *CellIdentifier = @"MainCell";
-    MainCell *cell = (MainCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (!cell) {
-        cell = [[MainCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-    }
+    MainCell *cell = [MainCell tcell:self.tableView reuse:YES];
     MainInfo *info = self.dataSource[indexPath.row];
     cell.mainInfo = info;
+    cell.showIndicator = YES;
     
     return cell;
 }
