@@ -8,8 +8,10 @@
 6. 工具类
 7. 参考文档
 
+#### 面向对象编程三大特性：封装、继承、多态，这边文章会在实际项目编码中介绍这些特性，提高编码水平和质量。
+
 #### 1. 目录结构图
-![](http://turkeyaa.github.io/assets/2015/product_structure.png)
+![目录结构图](http://turkeyaa.github.io/assets/2015/product_structure.png)
 
 ##### 说明
 
@@ -29,6 +31,25 @@
 #### 2. 接口封装
 
 > 一般的我们会使用第三方插件(AFNetworking...)来处理网络请求，每个请求都是通过AFN来调用，这样不好是因为开发和维护都需要很多的工作量。而有写经验的开发者会考虑在基类中实现AFN接口，通过继承的方式来处理网络请求，这样就很好了。下面介绍如何打造自己的网络库。
+
+![](http://turkeyaa.github.io/assets/2015/MVC.png)
+
+#### 在ViewController中，登录接口就是这样：
+
+		// 在 LoginVC.m 中实现登录
+		Login_Post *loginApi = [[Login_Post alloc] initWithAccount:account password:password];
+		[loginApi call];
+
+		if (loginApi.code == RestApi_OK) {
+			// 登录成功，赋值，其他处理....
+			UserInfo *userInfo = loginApi.userInfo;
+
+		}
+		else {
+			// 登录失败
+			[self showErrorMessage:loginApi.errorMessage];
+		}
+
 
 #### 一般的网络请求方法步骤：
 
@@ -57,24 +78,6 @@
 		[dataTask resume];
 
 #### 这些方法是通用的，不同的只是参数、请求方式(GET/POST/PUT...)、接口路径、返回的数据。那我们是不是可以把不同的参数通过多态(重写父类的方法)来实现。而请求数据完成，通过block、代理或重载来处理不同的结果。这里的结果一般的是json数据，同时就可以把json转换成model传递给相应的控制器对象。你会发现我们的请求过程会特别的简单、方便。流程图：
-
-![](http://turkeyaa.github.io/assets/2015/MVC.png)
-
-#### 在ViewController中，登录接口就是这样：
-
-		// 在 LoginVC.m 中实现登录
-		Login_Post *loginApi = [[Login_Post alloc] initWithAccount:account password:password];
-		[loginApi call];
-
-		if (loginApi.code == RestApi_OK) {
-			// 登录成功，赋值，其他处理....
-			UserInfo *userInfo = loginApi.userInfo;
-
-		}
-		else {
-			// 登录失败
-			[self showErrorMessage:loginApi.errorMessage];
-		}
 
 #### 如何实现？
 
@@ -288,8 +291,22 @@
 		}
 
 
-
 #### 3. 界面封装
+
+#### 重点介绍**UIViewController**和**UITableViewCell**的封装
+
+#### UIViewController的继承关系，设计如下图：
+
+![BaseVC继承关系图](http://turkeyaa.github.io/assets/2017/BaseLoadTC.png)
+
+#### 在BaseVC.h中，定义了一些属性和方法，包括：是否显示导航条、左标题、右标题、左图标、右图标、左条目事件、右条目事件、HUD的显示和隐藏。基本上满足了对控制器对象的基本的交互封装。
+
+#### 在BaseTC中，这是一个带有UITableView的视图控制器。包括：一个NSMutableArray类型的数据源和UITableView类型的表视图对象。
+
+#### 在BaseLoadTC中，这是一个带有下拉刷新、加载更多和表视图的视图控制器对象。
+
+
+## TODO
 
 #### 4. 模型封装
 

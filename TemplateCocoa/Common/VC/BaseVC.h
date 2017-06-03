@@ -10,13 +10,24 @@
 
 @interface BaseVC : UIViewController
 
+/* 是否隐藏导航条 */
 @property (nonatomic, assign) BOOL isHideNav;
 
+/* 导航左边标题 */
 @property (nonatomic, strong) NSString *leftTitle;
+/* 导航右边标题 */
 @property (nonatomic, strong) NSString *rightTitle;
 
+/* 导航左边图标 */
 @property (nonatomic, strong) UIImage *leftImage;
+
+/* 导航右边图标 */
 @property (nonatomic, strong) UIImage *rightImage;
+
+/* 左边导航按钮事件(如果存在) */
+- (void)goBack;
+/* 右边导航按钮事件(如果存在) */
+- (void)goNext;
 
 #pragma mark - SVProgressHUD
 /**
@@ -38,8 +49,5 @@
 - (void)showInfoMessage:(NSString *)msg;
 - (void)showSuccessMessage:(NSString *)msg;
 - (void)showErrorMessage:(NSString *)msg;
-
-- (void)goBack;
-- (void)goNext;
 
 @end
