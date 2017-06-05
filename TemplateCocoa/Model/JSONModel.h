@@ -17,6 +17,9 @@
 
 @interface JSONModel : NSObject <NSCopying,NSCoding,NSMutableCopying>
 
-- (id)initWithDictionary:(NSDictionary *)jsonDict;
+//- (id)initWithDictionary:(NSDictionary *)jsonDict;
+
++ (id)jsonModelWithDictionary:(NSDictionary *)jsonDict;
++ (NSDictionary *)jsonModelWithModel:(JSONModel *)model;
 
 @end

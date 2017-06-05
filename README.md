@@ -8,7 +8,7 @@
 6. 工具类
 7. 参考文档
 
-#### 面向对象编程三大特性：封装、继承、多态，这边文章会在实际项目编码中介绍这些特性，提高编码水平和质量。
+#### 面向对象编程三大特性：封装、继承、多态，这篇文章会在实际项目编码中介绍这些特性，提高编码水平和质量。
 
 #### 1. 目录结构图
 ![目录结构图](http://turkeyaa.github.io/assets/2015/product_structure.png)
@@ -27,6 +27,8 @@
 * Images.xcassets：切图资源
 * PrefixHeader.pch：编译预引用头文件
 * Pods：第三方库
+
+***
 
 #### 2. 接口封装
 
@@ -290,6 +292,7 @@
 			};
 		}
 
+***
 
 #### 3. 界面封装
 
@@ -305,12 +308,165 @@
 
 #### 在BaseLoadTC中，这是一个带有下拉刷新、加载更多和表视图的视图控制器对象。
 
+#### 在我们的视图控制器中，就可以这样写：
 
-## TODO
+	// 显示标题
+	self.leftTitle = @"登录";
+	self.rightTitle = @"注册";
+	
+	// 或者显示图标
+	self.leftImage = [UIImage imageNamed:@"app_icon"];
+	self.rightImage = [UIImage imageNamed:@"app_icon"];
+	
+	// 显示HUD
+	[self showLoadingHUD];
+	// 自定义HUD
+	[self showLoadingHUD:@"正在登录中..."];
+	// 隐藏HUD
+	[self hideLoadingHUD];
+	// 成功、失败、错误...等
+	[self showSuccessMessage:@"加载成功"];
+	[self showErrorMessage:@"加载失败"];
+	[self showInfoMessage:@"其他失败"];
+
+#### BaseTCell类设计如下：
+
+![BaseTCell继承关系](http://turkeyaa.github.io/assets/2017/BaseTCell.png)
+
+#### 通过 **tcell:reuse:** 方法来初始化UITableViewCell对象，支持 **click** 监听点击事件、**showIndicator** 是否显示右边的箭头、重写 **classCellHeight** 重写子类的高度、重写 **setupSubViews** 自定义子类界面。
+
+#### 然后我们的表视图数据源方法中 **tableView: cellForRowAtIndexPath:** ，初始化表视图就是这样：
+
+	- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+		MainCell *cell = [MainCell tcell:self.tableView reuse:YES];
+		MainInfo *info = self.dataSource[indexPath.row];
+		cell.mainInfo = info;
+		cell.showIndicator = YES;		// 默认为YES
+    
+		return cell;
+	}
+	
+#### 你也可以自定义UITableViewCell的高度：
+
+	- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+		return [MainCell classCellHeight];
+	}
+	
+***	
 
 #### 4. 模型封装
 
+#### 对象模型对象，最基本的需要满足下面的功能：
+1. JSON和Model的相互转化
+2. 编码和解码
+3. 对象的深复制
+
+#### 一般的我们使用**MJExtension**来处理模型转化，基本上可以项目中的各种需求。如果让你自己来实现这些功能，该如何来设计？
+
+#### 定义JSONModel类，继承NSObject类。实现NSCopying,NSCoding,NSMutableCopying三个协议。支持编码和解码功能，两个类方法，支持JSON和Model的相互转化。
+
+> 代码清单 JSONModel.h
+	
+	@interface JSONModel : NSObject <NSCopying,NSCoding,NSMutableCopying>
+
+	+ (id)jsonModelWithDictionary:(NSDictionary *)jsonDict;
+	+ (NSDictionary *)jsonModelWithModel:(JSONModel *)model;
+
+	@end
+	
+> 代码清单 JSONModel.m
+	
+	// 基于运行时特性，动态获取类的属性
+	#import "NSObject+Property.h"
+	
+	- (id)initWithDictionary:(NSDictionary *)jsonDict {
+		if (self = [super init]) {
+			[self setValuesForKeysWithDictionary:jsonDict];
+		}
+		return self;
+	}
+
+	+ (id)jsonModelWithDictionary:(NSDictionary *)jsonDict {
+		JSONModel *model = [[self alloc] initWithDictionary:jsonDict];
+		return model;
+	}
+
+	+ (NSDictionary *)jsonModelWithModel:(JSONModel *)model {
+    
+		NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
+    
+		NSArray *properNames = [model getPropertyList];
+    
+		for (NSString *key in properNames) {
+        
+			id value = [model valueForKey:key];
+			if (value) {
+				[dict setValue:value forKey:key];
+			}
+		}
+		return dict;
+	}
+
+#### 在 **jsonModelWithDictionary:** 方法中，基于KVC特性，把JSON转化成MOdel对象，在 **jsonModelWithModel:** 方法中，在运行时获取model的属性类型(runtime机制)，然后根据属性获取属性值(KVC机制)，然后把属性和值添加到字典中。即可实现Model转化成JSON字典对象。
+
+> 代码清单，接上，JSONModel.m
+	
+	#pragma mark -
+	#pragma mark - NSCoding协议:解码
+	- (id)initWithCoder:(NSCoder *)aDecoder {
+    
+		if (self = [super init]) {
+        
+			NSArray *properNames = [self getPropertyList];
+        
+			for (NSString *key in properNames) {
+            
+				id varValue = [aDecoder decodeObjectForKey:key];
+				if (varValue) {
+					[self setValue:varValue forKey:key];
+				}
+			}
+		}
+		return self;
+	}
+	
+	#pragma mark -
+	#pragma mark - NSCoding协议:编码
+	- (void)encodeWithCoder:(NSCoder *)aCoder {
+		NSArray *properNames = [self getPropertyList];
+		for (NSString *key in properNames) {
+        
+			id varValue = [self valueForKey:key];
+			if (varValue)
+			{
+				[aCoder encodeObject:varValue forKey:key];
+			}
+		}
+	}
+
+	#pragma mark -
+	#pragma mark - NSCopying协议
+	- (id)mutableCopyWithZone:(NSZone *)zone {
+		// subclass implementation should do a deep mutable copy
+		// this class doesn't have any ivars so this is ok
+		JSONModel *newModel = [[JSONModel allocWithZone:zone] init];
+		return newModel;
+	}
+
+	- (id)copyWithZone:(NSZone *)zone {
+		// subclass implementation should do a deep mutable copy
+		// this class doesn't have any ivars so this is ok
+		JSONModel *newModel = [[JSONModel allocWithZone:zone] init];
+		return newModel;
+	}
+
+***
+
+### TODO
+
 #### 5. 对象组合
+
 
 #### 6. 工具类
 

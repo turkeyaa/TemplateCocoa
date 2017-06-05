@@ -36,7 +36,7 @@
             
 //            MainInfo *info = [MainInfo yy_modelWithDictionary:dict];
             
-            MainInfo *info = [[MainInfo alloc] initWithDictionary:dict];
+            MainInfo *info = [MainInfo jsonModelWithDictionary:dict];
             [self.dataSource addObject:info];
         }
     }

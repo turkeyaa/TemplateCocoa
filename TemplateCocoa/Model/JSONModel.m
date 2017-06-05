@@ -19,6 +19,27 @@
     return self;
 }
 
++ (id)jsonModelWithDictionary:(NSDictionary *)jsonDict {
+    JSONModel *model = [[self alloc] initWithDictionary:jsonDict];
+    return model;
+}
+
++ (NSDictionary *)jsonModelWithModel:(JSONModel *)model {
+    
+    NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
+    
+    NSArray *properNames = [model getPropertyList];
+    
+    for (NSString *key in properNames) {
+        
+        id value = [model valueForKey:key];
+        if (value) {
+            [dict setValue:value forKey:key];
+        }
+    }
+    return dict;
+}
+
 #pragma mark -
 #pragma mark - NSCoding协议:解码
 - (id)initWithCoder:(NSCoder *)aDecoder {
