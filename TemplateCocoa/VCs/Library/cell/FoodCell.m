@@ -192,7 +192,6 @@
     
     
 //    [_iconView setPlaceHolderImageName:@"avator.png" iconURL:[NSURL URLWithString:_foodInfo.img]];
-    
     [_iconView sd_setImageWithURL:[NSURL URLWithString:_foodInfo.img] placeholderImage:[UIImage imageNamed:@"avator.png"]];
     _nameLabel.text = _foodInfo.name;
     _specificsLabel.text = _foodInfo.specifics;

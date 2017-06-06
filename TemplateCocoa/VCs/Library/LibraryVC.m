@@ -47,6 +47,7 @@
 
 - (void)goNext {
     SearchVC *vc = [[SearchVC alloc] init];
+    vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
 }
     
@@ -78,7 +79,7 @@
     [GCDUtil runInGlobalQueue:^{
         
         
-        NSMutableArray *iconsUrl = [[NSMutableArray alloc] init];
+//        NSMutableArray *iconsUrl = [[NSMutableArray alloc] init];
         
         Activity_Get *activityApi = [[Activity_Get alloc] init];
         [activityApi call];
@@ -88,7 +89,6 @@
 //                [iconsUrl addObject:info.img];
 //            }
 //            self.carouselView.imageArray = iconsUrl;
-            
         }
         
         Foods_Get *foodApi = [[Foods_Get alloc] init];
