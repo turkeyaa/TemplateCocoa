@@ -1,1 +1,0 @@
-../../../FlyImage/FlyImage/UI/FlyImageCacheUIProtocol.h

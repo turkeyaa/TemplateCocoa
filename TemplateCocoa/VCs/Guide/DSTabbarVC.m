@@ -12,6 +12,7 @@
 #import "LibraryVC.h"
 #import "MainVC.h"
 #import "MineVC.h"
+#import "CartVC.h"
 // View
 #import "DSTabbarView.h"
 
@@ -41,22 +42,27 @@
     // 默认 tabbar
     MainVC *mainVc = [[MainVC alloc] init];
     LibraryVC *libraryVc = [[LibraryVC alloc] init];
+    CartVC *cartVc = [[CartVC alloc] init];
     MineVC *mineVc = [[MineVC alloc] init];
     
     UITabBarItem *mainItem = [[UITabBarItem alloc] initWithTitle:@"首页" image:[UIImage imageNamed:@"main"] selectedImage:[UIImage imageNamed:@"mainHigh"]];
     mainVc.tabBarItem = mainItem;
     
-    UITabBarItem *libraryItem = [[UITabBarItem alloc] initWithTitle:@"病例库" image:[UIImage imageNamed:@"library"] selectedImage:[UIImage imageNamed:@"libraryHigh"]];
+    UITabBarItem *libraryItem = [[UITabBarItem alloc] initWithTitle:@"商品" image:[UIImage imageNamed:@"library"] selectedImage:[UIImage imageNamed:@"libraryHigh"]];
     libraryVc.tabBarItem = libraryItem;
+    
+    UITabBarItem *cartItem = [[UITabBarItem alloc] initWithTitle:@"购物车" image:[UIImage imageNamed:@"library"] selectedImage:[UIImage imageNamed:@"libraryHigh"]];
+    cartVc.tabBarItem = cartItem;
     
     UITabBarItem *mineItem = [[UITabBarItem alloc] initWithTitle:@"我的" image:[UIImage imageNamed:@"mine"] selectedImage:[UIImage imageNamed:@"mineHigh"]];
     mineVc.tabBarItem = mineItem;
     
     UINavigationController *mainNav = [[UINavigationController alloc] initWithRootViewController:mainVc];
     UINavigationController *libraryNav = [[UINavigationController alloc] initWithRootViewController:libraryVc];
+    UINavigationController *cartNav = [[UINavigationController alloc] initWithRootViewController:cartVc];
     UINavigationController *mineNav = [[UINavigationController alloc] initWithRootViewController:mineVc];
     
-    self.viewControllers = @[mainNav,libraryNav,mineNav];
+    self.viewControllers = @[mainNav,libraryNav,cartNav,mineNav];
     
     
 #else
@@ -79,7 +85,7 @@
      *  配置
      */
     _models = @[[DSTabItemModel modelWithTitle:@"首页" image:@"main" selectedImage:@"mainHigh"],
-                [DSTabItemModel modelWithTitle:@"病例库" image:@"library" selectedImage:@"libraryHigh"],
+                [DSTabItemModel modelWithTitle:@"商品" image:@"library" selectedImage:@"libraryHigh"],
                 [DSTabItemModel modelWithTitle:@"我的" image:@"mine" selectedImage:@"mineHigh"]
                 ];
     

@@ -38,6 +38,7 @@
     self.title = @"首页";
     [self.view addSubview:self.tableView];
     
+    
     // 加载数据
     [self loadData];
 }

@@ -6,7 +6,6 @@
 4. 模型封装
 5. 对象组合
 6. 工具类
-7. 参考文档
 
 #### 面向对象编程三大特性：封装、继承、多态，这篇文章会在实际项目编码中介绍这些特性，提高编码水平和质量。
 
@@ -463,12 +462,26 @@
 
 ***
 
+> 客户端代码
+	
+	// json转化成model 和 model 转化成 json
+	MainInfo *info = [MainInfo jsonModelWithDictionary:dict];
+	NSDictionary *dict = [MainInfo jsonModelWithModel:info];
+	
+	// 编码
+	MainInfo *p = [[MainInfo alloc] init];
+	p.name = @"turkey";
+	NSString *documents = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+	NSString *path = [documents stringByAppendingPathComponent:@"main.archiver"];//拓展名可以自己随便取
+	[NSKeyedArchiver archiveRootObject:p toFile:path];
+	    
+	// 解码
+	NSString *documents = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+	NSString *path = [documents stringByAppendingPathComponent:@"main.archiver"];
+	MainInfo *mainInfo = [NSKeyedUnarchiver unarchiveObjectWithFile:path];
+
 ### TODO
 
 #### 5. 对象组合
 
-
 #### 6. 工具类
-
-#### 7. 参考文档
-

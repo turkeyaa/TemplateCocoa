@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '0E2C7FF690F06661E7248F3445289287'
+               BlueprintIdentifier = '851F99744810DABA7B44E21667315B04'
                BlueprintName = 'FlyImage'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'libFlyImage.a'>
+               BuildableName = 'FlyImage.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

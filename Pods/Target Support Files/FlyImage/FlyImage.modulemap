@@ -1,0 +1,6 @@
+framework module FlyImage {
+  umbrella header "FlyImage-umbrella.h"
+
+  export *
+  module * { export * }
+}
