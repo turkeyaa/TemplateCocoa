@@ -15,6 +15,16 @@
 		A04442951E2DE26900B4A5E9 /* DSTabItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = A04442941E2DE26900B4A5E9 /* DSTabItemView.m */; };
 		A04442981E2DE28F00B4A5E9 /* DSTabbarView.m in Sources */ = {isa = PBXBuildFile; fileRef = A04442971E2DE28F00B4A5E9 /* DSTabbarView.m */; };
 		A044429B1E2DEEE800B4A5E9 /* Tabbar.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A044429A1E2DEEE800B4A5E9 /* Tabbar.xcassets */; };
+		A046BB2A1EE79141006CD36C /* FileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A046BB291EE79141006CD36C /* FileManager.m */; };
+		A046BB2D1EE7916F006CD36C /* UncaughtExceptionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = A046BB2C1EE7916F006CD36C /* UncaughtExceptionHandler.m */; };
+		A046BB311EE791A2006CD36C /* FmdbHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A046BB301EE791A2006CD36C /* FmdbHelper.m */; };
+		A046BB341EE791D2006CD36C /* DeviceHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A046BB331EE791D2006CD36C /* DeviceHelper.m */; };
+		A046BB371EE791F3006CD36C /* NetworkHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A046BB361EE791F3006CD36C /* NetworkHelper.m */; };
+		A046BB3A1EE79214006CD36C /* PredicateHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A046BB391EE79214006CD36C /* PredicateHelper.m */; };
+		A046BB3D1EE79227006CD36C /* ResourceHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A046BB3C1EE79227006CD36C /* ResourceHelper.m */; };
+		A046BB401EE7924B006CD36C /* ActionHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A046BB3F1EE7924B006CD36C /* ActionHelper.m */; };
+		A046BB441EE792BD006CD36C /* AppPreference.m in Sources */ = {isa = PBXBuildFile; fileRef = A046BB431EE792BD006CD36C /* AppPreference.m */; };
+		A046BB461EE793E3006CD36C /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A046BB451EE793E3006CD36C /* libsqlite3.tbd */; };
 		A06C514B1EE6616F002E119F /* activity.json in Resources */ = {isa = PBXBuildFile; fileRef = A06C514A1EE6616F002E119F /* activity.json */; };
 		A09899961EE6889E0095F293 /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A09899911EE6889E0095F293 /* 1.jpg */; };
 		A09899971EE6889E0095F293 /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A09899921EE6889E0095F293 /* 2.jpg */; };
@@ -23,11 +33,12 @@
 		A098999B1EE6908D0095F293 /* Library.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A098999A1EE6908D0095F293 /* Library.xcassets */; };
 		A098999E1EE69BA20095F293 /* SearchVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A098999D1EE69BA20095F293 /* SearchVC.m */; };
 		A09899A21EE69C5F0095F293 /* CartVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A09899A11EE69C5F0095F293 /* CartVC.m */; };
+		A0A3A13B1EE79A8C005611DB /* NetworkMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A3A13A1EE79A8C005611DB /* NetworkMonitor.m */; };
+		A0A3A13E1EE79A9A005611DB /* SQLiteHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A3A13D1EE79A9A005611DB /* SQLiteHelper.m */; };
 		A0AB5D2D1E305EB400FFF956 /* RegisterVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AB5D2C1E305EB300FFF956 /* RegisterVC.m */; };
 		A0AB5D301E306D4900FFF956 /* Auth.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0AB5D2F1E306D4900FFF956 /* Auth.xcassets */; };
 		A0AB5D371E3076F300FFF956 /* URLHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AB5D361E3076F300FFF956 /* URLHelper.m */; };
 		A0AB5D3B1E3078F600FFF956 /* URLUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AB5D3A1E3078F600FFF956 /* URLUtil.m */; };
-		A0BD328D1E948D370035D1DC /* UncaughtExceptionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = A0BD328C1E948D370035D1DC /* UncaughtExceptionHandler.m */; };
 		A0DF024E1EDE8B2900507F31 /* main.json in Resources */ = {isa = PBXBuildFile; fileRef = A0DF024D1EDE8B2900507F31 /* main.json */; };
 		A0DF02581EDE8C1A00507F31 /* Login_Post.m in Sources */ = {isa = PBXBuildFile; fileRef = A0DF02571EDE8C1A00507F31 /* Login_Post.m */; };
 		A0DF025B1EDE8C2E00507F31 /* Main_Get.m in Sources */ = {isa = PBXBuildFile; fileRef = A0DF025A1EDE8C2E00507F31 /* Main_Get.m */; };
@@ -103,6 +114,25 @@
 		A04442971E2DE28F00B4A5E9 /* DSTabbarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSTabbarView.m; sourceTree = "<group>"; };
 		A04442991E2DEDA000B4A5E9 /* KeyMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KeyMacro.h; sourceTree = "<group>"; };
 		A044429A1E2DEEE800B4A5E9 /* Tabbar.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Tabbar.xcassets; sourceTree = "<group>"; };
+		A046BB281EE79141006CD36C /* FileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileManager.h; sourceTree = "<group>"; };
+		A046BB291EE79141006CD36C /* FileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileManager.m; sourceTree = "<group>"; };
+		A046BB2B1EE7916F006CD36C /* UncaughtExceptionHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UncaughtExceptionHandler.h; sourceTree = "<group>"; };
+		A046BB2C1EE7916F006CD36C /* UncaughtExceptionHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UncaughtExceptionHandler.m; sourceTree = "<group>"; };
+		A046BB2F1EE791A2006CD36C /* FmdbHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FmdbHelper.h; sourceTree = "<group>"; };
+		A046BB301EE791A2006CD36C /* FmdbHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FmdbHelper.m; sourceTree = "<group>"; };
+		A046BB321EE791D2006CD36C /* DeviceHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceHelper.h; sourceTree = "<group>"; };
+		A046BB331EE791D2006CD36C /* DeviceHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceHelper.m; sourceTree = "<group>"; };
+		A046BB351EE791F3006CD36C /* NetworkHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkHelper.h; sourceTree = "<group>"; };
+		A046BB361EE791F3006CD36C /* NetworkHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkHelper.m; sourceTree = "<group>"; };
+		A046BB381EE79214006CD36C /* PredicateHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PredicateHelper.h; sourceTree = "<group>"; };
+		A046BB391EE79214006CD36C /* PredicateHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PredicateHelper.m; sourceTree = "<group>"; };
+		A046BB3B1EE79227006CD36C /* ResourceHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResourceHelper.h; sourceTree = "<group>"; };
+		A046BB3C1EE79227006CD36C /* ResourceHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResourceHelper.m; sourceTree = "<group>"; };
+		A046BB3E1EE7924B006CD36C /* ActionHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionHelper.h; sourceTree = "<group>"; };
+		A046BB3F1EE7924B006CD36C /* ActionHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionHelper.m; sourceTree = "<group>"; };
+		A046BB421EE792BD006CD36C /* AppPreference.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppPreference.h; sourceTree = "<group>"; };
+		A046BB431EE792BD006CD36C /* AppPreference.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppPreference.m; sourceTree = "<group>"; };
+		A046BB451EE793E3006CD36C /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		A06C514A1EE6616F002E119F /* activity.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = activity.json; sourceTree = "<group>"; };
 		A09899911EE6889E0095F293 /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
 		A09899921EE6889E0095F293 /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpg; sourceTree = "<group>"; };
@@ -114,6 +144,10 @@
 		A098999D1EE69BA20095F293 /* SearchVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchVC.m; sourceTree = "<group>"; };
 		A09899A01EE69C5F0095F293 /* CartVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CartVC.h; sourceTree = "<group>"; };
 		A09899A11EE69C5F0095F293 /* CartVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CartVC.m; sourceTree = "<group>"; };
+		A0A3A1391EE79A8C005611DB /* NetworkMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkMonitor.h; sourceTree = "<group>"; };
+		A0A3A13A1EE79A8C005611DB /* NetworkMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkMonitor.m; sourceTree = "<group>"; };
+		A0A3A13C1EE79A9A005611DB /* SQLiteHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLiteHelper.h; sourceTree = "<group>"; };
+		A0A3A13D1EE79A9A005611DB /* SQLiteHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLiteHelper.m; sourceTree = "<group>"; };
 		A0AB5D2B1E305EB300FFF956 /* RegisterVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterVC.h; sourceTree = "<group>"; };
 		A0AB5D2C1E305EB300FFF956 /* RegisterVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterVC.m; sourceTree = "<group>"; };
 		A0AB5D2F1E306D4900FFF956 /* Auth.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Auth.xcassets; sourceTree = "<group>"; };
@@ -121,8 +155,6 @@
 		A0AB5D361E3076F300FFF956 /* URLHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = URLHelper.m; sourceTree = "<group>"; };
 		A0AB5D391E3078F600FFF956 /* URLUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URLUtil.h; sourceTree = "<group>"; };
 		A0AB5D3A1E3078F600FFF956 /* URLUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = URLUtil.m; sourceTree = "<group>"; };
-		A0BD328B1E948D370035D1DC /* UncaughtExceptionHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UncaughtExceptionHandler.h; sourceTree = "<group>"; };
-		A0BD328C1E948D370035D1DC /* UncaughtExceptionHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UncaughtExceptionHandler.m; sourceTree = "<group>"; };
 		A0DF024D1EDE8B2900507F31 /* main.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = main.json; sourceTree = "<group>"; };
 		A0DF02561EDE8C1A00507F31 /* Login_Post.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Login_Post.h; sourceTree = "<group>"; };
 		A0DF02571EDE8C1A00507F31 /* Login_Post.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Login_Post.m; sourceTree = "<group>"; };
@@ -214,6 +246,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A046BB461EE793E3006CD36C /* libsqlite3.tbd in Frameworks */,
 				C3584A6BAE9385FED05A9BE8 /* Pods_TemplateCocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -238,6 +271,7 @@
 		72A52F8BC007CD4EB6449A1A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A046BB451EE793E3006CD36C /* libsqlite3.tbd */,
 				860C5DCEB263ACFB76FFB63B /* Pods_TemplateCocoa.framework */,
 			);
 			name = Frameworks;
@@ -284,6 +318,24 @@
 			path = view;
 			sourceTree = "<group>";
 		};
+		A046BB2E1EE791A2006CD36C /* FMDB */ = {
+			isa = PBXGroup;
+			children = (
+				A046BB2F1EE791A2006CD36C /* FmdbHelper.h */,
+				A046BB301EE791A2006CD36C /* FmdbHelper.m */,
+			);
+			path = FMDB;
+			sourceTree = "<group>";
+		};
+		A046BB411EE792BD006CD36C /* Preference */ = {
+			isa = PBXGroup;
+			children = (
+				A046BB421EE792BD006CD36C /* AppPreference.h */,
+				A046BB431EE792BD006CD36C /* AppPreference.m */,
+			);
+			path = Preference;
+			sourceTree = "<group>";
+		};
 		A098998F1EE688730095F293 /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
@@ -313,11 +365,30 @@
 			path = Cart;
 			sourceTree = "<group>";
 		};
+		A0A3A1381EE79744005611DB /* SQLite */ = {
+			isa = PBXGroup;
+			children = (
+				A0A3A13C1EE79A9A005611DB /* SQLiteHelper.h */,
+				A0A3A13D1EE79A9A005611DB /* SQLiteHelper.m */,
+			);
+			path = SQLite;
+			sourceTree = "<group>";
+		};
 		A0AB5D341E3076E800FFF956 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
 				A0AB5D351E3076F300FFF956 /* URLHelper.h */,
 				A0AB5D361E3076F300FFF956 /* URLHelper.m */,
+				A046BB321EE791D2006CD36C /* DeviceHelper.h */,
+				A046BB331EE791D2006CD36C /* DeviceHelper.m */,
+				A046BB351EE791F3006CD36C /* NetworkHelper.h */,
+				A046BB361EE791F3006CD36C /* NetworkHelper.m */,
+				A046BB381EE79214006CD36C /* PredicateHelper.h */,
+				A046BB391EE79214006CD36C /* PredicateHelper.m */,
+				A046BB3B1EE79227006CD36C /* ResourceHelper.h */,
+				A046BB3C1EE79227006CD36C /* ResourceHelper.m */,
+				A046BB3E1EE7924B006CD36C /* ActionHelper.h */,
+				A046BB3F1EE7924B006CD36C /* ActionHelper.m */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -428,8 +499,6 @@
 			children = (
 				A0EF535C1E0258D500DE645C /* AppDelegate.h */,
 				A0EF535D1E0258D500DE645C /* AppDelegate.m */,
-				A0BD328B1E948D370035D1DC /* UncaughtExceptionHandler.h */,
-				A0BD328C1E948D370035D1DC /* UncaughtExceptionHandler.m */,
 				A0EF538C1E0259C000DE645C /* APIs */,
 				A0EF538D1E0259C000DE645C /* Common */,
 				A0EF538F1E0259C000DE645C /* Macro */,
@@ -638,6 +707,13 @@
 			children = (
 				A0EF53CF1E025DB900DE645C /* Workspace.h */,
 				A0EF53D01E025DB900DE645C /* Workspace.m */,
+				A046BB281EE79141006CD36C /* FileManager.h */,
+				A046BB291EE79141006CD36C /* FileManager.m */,
+				A046BB2B1EE7916F006CD36C /* UncaughtExceptionHandler.h */,
+				A046BB2C1EE7916F006CD36C /* UncaughtExceptionHandler.m */,
+				A0A3A1381EE79744005611DB /* SQLite */,
+				A046BB411EE792BD006CD36C /* Preference */,
+				A046BB2E1EE791A2006CD36C /* FMDB */,
 				A0DF02681EDEAE2400507F31 /* Categories */,
 				A0FF71721E3099A00022E59A /* Networking */,
 				A0AB5D381E3078E200FFF956 /* Utils */,
@@ -658,6 +734,8 @@
 		A0FF71721E3099A00022E59A /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				A0A3A1391EE79A8C005611DB /* NetworkMonitor.h */,
+				A0A3A13A1EE79A8C005611DB /* NetworkMonitor.m */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -865,10 +943,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0EF53C31E025D0800DE645C /* BaseView.m in Sources */,
+				A0A3A13B1EE79A8C005611DB /* NetworkMonitor.m in Sources */,
 				A0F9EE2A1EE67D02009CF3B7 /* FoodInfo.m in Sources */,
 				A0EF53A11E025BD300DE645C /* BaseRestApi.m in Sources */,
-				A0BD328D1E948D370035D1DC /* UncaughtExceptionHandler.m in Sources */,
 				A04442951E2DE26900B4A5E9 /* DSTabItemView.m in Sources */,
+				A0A3A13E1EE79A9A005611DB /* SQLiteHelper.m in Sources */,
+				A046BB311EE791A2006CD36C /* FmdbHelper.m in Sources */,
 				A0DF025E1EDE8DE000507F31 /* MainInfo.m in Sources */,
 				A0AB5D2D1E305EB400FFF956 /* RegisterVC.m in Sources */,
 				A0DF02581EDE8C1A00507F31 /* Login_Post.m in Sources */,
@@ -877,20 +957,26 @@
 				A0EF53D41E025DF100DE645C /* LoginVC.m in Sources */,
 				A0EF53DD1E025E1100DE645C /* MineVC.m in Sources */,
 				A04442921E2DE13D00B4A5E9 /* DSTabItemModel.m in Sources */,
+				A046BB3A1EE79214006CD36C /* PredicateHelper.m in Sources */,
 				A0EF53C01E025CEF00DE645C /* BaseTCell.m in Sources */,
 				A09899A21EE69C5F0095F293 /* CartVC.m in Sources */,
 				A0EF53D71E025E0000DE645C /* LibraryVC.m in Sources */,
 				A0EF53DA1E025E0800DE645C /* MainVC.m in Sources */,
 				A0F9EE2D1EE67D0D009CF3B7 /* ActivityInfo.m in Sources */,
+				A046BB3D1EE79227006CD36C /* ResourceHelper.m in Sources */,
+				A046BB2D1EE7916F006CD36C /* UncaughtExceptionHandler.m in Sources */,
 				A0EF539E1E025BC200DE645C /* RestApi.m in Sources */,
 				A0EF53A41E025BE200DE645C /* API_UnitTest.m in Sources */,
 				A0F9EE391EE67FBF009CF3B7 /* Activity_Get.m in Sources */,
 				A0EF53BD1E025CC500DE645C /* BaseVC.m in Sources */,
 				A0EF535E1E0258D500DE645C /* AppDelegate.m in Sources */,
+				A046BB441EE792BD006CD36C /* AppPreference.m in Sources */,
 				A0EF535B1E0258D500DE645C /* main.m in Sources */,
+				A046BB341EE791D2006CD36C /* DeviceHelper.m in Sources */,
 				A0AB5D371E3076F300FFF956 /* URLHelper.m in Sources */,
 				A0DF02621EDE910600507F31 /* MainCell.m in Sources */,
 				A0DF02741EDEAE5200507F31 /* NSString+Utils.m in Sources */,
+				A046BB401EE7924B006CD36C /* ActionHelper.m in Sources */,
 				A0EF53CD1E025D7C00DE645C /* UserModel.m in Sources */,
 				A0DF02731EDEAE5200507F31 /* NSString+JudgeString.m in Sources */,
 				A0F9EE261EE67C7E009CF3B7 /* UserInfoVC.m in Sources */,
@@ -901,8 +987,10 @@
 				A0AB5D3B1E3078F600FFF956 /* URLUtil.m in Sources */,
 				A098999E1EE69BA20095F293 /* SearchVC.m in Sources */,
 				A0DF02711EDEAE5200507F31 /* NSArray+Swizzling.m in Sources */,
+				A046BB371EE791F3006CD36C /* NetworkHelper.m in Sources */,
 				A0FF71751E309ACA0022E59A /* GCDUtil.m in Sources */,
 				A0EF53CA1E025D6F00DE645C /* JSONModel.m in Sources */,
+				A046BB2A1EE79141006CD36C /* FileManager.m in Sources */,
 				A0DF025B1EDE8C2E00507F31 /* Main_Get.m in Sources */,
 				A0F9EE3C1EE68239009CF3B7 /* FoodCell.m in Sources */,
 				A0EF53BB1E025CC500DE645C /* BaseLoadTC.m in Sources */,

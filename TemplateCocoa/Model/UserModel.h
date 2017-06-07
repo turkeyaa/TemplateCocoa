@@ -10,7 +10,11 @@
 
 @interface UserModel : JSONModel
 
+/* 账号 */
+@property (nonatomic, copy) NSString *phone;
+@property (nonatomic, copy) NSString *password;
 
+/* 用户信息 */
 @property (nonatomic, copy) NSString *user_id;
 
 @property (nonatomic, copy) NSString *user_name;
