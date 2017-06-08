@@ -10,7 +10,7 @@
 
 // VC
 #import "LoginVC.h"
-#import "RegisterVC.h"
+#import "UserInfoVC.h"
 // Model
 #import "MainInfo.h"
 // API
@@ -33,8 +33,7 @@
     // Do any additional setup after loading the view.
     
     // 初始化界面
-    self.leftTitle = @"登录";
-    self.rightTitle = @"注册";
+    self.rightTitle = @"登录";
     self.title = @"首页";
     [self.view addSubview:self.tableView];
     
@@ -43,15 +42,18 @@
     [self loadData];
 }
 
-- (void)goBack {
-    LoginVC *vc = [[LoginVC alloc] init];
-    vc.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:vc animated:YES];
-}
 - (void)goNext {
-    RegisterVC *vc = [[RegisterVC alloc] init];
-    vc.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:vc animated:YES];
+    
+    if ([[Workspace getInstance].appPreference isLoginSuccess]) {
+        UserInfoVC *infoVc = [[UserInfoVC alloc] init];
+        infoVc.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:infoVc animated:YES];
+    }
+    else {
+        LoginVC *vc = [[LoginVC alloc] init];
+        vc.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:vc animated:YES];
+    }
 }
 
 - (UITableView *)tableView {

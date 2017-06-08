@@ -12,11 +12,15 @@
 #import "Login_Post.h"
 // Util
 #import "GCDUtil.h"
+// VC
+#import "RegisterVC.h"
 
 @interface LoginVC ()
 
 @property (nonatomic, strong) UITextField *accountField;
 @property (nonatomic, strong) UITextField *passwordField;
+
+@property (nonatomic, strong) UIButton *loginBtn;
 
 @property (nonatomic, strong) UILabel *promptLabel;
 
@@ -29,7 +33,7 @@
     // Do any additional setup after loading the view.
     
     self.title = @"登录";
-    self.rightTitle = @"提交";
+    self.rightTitle = @"注册";
     self.leftImage = [UIImage imageNamed:@"app_back"];
     
     [self p_setupUI];
@@ -42,6 +46,12 @@
     [self.view addSubview:self.passwordField];
     
     [self.view addSubview:self.promptLabel];
+    
+    [self.view addSubview:self.loginBtn];
+    
+    // 默认账号
+    _accountField.text = @"18688888888";
+    _passwordField.text = @"123456";
 }
 - (void)p_setupLayout {
     
@@ -64,6 +74,26 @@
         make.top.mas_equalTo(_accountField.mas_bottom).offset(10);
         make.height.offset(40);
     }];
+    
+    [_loginBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.offset(20);
+        make.right.offset(-20);
+        make.top.mas_equalTo(_passwordField.mas_bottom).offset(30);
+        make.height.offset(40);
+    }];
+}
+- (UIButton *)loginBtn {
+    if (!_loginBtn) {
+        _loginBtn = ({
+            UIButton *btn = [[UIButton alloc] init];
+            [btn setBackgroundColor:Color_Nav];
+            [btn setTitle:@"登录" forState:UIControlStateNormal];
+            [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+            [btn addTarget:self action:@selector(loginEvent) forControlEvents:UIControlEventTouchUpInside];
+            btn;
+        });
+    }
+    return _loginBtn;
 }
 - (UILabel *)promptLabel {
     if (!_promptLabel) {
@@ -115,7 +145,7 @@
 }
 
 #pragma mark - 登录接口
-- (void)goNext {
+- (void)loginEvent {
     
     NSString *account = _accountField.text;
     NSString *password = _passwordField.text;
@@ -138,7 +168,7 @@
         [loginApi call];
         
         // 线程休眠3秒
-        sleep(3);
+        sleep(2);
         
         [GCDUtil runInMainQueue:^{
             
@@ -147,6 +177,12 @@
             if (loginApi.code == RestApi_OK) {
                 // 登录成功
                 _promptLabel.text = [NSString stringWithFormat:@"登录成功,当前用户为:%@",loginApi.userInfo.user_name];
+                
+                // 登录成功配置
+                [[Workspace getInstance] onLogIn:loginApi];
+                
+                // 返回到首页
+                [self.navigationController popViewControllerAnimated:YES];
             }
             else {
                 // 登录失败了
@@ -154,6 +190,12 @@
             }
         }];
     }];
+}
+
+#pragma mark - 登录接口
+- (void)goNext {
+    RegisterVC *vc = [[RegisterVC alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -8,6 +8,9 @@
 
 #import "BaseVC.h"
 
-@interface BaseTC : BaseVC
+@interface BaseTC : BaseVC <UITableViewDelegate,UITableViewDataSource>
+
+@property (nonatomic, strong) NSMutableArray *dataSource;
+@property (nonatomic, strong) UITableView *tableView;
 
 @end

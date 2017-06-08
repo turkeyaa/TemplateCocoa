@@ -8,7 +8,22 @@
 
 #import "MineVC.h"
 
-@interface MineVC ()
+// View
+#import "LogInView.h"
+#import "LogOutView.h"
+// Cell
+#import "MineCell.h"
+// Notify
+#import "LoginNotify.h"
+
+@interface MineVC () <UITableViewDelegate,UITableViewDataSource>
+
+@property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, strong) MineHeaderView *headerView;
+
+/* 数据源 */
+@property (nonatomic, strong) NSArray *titleArr;
+@property (nonatomic, strong) NSArray *valueArr;
 
 @end
 
@@ -18,6 +33,56 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.title = @"我的";
+    
+    _titleArr = @[@"我的收藏",@"购买记录"];
+    [self.view addSubview:self.tableView];
+    
+    if ([[Workspace getInstance].appPreference isLoginSuccess]) {
+        _headerView = [[LogInView alloc] initWithFrame:CGRectMake(0, 0, DEVICE_WIDTH, 200)];
+    }
+    else {
+        _headerView = [[LogOutView alloc] initWithFrame:CGRectMake(0, 0, DEVICE_WIDTH, 200)];
+    }
+    self.tableView.tableHeaderView = _headerView;
+    
+    [[LoginNotify sharedInstance] addLoginObserver:self selector:@selector(logInNotify:)];
+}
+
+- (void)logInNotify:(NSNotification *)notify {
+    // TODO:
+}
+
+- (UITableView *)tableView {
+    if (!_tableView) {
+        _tableView = ({
+            UITableView *view = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
+            view.delegate = self;
+            view.dataSource = self;
+            view.tableFooterView = [[UIView alloc] init];
+            view.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, DEVICE_WIDTH, 20)];
+            view;
+        });
+    }
+    return _tableView;
+}
+
+#pragma mark -
+#pragma mark - tableView delegate and dataSource
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return _titleArr.count;
+}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    MineCell *cell = [MineCell tcell:self.tableView reuse:YES];
+    cell.showIndicator = YES;
+    cell.title = _titleArr[indexPath.row];
+    cell.value = @"无";
+    return cell;
+}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

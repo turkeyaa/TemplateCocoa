@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A009B5821EE82A9E00CC3946 /* LogInView.m in Sources */ = {isa = PBXBuildFile; fileRef = A009B5811EE82A9E00CC3946 /* LogInView.m */; };
+		A009B5851EE82AA900CC3946 /* LogOutView.m in Sources */ = {isa = PBXBuildFile; fileRef = A009B5841EE82AA900CC3946 /* LogOutView.m */; };
+		A009B5881EE82AE000CC3946 /* MineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A009B5871EE82AE000CC3946 /* MineCell.m */; };
+		A009B58B1EE82F6B00CC3946 /* MineHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = A009B58A1EE82F6B00CC3946 /* MineHeaderView.m */; };
+		A009B58F1EE833C900CC3946 /* LoginNotify.m in Sources */ = {isa = PBXBuildFile; fileRef = A009B58E1EE833C900CC3946 /* LoginNotify.m */; };
 		A02529E81E8CD73B00AB49E0 /* login.json in Resources */ = {isa = PBXBuildFile; fileRef = A02529E71E8CD73B00AB49E0 /* login.json */; };
 		A02529E91E8CD73B00AB49E0 /* login.json in Resources */ = {isa = PBXBuildFile; fileRef = A02529E71E8CD73B00AB49E0 /* login.json */; };
 		A02529EA1E8CD73B00AB49E0 /* login.json in Resources */ = {isa = PBXBuildFile; fileRef = A02529E71E8CD73B00AB49E0 /* login.json */; };
@@ -104,6 +109,16 @@
 		711E8E9C51665DD06224824D /* Pods-TemplateCocoa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TemplateCocoa.release.xcconfig"; path = "Pods/Target Support Files/Pods-TemplateCocoa/Pods-TemplateCocoa.release.xcconfig"; sourceTree = "<group>"; };
 		860C5DCEB263ACFB76FFB63B /* Pods_TemplateCocoa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TemplateCocoa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DF5DDB6C508D638FA3E5FBD /* Pods-TemplateCocoa.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TemplateCocoa.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TemplateCocoa/Pods-TemplateCocoa.debug.xcconfig"; sourceTree = "<group>"; };
+		A009B5801EE82A9E00CC3946 /* LogInView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogInView.h; sourceTree = "<group>"; };
+		A009B5811EE82A9E00CC3946 /* LogInView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogInView.m; sourceTree = "<group>"; };
+		A009B5831EE82AA900CC3946 /* LogOutView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogOutView.h; sourceTree = "<group>"; };
+		A009B5841EE82AA900CC3946 /* LogOutView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogOutView.m; sourceTree = "<group>"; };
+		A009B5861EE82AE000CC3946 /* MineCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineCell.h; sourceTree = "<group>"; };
+		A009B5871EE82AE000CC3946 /* MineCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineCell.m; sourceTree = "<group>"; };
+		A009B5891EE82F6B00CC3946 /* MineHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineHeaderView.h; sourceTree = "<group>"; };
+		A009B58A1EE82F6B00CC3946 /* MineHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineHeaderView.m; sourceTree = "<group>"; };
+		A009B58D1EE833C900CC3946 /* LoginNotify.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginNotify.h; sourceTree = "<group>"; };
+		A009B58E1EE833C900CC3946 /* LoginNotify.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginNotify.m; sourceTree = "<group>"; };
 		A02529E71E8CD73B00AB49E0 /* login.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = login.json; sourceTree = "<group>"; };
 		A03E46DB1E0263FC0013AD24 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		A04442901E2DE13D00B4A5E9 /* DSTabItemModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSTabItemModel.h; sourceTree = "<group>"; };
@@ -284,6 +299,37 @@
 				711E8E9C51665DD06224824D /* Pods-TemplateCocoa.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		A009B57E1EE82A6200CC3946 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				A009B5861EE82AE000CC3946 /* MineCell.h */,
+				A009B5871EE82AE000CC3946 /* MineCell.m */,
+			);
+			path = cell;
+			sourceTree = "<group>";
+		};
+		A009B57F1EE82A6200CC3946 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				A009B5891EE82F6B00CC3946 /* MineHeaderView.h */,
+				A009B58A1EE82F6B00CC3946 /* MineHeaderView.m */,
+				A009B5801EE82A9E00CC3946 /* LogInView.h */,
+				A009B5811EE82A9E00CC3946 /* LogInView.m */,
+				A009B5831EE82AA900CC3946 /* LogOutView.h */,
+				A009B5841EE82AA900CC3946 /* LogOutView.m */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		A009B58C1EE833BD00CC3946 /* Notify */ = {
+			isa = PBXGroup;
+			children = (
+				A009B58D1EE833C900CC3946 /* LoginNotify.h */,
+				A009B58E1EE833C900CC3946 /* LoginNotify.m */,
+			);
+			path = Notify;
 			sourceTree = "<group>";
 		};
 		A02529E61E8CD72F00AB49E0 /* Resource */ = {
@@ -622,6 +668,7 @@
 				A0AB5D2C1E305EB300FFF956 /* RegisterVC.m */,
 				A0F9EE241EE67C7E009CF3B7 /* UserInfoVC.h */,
 				A0F9EE251EE67C7E009CF3B7 /* UserInfoVC.m */,
+				A009B58C1EE833BD00CC3946 /* Notify */,
 				A0AB5D2F1E306D4900FFF956 /* Auth.xcassets */,
 			);
 			path = Auth;
@@ -667,6 +714,8 @@
 			children = (
 				A0EF53DB1E025E1100DE645C /* MineVC.h */,
 				A0EF53DC1E025E1100DE645C /* MineVC.m */,
+				A009B57E1EE82A6200CC3946 /* cell */,
+				A009B57F1EE82A6200CC3946 /* view */,
 			);
 			path = Mine;
 			sourceTree = "<group>";
@@ -959,11 +1008,13 @@
 				A04442921E2DE13D00B4A5E9 /* DSTabItemModel.m in Sources */,
 				A046BB3A1EE79214006CD36C /* PredicateHelper.m in Sources */,
 				A0EF53C01E025CEF00DE645C /* BaseTCell.m in Sources */,
+				A009B58B1EE82F6B00CC3946 /* MineHeaderView.m in Sources */,
 				A09899A21EE69C5F0095F293 /* CartVC.m in Sources */,
 				A0EF53D71E025E0000DE645C /* LibraryVC.m in Sources */,
 				A0EF53DA1E025E0800DE645C /* MainVC.m in Sources */,
 				A0F9EE2D1EE67D0D009CF3B7 /* ActivityInfo.m in Sources */,
 				A046BB3D1EE79227006CD36C /* ResourceHelper.m in Sources */,
+				A009B5821EE82A9E00CC3946 /* LogInView.m in Sources */,
 				A046BB2D1EE7916F006CD36C /* UncaughtExceptionHandler.m in Sources */,
 				A0EF539E1E025BC200DE645C /* RestApi.m in Sources */,
 				A0EF53A41E025BE200DE645C /* API_UnitTest.m in Sources */,
@@ -971,12 +1022,15 @@
 				A0EF53BD1E025CC500DE645C /* BaseVC.m in Sources */,
 				A0EF535E1E0258D500DE645C /* AppDelegate.m in Sources */,
 				A046BB441EE792BD006CD36C /* AppPreference.m in Sources */,
+				A009B5881EE82AE000CC3946 /* MineCell.m in Sources */,
 				A0EF535B1E0258D500DE645C /* main.m in Sources */,
 				A046BB341EE791D2006CD36C /* DeviceHelper.m in Sources */,
 				A0AB5D371E3076F300FFF956 /* URLHelper.m in Sources */,
 				A0DF02621EDE910600507F31 /* MainCell.m in Sources */,
+				A009B58F1EE833C900CC3946 /* LoginNotify.m in Sources */,
 				A0DF02741EDEAE5200507F31 /* NSString+Utils.m in Sources */,
 				A046BB401EE7924B006CD36C /* ActionHelper.m in Sources */,
+				A009B5851EE82AA900CC3946 /* LogOutView.m in Sources */,
 				A0EF53CD1E025D7C00DE645C /* UserModel.m in Sources */,
 				A0DF02731EDEAE5200507F31 /* NSString+JudgeString.m in Sources */,
 				A0F9EE261EE67C7E009CF3B7 /* UserInfoVC.m in Sources */,

@@ -16,8 +16,10 @@
 #import "UtilsMacro.h"
 
 // Setting
+#import "Workspace.h"
+#import "FileManager.h"
 #import "GCDUtil.h"
-
+#import "AppPreference.h"
 
 // Library
 #import "Masonry.h"

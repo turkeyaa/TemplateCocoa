@@ -8,11 +8,16 @@
 
 #import "Workspace.h"
 
+// Model
 #import "UserModel.h"
 #import "BaseRestApi.h"
 #import "AppPreference.h"
 #import "NetworkMonitor.h"
 
+// Notify
+#import "LoginNotify.h"
+
+// Api
 #import "Login_Post.h"
 
 @interface Workspace ()
@@ -76,6 +81,9 @@
         // TODO: 是否需要再次赋值？ 待验证
         // 4. 更新用户信息
 //        [Workspace setCurrentUser:_userInfo];
+        
+        // 5. 发送登录成功通知
+        [[LoginNotify sharedInstance] postLoginNotify];
     }
 }
 - (void)onLogOut {

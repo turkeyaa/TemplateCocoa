@@ -8,6 +8,8 @@
 
 #import "BaseVC.h"
 
-@interface UserInfoVC : BaseVC
+#import "BaseTC.h"
+
+@interface UserInfoVC : BaseTC
 
 @end
