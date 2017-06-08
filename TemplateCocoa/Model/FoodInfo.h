@@ -18,6 +18,12 @@
 @property (nonatomic, copy) NSString *partner_price;
 @property (nonatomic, copy) NSString *img;
 
+/* 扩展属性 */
+// 购买数量
+@property (nonatomic, assign) NSInteger buy_numbers;
+// 是否收藏
+@property (nonatomic, assign) BOOL collected;
+
 @end
 
 

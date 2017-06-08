@@ -45,6 +45,9 @@
     if (self = [super init]) {
         _appPreference = [[AppPreference alloc] init];
         _networkMonitor = [[NetworkMonitor alloc] init];
+        
+        _collectionArray = [[NSMutableArray alloc] init];
+        _foodCartArray = [[NSMutableArray alloc] init];
     }
     return self;
 }
@@ -96,6 +99,9 @@
     _appPreference.password = @"";
     
     _userInfo = nil;
+    
+    // 发送退出登录通知
+    [[LoginNotify sharedInstance] postLogoutNotify];
 }
 
 

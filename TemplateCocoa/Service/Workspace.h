@@ -35,5 +35,9 @@
 // 网络监控
 @property (nonatomic, readonly) NetworkMonitor *networkMonitor;
 
+// TODO: 调试用，我的收藏、购物车列表
+@property (nonatomic, strong) NSMutableArray *collectionArray;
+@property (nonatomic, strong) NSMutableArray *foodCartArray;
+
 
 @end

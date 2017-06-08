@@ -17,6 +17,7 @@ typedef void(^BlockCompletion)(BOOL flag, NSError *error);
 typedef void(^BlockTableSection)(NSInteger section, NSInteger row);
 
 typedef void(^BlockItem)(NSInteger index);
+typedef void(^BlockResult) (BOOL flag);
 
 
 #endif /* BlockMacro_h */

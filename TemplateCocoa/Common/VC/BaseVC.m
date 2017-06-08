@@ -132,7 +132,7 @@
 - (void)settingSVProgressHUD {
     [SVProgressHUD setDefaultStyle:SVProgressHUDStyleDark];
     [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeClear];
-    [SVProgressHUD setMinimumDismissTimeInterval:3];
+    [SVProgressHUD setMinimumDismissTimeInterval:2];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -20,6 +20,8 @@
 #import "FoodCell.h"
 // VC
 #import "SearchVC.h"
+// Notify
+#import "CollectionNotify.h"
 
 @interface LibraryVC () <UITableViewDelegate,UITableViewDataSource>
 
@@ -132,6 +134,22 @@
     FoodCell *cell = [FoodCell tcell:self.tableView reuse:YES];
     cell.foodInfo = foodInfo;
     cell.showIndicator = NO;
+    
+    // 收藏
+    cell.clickCollectBlock = ^(BOOL flag) {
+        
+        if (flag) {
+            [self showInfoMessage:@"收藏成功"];
+            [[Workspace getInstance].collectionArray addObject:foodInfo];
+            
+//            [[CollectionNotify sharedInstance] postCollectionNotify];
+        }
+        else {
+            [self showInfoMessage:@"取消收藏"];
+            [[Workspace getInstance].collectionArray removeObject:foodInfo];
+//            [[CollectionNotify sharedInstance] postCancelCollectionNotify];
+        }
+    };
     
     return cell;
 }

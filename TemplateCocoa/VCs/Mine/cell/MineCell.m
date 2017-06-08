@@ -45,6 +45,7 @@
             UILabel *label = [[UILabel alloc] init];
             label.textColor = RGB(99, 99, 99);
             label.font = FONT(15);
+            label.textAlignment = NSTextAlignmentRight;
             label;
         });
     }
@@ -55,12 +56,12 @@
     [_titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.bottom.offset(0);
         make.left.offset(20);
-        make.right.offset(-100);
+        make.width.offset(100);
     }];
     [_valueLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.bottom.offset(0);
-        make.right.offset(-10);
-        make.width.offset(80);
+        make.right.offset(-30);
+        make.width.offset(200);
     }];
 }
 

@@ -20,6 +20,8 @@
 @property (nonatomic, strong) UIButton *removeBtn;
 @property (nonatomic, strong) UILabel *numbersLabel;
 
+@property (nonatomic, strong) UIButton *collectBtn;
+
 @end
 
 @implementation FoodCell
@@ -36,6 +38,7 @@
     [self addSubview:self.priceLabel];
     [self addSubview:self.partnerPriceLabel];
     [self addSubview:self.addBtn];
+    [self addSubview:self.collectBtn];
     
     [self addSubview:self.removeBtn];
     [self addSubview:self.numbersLabel];
@@ -109,6 +112,20 @@
     }
     return _numbersLabel;
 }
+- (UIButton *)collectBtn {
+    if (!_collectBtn) {
+        _collectBtn = ({
+            UIButton *btn = [[UIButton alloc] init];
+            
+            [btn setImage:[UIImage imageNamed:@"l_collect"] forState:UIControlStateSelected];
+            [btn setImage:[UIImage imageNamed:@"l_collectNot"] forState:UIControlStateNormal];
+            [btn setImageEdgeInsets:UIEdgeInsetsMake(5, 5, 5, 5)];
+            [btn addTarget:self action:@selector(collectEvent:) forControlEvents:UIControlEventTouchUpInside];
+            btn;
+        });
+    }
+    return _collectBtn;
+}
 - (UIButton *)addBtn {
     if (!_addBtn) {
         _addBtn = ({
@@ -116,6 +133,7 @@
 
             [btn setImage:[UIImage imageNamed:@"l_add"] forState:UIControlStateNormal];
             [btn setImageEdgeInsets:UIEdgeInsetsMake(5, 5, 5, 5)];
+            [btn addTarget:self action:@selector(addEvent:) forControlEvents:UIControlEventTouchUpInside];
             btn;
         });
     }
@@ -127,6 +145,7 @@
             UIButton *btn = [[UIButton alloc] init];
             [btn setImage:[UIImage imageNamed:@"l_remove"] forState:UIControlStateNormal];
             [btn setImageEdgeInsets:UIEdgeInsetsMake(10, 5, 10, 5)];
+            [btn addTarget:self action:@selector(removeEvent:) forControlEvents:UIControlEventTouchUpInside];
             btn;
         });
     }
@@ -164,7 +183,12 @@
         make.width.offset(50);
         make.height.offset(20);
     }];
-    
+    [_collectBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        
+        make.width.height.offset(40);
+        make.top.offset(5);
+        make.right.offset(-10);
+    }];
     [_addBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.width.height.offset(30);
         make.right.offset(-10);
@@ -177,7 +201,7 @@
     }];
     [_numbersLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.width.height.offset(30);
-        make.right.offset(-40);
+        make.right.offset(-30);
         make.centerY.mas_equalTo(self.mas_centerY);
     }];
 }
@@ -190,15 +214,56 @@
 
 - (void)updateUI {
     
-    
-//    [_iconView setPlaceHolderImageName:@"avator.png" iconURL:[NSURL URLWithString:_foodInfo.img]];
     [_iconView sd_setImageWithURL:[NSURL URLWithString:_foodInfo.img] placeholderImage:[UIImage imageNamed:@"avator.png"]];
     _nameLabel.text = _foodInfo.name;
     _specificsLabel.text = _foodInfo.specifics;
     _priceLabel.text = _foodInfo.price;
     _partnerPriceLabel.text = _foodInfo.partner_price;
     
-    _numbersLabel.text = @"0";
+    [self updateBuyUI];
+    [self updateCollectUI];
+}
+
+- (void)updateCollectUI {
+    _collectBtn.selected = _foodInfo.collected;
+}
+
+- (void)updateBuyUI {
+    _numbersLabel.text = [NSString stringWithFormat:@"%d",_foodInfo.buy_numbers];
+}
+
+#pragma mark - Event
+- (void)addEvent:(UIButton *)sender {
+    if (_foodInfo.buy_numbers > _foodInfo.store_nums) {
+        // 不能大于库存
+    }
+    else {
+        _foodInfo.buy_numbers++;
+    }
+    [self updateBuyUI];
+    
+    if (_clickOperationBlock) {
+        _clickOperationBlock(_foodInfo.store_nums);
+    }
+}
+
+- (void)removeEvent:(UIButton *)sender {
+    if (_foodInfo.buy_numbers <= 0) {
+        // 不能小于0
+    }
+    else {
+        _foodInfo.buy_numbers--;
+    }
+    [self updateBuyUI];
+}
+- (void)collectEvent:(UIButton *)sender {
+    
+    _foodInfo.collected = !_foodInfo.collected;
+    [self updateCollectUI];
+    
+    if (_clickCollectBlock) {
+        _clickCollectBlock(_foodInfo.collected);
+    }
 }
 
 /*

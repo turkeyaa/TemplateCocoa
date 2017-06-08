@@ -33,10 +33,20 @@
         _bgView = ({
             UIView *view = [[UIView alloc] initWithFrame:self.bounds];
             view.backgroundColor = [UIColor blueColor];
+            
+            UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapEvent:)];
+            [view addGestureRecognizer:tap];
+            
             view;
         });
     }
     return _bgView;
+}
+
+- (void)tapEvent:(UIGestureRecognizer *)gesture {
+    if (_clickItemBlock) {
+        _clickItemBlock(1);
+    }
 }
 
 /*

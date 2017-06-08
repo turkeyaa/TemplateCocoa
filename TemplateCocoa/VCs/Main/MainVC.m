@@ -33,13 +33,32 @@
     // Do any additional setup after loading the view.
     
     // 初始化界面
-    self.rightTitle = @"登录";
+    
+    [self setupSettingUI];
     self.title = @"首页";
     [self.view addSubview:self.tableView];
     
     
     // 加载数据
     [self loadData];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [self setupSettingUI];
+}
+
+- (void)setupSettingUI {
+    
+    if ([[Workspace getInstance].appPreference isLoginSuccess]) {
+        self.rightImage = [UIImage imageNamed:@"app_more"];
+        self.rightTitle = @"";
+    }
+    else {
+        self.rightImage = nil;
+        self.rightTitle = @"登录";
+    }
 }
 
 - (void)goNext {

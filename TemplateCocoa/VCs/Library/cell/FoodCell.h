@@ -15,5 +15,10 @@
 @property (nonatomic, strong) FoodInfo *foodInfo;
 
 
+// 收藏
+@property (nonatomic, copy) BlockResult clickCollectBlock;
+// 操作 +、-
+@property (nonatomic, copy) BlockItem clickOperationBlock;
+
 
 @end

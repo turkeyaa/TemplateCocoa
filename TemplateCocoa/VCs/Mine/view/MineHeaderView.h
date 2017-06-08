@@ -10,4 +10,6 @@
 
 @interface MineHeaderView : UIView
 
+@property (nonatomic, copy) BlockItem clickItemBlock;
+
 @end
