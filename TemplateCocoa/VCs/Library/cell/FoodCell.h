@@ -14,11 +14,14 @@
     
 @property (nonatomic, strong) FoodInfo *foodInfo;
 
+@property (nonatomic, readonly) UIImage *cartImage;
+
 
 // 收藏
 @property (nonatomic, copy) BlockResult clickCollectBlock;
 // 操作 +、-
-@property (nonatomic, copy) BlockItem clickOperationBlock;
+@property (nonatomic, copy) BlockItem clickReduceBlock;
+@property (nonatomic, copy) BlockItem clickAddBlock;
 
 
 @end

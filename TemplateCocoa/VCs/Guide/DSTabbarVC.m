@@ -37,8 +37,6 @@
 
 - (void)initVC {
     
-#if 1
-    
     // 默认 tabbar
     MainVC *mainVc = [[MainVC alloc] init];
     LibraryVC *libraryVc = [[LibraryVC alloc] init];
@@ -64,28 +62,24 @@
     
     self.viewControllers = @[mainNav,libraryNav,cartNav,mineNav];
     
+#if 1
+    
+    
     
 #else
     
     // 自定义 tabbar
-    MainVC *mainVc = [[MainVC alloc] init];
-    LibraryVC *libraryVc = [[LibraryVC alloc] init];
-    MineVC *mineVc = [[MineVC alloc] init];
-    
-    UINavigationController *mainNav = [[UINavigationController alloc] initWithRootViewController:mainVc];
-    UINavigationController *libraryNav = [[UINavigationController alloc] initWithRootViewController:libraryVc];
-    UINavigationController *mineNav = [[UINavigationController alloc] initWithRootViewController:mineVc];
-    
-    self.viewControllers = @[mainNav,libraryNav,mineNav];
-    
+    self.tabBar.hidden = NO;
     self.tabBar.alpha = 0.0;
     self.selectedIndex = 0;
     
     /**
      *  配置
      */
-    _models = @[[DSTabItemModel modelWithTitle:@"首页" image:@"main" selectedImage:@"mainHigh"],
+    _models = @[
+                [DSTabItemModel modelWithTitle:@"首页" image:@"main" selectedImage:@"mainHigh"],
                 [DSTabItemModel modelWithTitle:@"商品" image:@"library" selectedImage:@"libraryHigh"],
+                [DSTabItemModel modelWithTitle:@"购物车" image:@"library" selectedImage:@"libraryHigh"],
                 [DSTabItemModel modelWithTitle:@"我的" image:@"mine" selectedImage:@"mineHigh"]
                 ];
     
@@ -95,7 +89,7 @@
     self.dsTabbar.dataSource = self;
     [self.view addSubview:self.dsTabbar];
     [self.dsTabbar setupViews];
-
+    
 #endif
     
 }
@@ -112,6 +106,22 @@
 }
 - (BOOL)tabbar:(DSTabbarView *)tabbar canSelectedAtIndex:(NSUInteger)index {
     return YES;
+}
+
+/** 更新消息个数
+ * tabIndex: 标签栏索引
+ * badge: 当前的消息个数
+ */
+- (void)updateBadge:(NSInteger)tabIndex badge:(NSInteger)badge {
+    
+    UITabBarItem *item = self.tabBar.items[tabIndex];
+    
+    if (badge == 0) {
+        [item setBadgeValue:nil];
+    }
+    else {
+        [item setBadgeValue:[NSString stringWithFormat:@"%ld",(long)badge]];
+    }
 }
 
 - (void)didReceiveMemoryWarning {

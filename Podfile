@@ -13,6 +13,7 @@ pod 'FMDB'
 pod 'FDFullscreenPopGesture'
 pod 'SVProgressHUD'
 pod 'Masonry'
+pod 'JSBadgeView'
 # pod 'ReactiveCocoa'
 
 end

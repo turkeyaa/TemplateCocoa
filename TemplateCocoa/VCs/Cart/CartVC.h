@@ -6,8 +6,8 @@
 //  Copyright © 2017年 DS. All rights reserved.
 //
 
-#import "BaseVC.h"
+#import "BaseTC.h"
 
-@interface CartVC : BaseVC
+@interface CartVC : BaseTC
 
 @end

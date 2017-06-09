@@ -14,4 +14,10 @@
 
 @property (nonatomic, strong) DSTabbarView *dsTabbar;
 
+/** 更新消息个数
+ * tabIndex: 标签栏索引
+ * badge: 当前的消息个数
+ */
+- (void)updateBadge:(NSInteger)tabIndex badge:(NSInteger)badge;
+
 @end

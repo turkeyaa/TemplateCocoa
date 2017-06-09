@@ -206,6 +206,10 @@
     }];
 }
 
+- (UIImage *)cartImage {
+    return _iconView.image;
+}
+
 - (void)setFoodInfo:(FoodInfo *)foodInfo {
     _foodInfo = foodInfo;
     
@@ -229,7 +233,7 @@
 }
 
 - (void)updateBuyUI {
-    _numbersLabel.text = [NSString stringWithFormat:@"%d",_foodInfo.buy_numbers];
+    _numbersLabel.text = [NSString stringWithFormat:@"%ld",(long)_foodInfo.buy_numbers];
 }
 
 #pragma mark - Event
@@ -239,11 +243,11 @@
     }
     else {
         _foodInfo.buy_numbers++;
-    }
-    [self updateBuyUI];
-    
-    if (_clickOperationBlock) {
-        _clickOperationBlock(_foodInfo.store_nums);
+        [self updateBuyUI];
+        
+        if (_clickAddBlock) {
+            _clickAddBlock(_foodInfo.buy_numbers);
+        }
     }
 }
 
@@ -253,8 +257,12 @@
     }
     else {
         _foodInfo.buy_numbers--;
+        [self updateBuyUI];
+        
+        if (_clickReduceBlock) {
+            _clickReduceBlock(_foodInfo.buy_numbers);
+        }
     }
-    [self updateBuyUI];
 }
 - (void)collectEvent:(UIButton *)sender {
     

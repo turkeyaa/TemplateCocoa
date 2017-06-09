@@ -1,16 +1,15 @@
 //
-//  CollectionVC.h
+//  CartCell.h
 //  TemplateCocoa
 //
-//  Created by yuwenhua on 2017/6/8.
+//  Created by yuwenhua on 2017/6/9.
 //  Copyright © 2017年 DS. All rights reserved.
 //
 
-#import "BaseTC.h"
+#import "CollectionCell.h"
 
-@interface CollectionVC : BaseTC
+@interface CartCell : CollectionCell
 
-// 购物车数量
 @property (nonatomic, assign) NSInteger numbers;
 
 @end

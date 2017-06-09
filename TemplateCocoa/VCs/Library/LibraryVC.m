@@ -22,8 +22,14 @@
 #import "SearchVC.h"
 // Notify
 #import "CollectionNotify.h"
+// App
+#import "AppDelegate.h"
 
-@interface LibraryVC () <UITableViewDelegate,UITableViewDataSource>
+@interface LibraryVC () <UITableViewDelegate,UITableViewDataSource,CAAnimationDelegate>
+
+{
+    CALayer *_cartLayer;
+}
 
 /* 界面 */
 @property (nonatomic, strong) XRCarouselView *carouselView; // 轮播图
@@ -141,14 +147,33 @@
         if (flag) {
             [self showInfoMessage:@"收藏成功"];
             [[Workspace getInstance].collectionArray addObject:foodInfo];
-            
-//            [[CollectionNotify sharedInstance] postCollectionNotify];
         }
         else {
             [self showInfoMessage:@"取消收藏"];
             [[Workspace getInstance].collectionArray removeObject:foodInfo];
-//            [[CollectionNotify sharedInstance] postCancelCollectionNotify];
         }
+    };
+    // 添加到购物车
+    cell.clickAddBlock = ^(NSInteger index) {
+        
+        FoodCell *cell = (FoodCell *)[tableView cellForRowAtIndexPath:indexPath];
+        
+        NSLog(@"IndexPath = %@",indexPath);
+        NSLog(@"Cell = %@",cell);
+        NSLog(@"tableView = %@",tableView);
+        
+        CGFloat cellY = cell.frame.origin.y;
+        CGFloat offsetY = tableView.contentOffset.y;
+        
+        CGPoint position = CGPointMake(5+55, cellY-offsetY+200+45+55-NAV_HEIGHT);
+        WEAKSELF
+        [weakSelf addCartFood:foodInfo];
+        [weakSelf cartAnimationWithPosition:position content:cell.cartImage];
+    };
+    cell.clickReduceBlock = ^(NSInteger index) {
+        
+        WEAKSELF
+        [weakSelf reduceCartFood:foodInfo];
     };
     
     return cell;
@@ -156,6 +181,100 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+#pragma mark - 
+#pragma mark - 数据：购物车商品
+- (void)addCartFood:(FoodInfo *)foodInfo {
+    
+    __block BOOL result = NO;
+    [[Workspace getInstance].foodCartArray enumerateObjectsUsingBlock:^(FoodInfo *obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        if ([foodInfo._id isEqualToString:obj._id]) {
+            result = YES;
+            *stop = YES;
+        }
+    }];
+    if (!result) {
+        [[Workspace getInstance].foodCartArray addObject:foodInfo];
+    }
+    [self updateBadge];
+}
+
+- (void)reduceCartFood:(FoodInfo *)foodInfo {
+    
+    __block BOOL result = NO;
+    [[Workspace getInstance].foodCartArray enumerateObjectsUsingBlock:^(FoodInfo *obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        if ([foodInfo._id isEqualToString:obj._id]) {
+            if (obj.buy_numbers == 0) {
+                result = YES;
+                *stop = YES;
+            }
+        }
+    }];
+    if (result) {
+        [[Workspace getInstance].foodCartArray removeObject:foodInfo];
+    }
+    [self updateBadge];
+}
+
+#pragma mark - 更新角标
+- (void)updateBadge {
+    
+    __block NSInteger numbers = 0;
+    [[Workspace getInstance].foodCartArray enumerateObjectsUsingBlock:^(FoodInfo *obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        numbers += obj.buy_numbers;
+    }];
+    [SharedApp.tabbarVC updateBadge:2 badge:numbers];
+}
+
+#pragma mark - CAAnimationDelegate
+- (void)animationDidStart:(CAAnimation *)anim {
+    
+}
+- (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag {
+    
+    [_cartLayer removeFromSuperlayer];
+    _cartLayer = nil;
+}
+
+#pragma mark - 购物车动画
+- (void)cartAnimationWithPosition:(CGPoint)position
+                          content:(UIImage *)content {
+    
+    if (_cartLayer) {
+        return;
+    }
+    // 动画
+    _cartLayer = [[CALayer alloc] init];
+    _cartLayer.bounds = CGRectMake(0, 0, 110, 110);
+    _cartLayer.position = position;
+    _cartLayer.contents = (id)content.CGImage;
+    [self.view.layer addSublayer:_cartLayer];
+    
+    // 贝塞尔曲线绘制动画路径
+    CAKeyframeAnimation *keyframeAnimation = [CAKeyframeAnimation animationWithKeyPath:@"position"];
+    
+    UIBezierPath *bezier = [UIBezierPath bezierPath];
+    [bezier moveToPoint:CGPointMake(_cartLayer.position.x, _cartLayer.position.y)];
+    [bezier addCurveToPoint:CGPointMake(DEVICE_WIDTH/4*3-30, DEVICE_HEIGHT-TAB_HEIGHT) controlPoint1:CGPointMake(_cartLayer.position.x+50, _cartLayer.position.y-20) controlPoint2:CGPointMake(_cartLayer.position.x+100, _cartLayer.position.y)];
+    keyframeAnimation.path = bezier.CGPath;
+    keyframeAnimation.duration = 1.0;
+    
+    // 缩放
+    CABasicAnimation *rotationAnimation = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
+    rotationAnimation.duration = 1.0;
+    rotationAnimation.autoreverses = YES;
+    rotationAnimation.fromValue = @(1);
+    rotationAnimation.toValue = @(0.2);
+    
+    // 添加到动画组
+    CAAnimationGroup *group = [[CAAnimationGroup alloc] init];
+    group.animations = @[keyframeAnimation,rotationAnimation];
+    group.duration = 1.0;
+    group.delegate = self;
+    group.removedOnCompletion = YES;
+    [_cartLayer addAnimation:group forKey:@"CartAnimation"];
+    
 }
 
 - (void)didReceiveMemoryWarning {
