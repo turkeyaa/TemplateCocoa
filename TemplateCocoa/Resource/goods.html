@@ -1,0 +1,54 @@
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>商品</title>
+
+  <style type="text/css">
+      body {
+          background-color: white;
+          margin-left: 30px;
+      }
+      p {
+          font-size: 20px;
+      }
+      div {
+          font-size: 30px;
+      }
+      img {
+          width: 80%;
+      }
+  </style>
+  
+  <script>
+  // OC调用JS的方法列表
+  function updateJs(name,desc,standard,url) {
+      document.getElementById('title').innerHTML = name
+      document.getElementById('descript').innerHTML = desc
+      document.getElementById('standard').innerHTML = standard
+      document.getElementById('foodImg').src = url;
+  }
+  
+  function collectionJs() {
+      document.getElementById('collection').innerHTML = '已收藏'
+  }
+
+  // JS响应方法列表
+  function btnCollection() {
+      window.webkit.messageHandlers.collectionEvent.postMessage('收藏')
+  }
+  </script>
+</head>
+<body>
+
+    <h1 id="title" align="center" style="font-family:verdana;font-size:40px;color:red">商品名称</h1>
+    <p id="descript" style="font-family:verdana;font-size:30px;color:black">商品描述</p>
+    <p id="standard" style="font-family:verdana;font-size:30px;color:black">商品规格</p>
+    <img id="foodImg" src="avator.png" />
+
+
+  <div id="collection">
+    <button type="button" onclick="btnCollection()">收藏</button>
+  </div>
+
+</body>
+</html>

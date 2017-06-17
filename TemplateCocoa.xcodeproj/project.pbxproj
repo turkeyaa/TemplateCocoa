@@ -16,6 +16,7 @@
 		A02529E91E8CD73B00AB49E0 /* login.json in Resources */ = {isa = PBXBuildFile; fileRef = A02529E71E8CD73B00AB49E0 /* login.json */; };
 		A02529EA1E8CD73B00AB49E0 /* login.json in Resources */ = {isa = PBXBuildFile; fileRef = A02529E71E8CD73B00AB49E0 /* login.json */; };
 		A03E46DC1E0263FC0013AD24 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A03E46DB1E0263FC0013AD24 /* Main.storyboard */; };
+		A04223BD1EF53B250015B1B3 /* goods.html in Resources */ = {isa = PBXBuildFile; fileRef = A04223BC1EF53B250015B1B3 /* goods.html */; };
 		A04442921E2DE13D00B4A5E9 /* DSTabItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A04442911E2DE13D00B4A5E9 /* DSTabItemModel.m */; };
 		A04442951E2DE26900B4A5E9 /* DSTabItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = A04442941E2DE26900B4A5E9 /* DSTabItemView.m */; };
 		A04442981E2DE28F00B4A5E9 /* DSTabbarView.m in Sources */ = {isa = PBXBuildFile; fileRef = A04442971E2DE28F00B4A5E9 /* DSTabbarView.m */; };
@@ -31,9 +32,10 @@
 		A046BB441EE792BD006CD36C /* AppPreference.m in Sources */ = {isa = PBXBuildFile; fileRef = A046BB431EE792BD006CD36C /* AppPreference.m */; };
 		A046BB461EE793E3006CD36C /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A046BB451EE793E3006CD36C /* libsqlite3.tbd */; };
 		A060125F1EEA7DFA00F54150 /* CartCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A060125E1EEA7DFA00F54150 /* CartCell.m */; };
+		A06012621EEA7FB800F54150 /* GoodsDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A06012611EEA7FB800F54150 /* GoodsDetailVC.m */; };
+		A06012661EEA7FCE00F54150 /* CollectionNotify.m in Sources */ = {isa = PBXBuildFile; fileRef = A06012651EEA7FCE00F54150 /* CollectionNotify.m */; };
 		A06671231EE91BC4007ED190 /* UIHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A06671221EE91BC4007ED190 /* UIHelper.m */; };
 		A06671261EE91FF2007ED190 /* CollectionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A06671251EE91FF2007ED190 /* CollectionVC.m */; };
-		A06671291EE921F4007ED190 /* CollectionNotify.m in Sources */ = {isa = PBXBuildFile; fileRef = A06671281EE921F4007ED190 /* CollectionNotify.m */; };
 		A066712C1EE92509007ED190 /* CollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A066712B1EE92509007ED190 /* CollectionCell.m */; };
 		A06C514B1EE6616F002E119F /* activity.json in Resources */ = {isa = PBXBuildFile; fileRef = A06C514A1EE6616F002E119F /* activity.json */; };
 		A09899961EE6889E0095F293 /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A09899911EE6889E0095F293 /* 1.jpg */; };
@@ -126,6 +128,7 @@
 		A009B58E1EE833C900CC3946 /* LoginNotify.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginNotify.m; sourceTree = "<group>"; };
 		A02529E71E8CD73B00AB49E0 /* login.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = login.json; sourceTree = "<group>"; };
 		A03E46DB1E0263FC0013AD24 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		A04223BC1EF53B250015B1B3 /* goods.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = goods.html; sourceTree = "<group>"; };
 		A04442901E2DE13D00B4A5E9 /* DSTabItemModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSTabItemModel.h; sourceTree = "<group>"; };
 		A04442911E2DE13D00B4A5E9 /* DSTabItemModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSTabItemModel.m; sourceTree = "<group>"; };
 		A04442931E2DE26900B4A5E9 /* DSTabItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSTabItemView.h; sourceTree = "<group>"; };
@@ -155,12 +158,14 @@
 		A046BB451EE793E3006CD36C /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		A060125D1EEA7DFA00F54150 /* CartCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CartCell.h; sourceTree = "<group>"; };
 		A060125E1EEA7DFA00F54150 /* CartCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CartCell.m; sourceTree = "<group>"; };
+		A06012601EEA7FB800F54150 /* GoodsDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoodsDetailVC.h; sourceTree = "<group>"; };
+		A06012611EEA7FB800F54150 /* GoodsDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodsDetailVC.m; sourceTree = "<group>"; };
+		A06012641EEA7FCE00F54150 /* CollectionNotify.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionNotify.h; sourceTree = "<group>"; };
+		A06012651EEA7FCE00F54150 /* CollectionNotify.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionNotify.m; sourceTree = "<group>"; };
 		A06671211EE91BC4007ED190 /* UIHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIHelper.h; sourceTree = "<group>"; };
 		A06671221EE91BC4007ED190 /* UIHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIHelper.m; sourceTree = "<group>"; };
 		A06671241EE91FF2007ED190 /* CollectionVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionVC.h; sourceTree = "<group>"; };
 		A06671251EE91FF2007ED190 /* CollectionVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionVC.m; sourceTree = "<group>"; };
-		A06671271EE921F4007ED190 /* CollectionNotify.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionNotify.h; sourceTree = "<group>"; };
-		A06671281EE921F4007ED190 /* CollectionNotify.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionNotify.m; sourceTree = "<group>"; };
 		A066712A1EE92509007ED190 /* CollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionCell.h; sourceTree = "<group>"; };
 		A066712B1EE92509007ED190 /* CollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionCell.m; sourceTree = "<group>"; };
 		A06C514A1EE6616F002E119F /* activity.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = activity.json; sourceTree = "<group>"; };
@@ -357,6 +362,7 @@
 				A06C514A1EE6616F002E119F /* activity.json */,
 				A0E1EC271EE65BEF00AE29D6 /* foods.json */,
 				A0E1EC291EE65F5200AE29D6 /* market.json */,
+				A04223BC1EF53B250015B1B3 /* goods.html */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -406,6 +412,15 @@
 				A060125E1EEA7DFA00F54150 /* CartCell.m */,
 			);
 			path = cell;
+			sourceTree = "<group>";
+		};
+		A06012631EEA7FCE00F54150 /* Notify */ = {
+			isa = PBXGroup;
+			children = (
+				A06012641EEA7FCE00F54150 /* CollectionNotify.h */,
+				A06012651EEA7FCE00F54150 /* CollectionNotify.m */,
+			);
+			path = Notify;
 			sourceTree = "<group>";
 		};
 		A098998F1EE688730095F293 /* Vendors */ = {
@@ -722,8 +737,9 @@
 				A0EF53D61E025E0000DE645C /* LibraryVC.m */,
 				A098999C1EE69BA20095F293 /* SearchVC.h */,
 				A098999D1EE69BA20095F293 /* SearchVC.m */,
-				A06671271EE921F4007ED190 /* CollectionNotify.h */,
-				A06671281EE921F4007ED190 /* CollectionNotify.m */,
+				A06012601EEA7FB800F54150 /* GoodsDetailVC.h */,
+				A06012611EEA7FB800F54150 /* GoodsDetailVC.m */,
+				A06012631EEA7FCE00F54150 /* Notify */,
 				A098999A1EE6908D0095F293 /* Library.xcassets */,
 				A0F9EE271EE67CEB009CF3B7 /* cell */,
 			);
@@ -945,6 +961,7 @@
 				A0AB5D301E306D4900FFF956 /* Auth.xcassets in Resources */,
 				A098999B1EE6908D0095F293 /* Library.xcassets in Resources */,
 				A044429B1E2DEEE800B4A5E9 /* Tabbar.xcassets in Resources */,
+				A04223BD1EF53B250015B1B3 /* goods.html in Resources */,
 				A02529E81E8CD73B00AB49E0 /* login.json in Resources */,
 				A09899971EE6889E0095F293 /* 2.jpg in Resources */,
 				A09899961EE6889E0095F293 /* 1.jpg in Resources */,
@@ -1042,12 +1059,14 @@
 				A04442921E2DE13D00B4A5E9 /* DSTabItemModel.m in Sources */,
 				A046BB3A1EE79214006CD36C /* PredicateHelper.m in Sources */,
 				A0EF53C01E025CEF00DE645C /* BaseTCell.m in Sources */,
+				A06012621EEA7FB800F54150 /* GoodsDetailVC.m in Sources */,
 				A009B58B1EE82F6B00CC3946 /* MineHeaderView.m in Sources */,
 				A09899A21EE69C5F0095F293 /* CartVC.m in Sources */,
 				A0EF53D71E025E0000DE645C /* LibraryVC.m in Sources */,
 				A0EF53DA1E025E0800DE645C /* MainVC.m in Sources */,
 				A0F9EE2D1EE67D0D009CF3B7 /* ActivityInfo.m in Sources */,
 				A046BB3D1EE79227006CD36C /* ResourceHelper.m in Sources */,
+				A06012661EEA7FCE00F54150 /* CollectionNotify.m in Sources */,
 				A009B5821EE82A9E00CC3946 /* LogInView.m in Sources */,
 				A046BB2D1EE7916F006CD36C /* UncaughtExceptionHandler.m in Sources */,
 				A0EF539E1E025BC200DE645C /* RestApi.m in Sources */,
@@ -1062,7 +1081,6 @@
 				A0AB5D371E3076F300FFF956 /* URLHelper.m in Sources */,
 				A0DF02621EDE910600507F31 /* MainCell.m in Sources */,
 				A009B58F1EE833C900CC3946 /* LoginNotify.m in Sources */,
-				A06671291EE921F4007ED190 /* CollectionNotify.m in Sources */,
 				A0DF02741EDEAE5200507F31 /* NSString+Utils.m in Sources */,
 				A046BB401EE7924B006CD36C /* ActionHelper.m in Sources */,
 				A009B5851EE82AA900CC3946 /* LogOutView.m in Sources */,
@@ -1229,6 +1247,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/PrefixHeader.pch";
 				INFOPLIST_FILE = TemplateCocoa/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = DS.TemplateCocoa;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1244,6 +1263,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/PrefixHeader.pch";
 				INFOPLIST_FILE = TemplateCocoa/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = DS.TemplateCocoa;
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -20,6 +20,7 @@
 #import "FoodCell.h"
 // VC
 #import "SearchVC.h"
+#import "GoodsDetailVC.h"
 // Notify
 #import "CollectionNotify.h"
 // App
@@ -51,6 +52,12 @@
     [self customUI];
     
     [self loadData];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [self.tableView reloadData];
 }
 
 - (void)goNext {
@@ -181,6 +188,14 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    FoodType *typeInfo = self.dataSource[indexPath.section];
+    FoodInfo *foodInfo = typeInfo.foodInfos[indexPath.row];
+    
+    GoodsDetailVC *vc = [[GoodsDetailVC alloc] init];
+    vc.hidesBottomBarWhenPushed = YES;
+    vc.foodInfo = foodInfo;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 #pragma mark - 
@@ -263,7 +278,7 @@
     // 缩放
     CABasicAnimation *rotationAnimation = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
     rotationAnimation.duration = 1.0;
-    rotationAnimation.autoreverses = YES;
+    rotationAnimation.autoreverses = NO;
     rotationAnimation.fromValue = @(1);
     rotationAnimation.toValue = @(0.2);
     
@@ -274,7 +289,6 @@
     group.delegate = self;
     group.removedOnCompletion = YES;
     [_cartLayer addAnimation:group forKey:@"CartAnimation"];
-    
 }
 
 - (void)didReceiveMemoryWarning {

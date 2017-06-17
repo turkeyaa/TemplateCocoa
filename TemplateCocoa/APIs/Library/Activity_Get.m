@@ -11,30 +11,30 @@
 
 @implementation Activity_Get
     
-    - (id)init {
-        if (self = [super initWithURL:@"food/activity" httpMethods:HttpMethods_Get]) {
-            
-            self.dataSource = [[NSMutableArray alloc] init];
+- (id)init {
+    if (self = [super initWithURL:@"food/activity" httpMethods:HttpMethods_Get]) {
+        
+        self.dataSource = [[NSMutableArray alloc] init];
+    }
+    return self;
+}
+
+- (BOOL)parseResponseJson:(NSDictionary *)json {
+    NSArray *data = json[@"data"];
+    if (data) {
+        for (NSDictionary *dict in data) {
+            ActivityInfo *info = [ActivityInfo yy_modelWithDictionary:dict];
+            [self.dataSource addObject:info];
         }
-        return self;
     }
-    
-    - (BOOL)parseResponseJson:(NSDictionary *)json {
-        NSArray *data = json[@"data"];
-        if (data) {
-            for (NSDictionary *dict in data) {
-                ActivityInfo *info = [ActivityInfo yy_modelWithDictionary:dict];
-                [self.dataSource addObject:info];
-            }
-        }
-        return self.dataSource && self.dataSource.count > 0;
-    }
-    
-    - (MockType)mockType {
-        return MockFile;
-    }
-    - (NSString *)mockFile {
-        return @"activity";
-    }
+    return self.dataSource && self.dataSource.count > 0;
+}
+
+- (MockType)mockType {
+    return MockFile;
+}
+- (NSString *)mockFile {
+    return @"activity";
+}
 
 @end
