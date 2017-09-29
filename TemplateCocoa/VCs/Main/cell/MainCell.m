@@ -93,8 +93,8 @@
     _spellLabel.text = mainInfo.name_spell;
     
     NSString *avatar_url = mainInfo.avatar_url;
-    [_iconView setPlaceHolderImageName:@"avator.png" iconURL:[NSURL URLWithString:avatar_url]];
-//    [_iconView sd_setImageWithURL:[NSURL URLWithString:avatar_url] placeholderImage:[UIImage imageNamed:@"avator.png"]];
+//    [_iconView setPlaceHolderImageName:@"avator.png" iconURL:[NSURL URLWithString:avatar_url]];
+    [_iconView sd_setImageWithURL:[NSURL URLWithString:avatar_url] placeholderImage:[UIImage imageNamed:@"avator.png"]];
 }
 
 /*

@@ -9,11 +9,14 @@
 #import "BaseVC.h"
 
 #import "SVProgressHUD.h"
+#import "BaseNavView.h"
 
 @interface BaseVC ()
 
 @property (nonatomic, strong) UIButton *rightBtn;
 @property (nonatomic, strong) UIButton *leftBtn;
+
+@property (nonatomic, strong) BaseNavView *navView;
 
 
 @end
@@ -31,6 +34,29 @@
     _rightTitle = @"";
     
     [self setupUI];
+}
+
+- (BaseNavView *)navView {
+    if (!_navView) {
+        _navView = ({
+            BaseNavView *view = [[BaseNavView alloc] init];
+            view.leftIcon = _leftImage;
+            view.title = self.title;
+            view.titleColor = [UIColor whiteColor];
+            view.rightIcon = _rightImage;
+            view.backgroundColor = Color_Nav;
+            view;
+        });
+    }
+    return _navView;
+}
+
+- (void)setIsSetNav:(BOOL)isSetNav {
+    _isSetNav = isSetNav;
+    
+    if (_isHideNav && isSetNav) {
+        [self.view addSubview:self.navView];
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated {

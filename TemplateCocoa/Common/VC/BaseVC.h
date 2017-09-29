@@ -13,6 +13,9 @@
 /* 是否隐藏导航条 */
 @property (nonatomic, assign) BOOL isHideNav;
 
+/* 自定义导航栏 */
+@property (nonatomic, assign) BOOL isSetNav;
+
 /* 导航左边标题 */
 @property (nonatomic, strong) NSString *leftTitle;
 /* 导航右边标题 */

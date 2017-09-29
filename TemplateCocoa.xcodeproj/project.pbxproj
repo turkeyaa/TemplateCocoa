@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8A46734C1F7DFB930089670E /* TPKeyboardAvoidingCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A4673421F7DFB930089670E /* TPKeyboardAvoidingCollectionView.m */; };
+		8A46734D1F7DFB930089670E /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A4673441F7DFB930089670E /* TPKeyboardAvoidingScrollView.m */; };
+		8A46734E1F7DFB930089670E /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A4673461F7DFB930089670E /* TPKeyboardAvoidingTableView.m */; };
+		8A46734F1F7DFB930089670E /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A4673481F7DFB930089670E /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
+		8A4673501F7DFB930089670E /* XCDFormInputAccessoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A46734B1F7DFB930089670E /* XCDFormInputAccessoryView.m */; };
+		8A4673551F7DFBB30089670E /* BaseFormGroupTC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A4673521F7DFBB30089670E /* BaseFormGroupTC.m */; };
+		8A4673561F7DFBB30089670E /* BaseFormTC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A4673541F7DFBB30089670E /* BaseFormTC.m */; };
+		8A4673591F7DFC000089670E /* BaseNavView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A4673581F7DFC000089670E /* BaseNavView.m */; };
 		A009B5821EE82A9E00CC3946 /* LogInView.m in Sources */ = {isa = PBXBuildFile; fileRef = A009B5811EE82A9E00CC3946 /* LogInView.m */; };
 		A009B5851EE82AA900CC3946 /* LogOutView.m in Sources */ = {isa = PBXBuildFile; fileRef = A009B5841EE82AA900CC3946 /* LogOutView.m */; };
 		A009B5881EE82AE000CC3946 /* MineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A009B5871EE82AE000CC3946 /* MineCell.m */; };
@@ -115,6 +123,22 @@
 /* Begin PBXFileReference section */
 		711E8E9C51665DD06224824D /* Pods-TemplateCocoa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TemplateCocoa.release.xcconfig"; path = "Pods/Target Support Files/Pods-TemplateCocoa/Pods-TemplateCocoa.release.xcconfig"; sourceTree = "<group>"; };
 		860C5DCEB263ACFB76FFB63B /* Pods_TemplateCocoa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TemplateCocoa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A4673411F7DFB930089670E /* TPKeyboardAvoidingCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingCollectionView.h; sourceTree = "<group>"; };
+		8A4673421F7DFB930089670E /* TPKeyboardAvoidingCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingCollectionView.m; sourceTree = "<group>"; };
+		8A4673431F7DFB930089670E /* TPKeyboardAvoidingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingScrollView.h; sourceTree = "<group>"; };
+		8A4673441F7DFB930089670E /* TPKeyboardAvoidingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingScrollView.m; sourceTree = "<group>"; };
+		8A4673451F7DFB930089670E /* TPKeyboardAvoidingTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingTableView.h; sourceTree = "<group>"; };
+		8A4673461F7DFB930089670E /* TPKeyboardAvoidingTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingTableView.m; sourceTree = "<group>"; };
+		8A4673471F7DFB930089670E /* UIScrollView+TPKeyboardAvoidingAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+TPKeyboardAvoidingAdditions.h"; sourceTree = "<group>"; };
+		8A4673481F7DFB930089670E /* UIScrollView+TPKeyboardAvoidingAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+TPKeyboardAvoidingAdditions.m"; sourceTree = "<group>"; };
+		8A46734A1F7DFB930089670E /* XCDFormInputAccessoryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCDFormInputAccessoryView.h; sourceTree = "<group>"; };
+		8A46734B1F7DFB930089670E /* XCDFormInputAccessoryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCDFormInputAccessoryView.m; sourceTree = "<group>"; };
+		8A4673511F7DFBB30089670E /* BaseFormGroupTC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseFormGroupTC.h; sourceTree = "<group>"; };
+		8A4673521F7DFBB30089670E /* BaseFormGroupTC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseFormGroupTC.m; sourceTree = "<group>"; };
+		8A4673531F7DFBB30089670E /* BaseFormTC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseFormTC.h; sourceTree = "<group>"; };
+		8A4673541F7DFBB30089670E /* BaseFormTC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseFormTC.m; sourceTree = "<group>"; };
+		8A4673571F7DFC000089670E /* BaseNavView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNavView.h; sourceTree = "<group>"; };
+		8A4673581F7DFC000089670E /* BaseNavView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseNavView.m; sourceTree = "<group>"; };
 		9DF5DDB6C508D638FA3E5FBD /* Pods-TemplateCocoa.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TemplateCocoa.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TemplateCocoa/Pods-TemplateCocoa.debug.xcconfig"; sourceTree = "<group>"; };
 		A009B5801EE82A9E00CC3946 /* LogInView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogInView.h; sourceTree = "<group>"; };
 		A009B5811EE82A9E00CC3946 /* LogInView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogInView.m; sourceTree = "<group>"; };
@@ -321,6 +345,30 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		8A4673401F7DFB930089670E /* TPKeyboardAvoiding */ = {
+			isa = PBXGroup;
+			children = (
+				8A4673411F7DFB930089670E /* TPKeyboardAvoidingCollectionView.h */,
+				8A4673421F7DFB930089670E /* TPKeyboardAvoidingCollectionView.m */,
+				8A4673431F7DFB930089670E /* TPKeyboardAvoidingScrollView.h */,
+				8A4673441F7DFB930089670E /* TPKeyboardAvoidingScrollView.m */,
+				8A4673451F7DFB930089670E /* TPKeyboardAvoidingTableView.h */,
+				8A4673461F7DFB930089670E /* TPKeyboardAvoidingTableView.m */,
+				8A4673471F7DFB930089670E /* UIScrollView+TPKeyboardAvoidingAdditions.h */,
+				8A4673481F7DFB930089670E /* UIScrollView+TPKeyboardAvoidingAdditions.m */,
+			);
+			path = TPKeyboardAvoiding;
+			sourceTree = "<group>";
+		};
+		8A4673491F7DFB930089670E /* XCDFormInput */ = {
+			isa = PBXGroup;
+			children = (
+				8A46734A1F7DFB930089670E /* XCDFormInputAccessoryView.h */,
+				8A46734B1F7DFB930089670E /* XCDFormInputAccessoryView.m */,
+			);
+			path = XCDFormInput;
+			sourceTree = "<group>";
+		};
 		A009B57E1EE82A6200CC3946 /* cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -426,6 +474,8 @@
 		A098998F1EE688730095F293 /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				8A4673401F7DFB930089670E /* TPKeyboardAvoiding */,
+				8A4673491F7DFB930089670E /* XCDFormInput */,
 				A09899901EE6889E0095F293 /* XRCarouseView */,
 			);
 			path = Vendors;
@@ -781,6 +831,10 @@
 		A0EF53B31E025CBD00DE645C /* VC */ = {
 			isa = PBXGroup;
 			children = (
+				8A4673511F7DFBB30089670E /* BaseFormGroupTC.h */,
+				8A4673521F7DFBB30089670E /* BaseFormGroupTC.m */,
+				8A4673531F7DFBB30089670E /* BaseFormTC.h */,
+				8A4673541F7DFBB30089670E /* BaseFormTC.m */,
 				A0EF53B51E025CC400DE645C /* BaseLoadTC.h */,
 				A0EF53B61E025CC400DE645C /* BaseLoadTC.m */,
 				A0EF53B71E025CC400DE645C /* BaseTC.h */,
@@ -794,6 +848,8 @@
 		A0EF53B41E025CBD00DE645C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				8A4673571F7DFC000089670E /* BaseNavView.h */,
+				8A4673581F7DFC000089670E /* BaseNavView.m */,
 				A0EF53C11E025D0800DE645C /* BaseView.h */,
 				A0EF53C21E025D0800DE645C /* BaseView.m */,
 			);
@@ -908,7 +964,7 @@
 				TargetAttributes = {
 					A0EF53551E0258D500DE645C = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = CEW846XYSB;
+						DevelopmentTeam = 7UKRYGQ5G9;
 						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
@@ -1064,10 +1120,12 @@
 				A09899A21EE69C5F0095F293 /* CartVC.m in Sources */,
 				A0EF53D71E025E0000DE645C /* LibraryVC.m in Sources */,
 				A0EF53DA1E025E0800DE645C /* MainVC.m in Sources */,
+				8A4673501F7DFB930089670E /* XCDFormInputAccessoryView.m in Sources */,
 				A0F9EE2D1EE67D0D009CF3B7 /* ActivityInfo.m in Sources */,
 				A046BB3D1EE79227006CD36C /* ResourceHelper.m in Sources */,
 				A06012661EEA7FCE00F54150 /* CollectionNotify.m in Sources */,
 				A009B5821EE82A9E00CC3946 /* LogInView.m in Sources */,
+				8A46734D1F7DFB930089670E /* TPKeyboardAvoidingScrollView.m in Sources */,
 				A046BB2D1EE7916F006CD36C /* UncaughtExceptionHandler.m in Sources */,
 				A0EF539E1E025BC200DE645C /* RestApi.m in Sources */,
 				A0EF53A41E025BE200DE645C /* API_UnitTest.m in Sources */,
@@ -1077,10 +1135,12 @@
 				A046BB441EE792BD006CD36C /* AppPreference.m in Sources */,
 				A009B5881EE82AE000CC3946 /* MineCell.m in Sources */,
 				A0EF535B1E0258D500DE645C /* main.m in Sources */,
+				8A46734F1F7DFB930089670E /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				A046BB341EE791D2006CD36C /* DeviceHelper.m in Sources */,
 				A0AB5D371E3076F300FFF956 /* URLHelper.m in Sources */,
 				A0DF02621EDE910600507F31 /* MainCell.m in Sources */,
 				A009B58F1EE833C900CC3946 /* LoginNotify.m in Sources */,
+				8A4673591F7DFC000089670E /* BaseNavView.m in Sources */,
 				A0DF02741EDEAE5200507F31 /* NSString+Utils.m in Sources */,
 				A046BB401EE7924B006CD36C /* ActionHelper.m in Sources */,
 				A009B5851EE82AA900CC3946 /* LogOutView.m in Sources */,
@@ -1088,11 +1148,14 @@
 				A0DF02731EDEAE5200507F31 /* NSString+JudgeString.m in Sources */,
 				A0F9EE261EE67C7E009CF3B7 /* UserInfoVC.m in Sources */,
 				A0DF02721EDEAE5200507F31 /* NSObject+Property.m in Sources */,
+				8A46734E1F7DFB930089670E /* TPKeyboardAvoidingTableView.m in Sources */,
 				A060125F1EEA7DFA00F54150 /* CartCell.m in Sources */,
 				A0EF53D11E025DB900DE645C /* Workspace.m in Sources */,
 				A0EF53BC1E025CC500DE645C /* BaseTC.m in Sources */,
+				8A46734C1F7DFB930089670E /* TPKeyboardAvoidingCollectionView.m in Sources */,
 				A0F9EE361EE67E47009CF3B7 /* Foods_Get.m in Sources */,
 				A0AB5D3B1E3078F600FFF956 /* URLUtil.m in Sources */,
+				8A4673551F7DFBB30089670E /* BaseFormGroupTC.m in Sources */,
 				A098999E1EE69BA20095F293 /* SearchVC.m in Sources */,
 				A0DF02711EDEAE5200507F31 /* NSArray+Swizzling.m in Sources */,
 				A06671261EE91FF2007ED190 /* CollectionVC.m in Sources */,
@@ -1104,6 +1167,7 @@
 				A0F9EE3C1EE68239009CF3B7 /* FoodCell.m in Sources */,
 				A06671231EE91BC4007ED190 /* UIHelper.m in Sources */,
 				A0EF53BB1E025CC500DE645C /* BaseLoadTC.m in Sources */,
+				8A4673561F7DFBB30089670E /* BaseFormTC.m in Sources */,
 				A0EF539B1E025BAA00DE645C /* DSTabbarVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1243,7 +1307,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9DF5DDB6C508D638FA3E5FBD /* Pods-TemplateCocoa.debug.xcconfig */;
 			buildSettings = {
-				DEVELOPMENT_TEAM = CEW846XYSB;
+				DEVELOPMENT_TEAM = 7UKRYGQ5G9;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/PrefixHeader.pch";
 				INFOPLIST_FILE = TemplateCocoa/Info.plist;
@@ -1259,7 +1323,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 711E8E9C51665DD06224824D /* Pods-TemplateCocoa.release.xcconfig */;
 			buildSettings = {
-				DEVELOPMENT_TEAM = CEW846XYSB;
+				DEVELOPMENT_TEAM = 7UKRYGQ5G9;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/PrefixHeader.pch";
 				INFOPLIST_FILE = TemplateCocoa/Info.plist;
