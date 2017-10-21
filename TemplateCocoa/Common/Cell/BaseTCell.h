@@ -28,5 +28,6 @@ typedef void(^ClickEventBlock)(NSIndexPath *indexPath, BaseTCell *cell);
 
 #pragma mark - Subclass
 - (void)setupSubViews;
+- (void)setupLayout;
 
 @end

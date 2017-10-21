@@ -13,6 +13,8 @@
 #import "MainVC.h"
 #import "MineVC.h"
 #import "CartVC.h"
+#import "SettingVC.h"
+
 // View
 #import "DSTabbarView.h"
 
@@ -42,6 +44,7 @@
     LibraryVC *libraryVc = [[LibraryVC alloc] init];
     CartVC *cartVc = [[CartVC alloc] init];
     MineVC *mineVc = [[MineVC alloc] init];
+    SettingVC *setVc = [[SettingVC alloc] init];
     
     UITabBarItem *mainItem = [[UITabBarItem alloc] initWithTitle:@"首页" image:[UIImage imageNamed:@"main"] selectedImage:[UIImage imageNamed:@"mainHigh"]];
     mainVc.tabBarItem = mainItem;
@@ -55,12 +58,16 @@
     UITabBarItem *mineItem = [[UITabBarItem alloc] initWithTitle:@"我的" image:[UIImage imageNamed:@"mine"] selectedImage:[UIImage imageNamed:@"mineHigh"]];
     mineVc.tabBarItem = mineItem;
     
+    UITabBarItem *setItem = [[UITabBarItem alloc] initWithTitle:@"设置" image:[UIImage imageNamed:@"mine"] selectedImage:[UIImage imageNamed:@"mineHigh"]];
+    setVc.tabBarItem = setItem;
+    
     UINavigationController *mainNav = [[UINavigationController alloc] initWithRootViewController:mainVc];
     UINavigationController *libraryNav = [[UINavigationController alloc] initWithRootViewController:libraryVc];
     UINavigationController *cartNav = [[UINavigationController alloc] initWithRootViewController:cartVc];
     UINavigationController *mineNav = [[UINavigationController alloc] initWithRootViewController:mineVc];
+    UINavigationController *setNav = [[UINavigationController alloc] initWithRootViewController:setVc];
     
-    self.viewControllers = @[mainNav,libraryNav,cartNav,mineNav];
+    self.viewControllers = @[mainNav,libraryNav,cartNav,mineNav,setNav];
     
 #if 1
     

@@ -13,6 +13,7 @@
 #import "LogOutView.h"
 // Cell
 #import "MineCell.h"
+#import "TCell_Image.h"
 // Notify
 #import "LoginNotify.h"
 // Helper

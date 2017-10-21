@@ -14,8 +14,6 @@ typedef NS_ENUM(NSInteger, RestApiCode) {
     RestApi_NoUserId = 0001,            // 无用户ID信息 （请登录）
     RestApi_UnkownError = 0002,         // 未知错误（系统出错）
     
-    
-    
     RestApi_InvalidJSON = 108,          // 解析 JSON 异常
 };
 
@@ -34,6 +32,7 @@ typedef NS_ENUM(NSInteger, MockType) {
 
 #pragma mark - Subclassing methods
 - (BOOL)parseResponseJson:(NSDictionary *)json;
+- (id)queryObjData;
 
 - (id)prepareRequestData;
 

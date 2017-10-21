@@ -110,6 +110,7 @@
 }
 
 - (void)setupSubViews {}
+- (void)setupLayout {}
 
 - (void)awakeFromNib {
     [super awakeFromNib];

@@ -24,45 +24,6 @@
     // 1. 异常处理
     InstallUncaughtExceptionHandler();
     
-    // 2. 测试异常
-    if (NO) {
-        
-        NSArray *arr = @[@"One"];
-        NSString *string = arr[1];
-        NSLog(@"String = %@",string);
-    }
-    
-    if (NO) {
-        
-        NSException *exception = [NSException exceptionWithName:@"Test" reason:@"This is a test" userInfo:@{@"name":@"yuwenhua"}];
-        
-//        @throw exception;
-        
-        @try {
-            // 可能抛出的异常代码
-            int b = 0;
-            switch (b) {
-                case 0:
-                {
-                    @throw exception;
-                }
-                    break;
-                    
-                default:
-                    break;
-            }
-        } @catch (NSException *exception) {
-            // 异常处理的代码
-            NSLog(@"Name = %@",exception.name);
-            NSLog(@"Reason = %@",exception.reason);
-            NSLog(@"b==0 Exception!");
-        } @finally {
-            // 不论是否有异常总会被执行的代码，通常用于clean
-            NSLog(@"Finally");
-        }
-    }
-    
-    
     self.tabbarVC = [[DSTabbarVC alloc] init];
     
     self.window.rootViewController = self.tabbarVC;

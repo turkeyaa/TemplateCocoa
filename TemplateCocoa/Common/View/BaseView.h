@@ -10,4 +10,8 @@
 
 @interface BaseView : UIView
 
+/* Subclass - 需要子类重写 */
+- (void)setupUI;
+- (void)setupLayout;
+
 @end

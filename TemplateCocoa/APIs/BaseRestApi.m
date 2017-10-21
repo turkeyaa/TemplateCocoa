@@ -44,14 +44,15 @@
     return nil;
 }
 
-- (void)callWithTimeout:(CGFloat)timeout {
+- (void)callWithTimeout:(NSTimeInterval)timeout
+                  async:(BlockJsonData)block {
     if ([NSThread isMainThread]) {
         [self raiseException:@"主线程不允许同步调用"];
         return;
     }
     
     if ([self mockType] == MockNone) {
-        [super callWithTimeout:timeout];
+        [super callWithTimeout:timeout async:block];
     }
     else {
         /*
@@ -73,7 +74,11 @@
                 [weakSelf raiseException:@"应答数据不能为nil, responseData==nil"];
             }
             
-            [self doSuccess:responseData];
+            id obj = [self doHttpResonse:responseData error:nil];
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                block(obj);
+            });
         };
         
         simulateBlock();
@@ -108,6 +113,20 @@
     } @finally {
         
     }
+}
+
+- (id)doHttpResonse:(id)responseObject
+              error:(NSError *)error {
+    [self doSuccess:responseObject];
+    if (self.code == RestApi_OK) {
+        return [self queryObjData];
+    }
+    return nil;
+}
+
+- (id)queryObjData {
+    NSAssert(NO, @"子类必须重写该方法");
+    return nil;
 }
 
 - (NSDictionary *)errorCodeMessage {

@@ -8,7 +8,46 @@
 
 #import "BaseView.h"
 
+@interface BaseView ()
+
+{
+    BOOL _commonInit;
+}
+
+@end
+
 @implementation BaseView
+
+- (id)init {
+    if (self = [super init]) {
+        [self commonInit];
+    }
+    return self;
+}
+
+- (id)initWithFrame:(CGRect)frame {
+    if (self = [super initWithFrame:frame]) {
+        [self commonInit];
+    }
+    return self;
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder {
+    if (self = [super initWithCoder:aDecoder]) {
+        [self commonInit];
+    }
+    return self;
+}
+
+- (void)commonInit {
+    if (!_commonInit) {
+        [self setupUI];
+        _commonInit = YES;
+    }
+}
+
+- (void)setupUI {}
+- (void)setupLayout {}
 
 /*
 // Only override drawRect: if you perform custom drawing.

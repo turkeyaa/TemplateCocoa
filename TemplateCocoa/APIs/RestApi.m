@@ -10,6 +10,8 @@
 
 #import "AFNetworking.h"
 
+static NSTimeInterval kNetworkTimeout = 10;
+
 @interface RestApi ()
 
 {
@@ -44,10 +46,20 @@
 }
 
 - (void)call {
-    [self callWithTimeout:10.0];
+    [self callWithTimeout:kNetworkTimeout];
 }
 
-- (void)callWithTimeout:(CGFloat)timeout {
+- (void)callWithTimeout:(NSTimeInterval)timeout {
+    [self callWithTimeout:timeout async:nil];
+}
+
+- (void)callWithAsync:(BlockJsonData)result {
+    [self callWithTimeout:kNetworkTimeout async:result];
+}
+
+#pragma mark - 初始化方法
+- (void)callWithTimeout:(NSTimeInterval)timeout
+                  async:(BlockJsonData)block {
     
     if ([NSThread isMainThread]) {
         [self raiseException:@"主线程不允许同步调用"];
@@ -55,7 +67,6 @@
     }
     
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-    
     
     if (_httpMethod == HttpMethods_Get) {
         
@@ -109,38 +120,54 @@
     
     __weak RestApi *weakSelf = self;
     
-    NSCondition *condition = [[NSCondition alloc] init];
-    
     NSURLSession *session = [NSURLSession sharedSession];
     
-    _task = [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-        
-        if (error) {
+    if (block) {
+        _task = [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
             
-            [weakSelf doFailure:error];
-        }
-        else {
-            [weakSelf doSuccess:data];
-        }
+//            [weakSelf doHttpResonse:response error:error block:^(id data) {
+//                block(data);
+//            }];
+            
+            id obj = [self doHttpResonse:response error:error];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                block(obj);
+            });
+        }];
         
-        [condition lock];
-        [condition signal];
-        [condition unlock];
-    }];
-    
-    [_task resume];
-    
-    if (condition) {
-        [condition lock];
-        [condition wait];
-        [condition unlock];
+        [_task resume];
+    }
+    else {
+        NSCondition *condition = [[NSCondition alloc] init];
+        _task = [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+            
+            if (error) {
+                
+                [weakSelf doFailure:error];
+            }
+            else {
+                [weakSelf doSuccess:data];
+            }
+            
+            [condition lock];
+            [condition signal];
+            [condition unlock];
+        }];
+        
+        [_task resume];
+        
+        if (condition) {
+            [condition lock];
+            [condition wait];
+            [condition unlock];
+        }
     }
 }
 
 - (void)cancel {
     if (!_isCancel) {
         
-        // TODO
+        [_task cancel];
         _isCancel = YES;
     }
 }

@@ -39,6 +39,7 @@
 		A046BB401EE7924B006CD36C /* ActionHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A046BB3F1EE7924B006CD36C /* ActionHelper.m */; };
 		A046BB441EE792BD006CD36C /* AppPreference.m in Sources */ = {isa = PBXBuildFile; fileRef = A046BB431EE792BD006CD36C /* AppPreference.m */; };
 		A046BB461EE793E3006CD36C /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A046BB451EE793E3006CD36C /* libsqlite3.tbd */; };
+		A04893841F99D75600CAD676 /* TCell_Image.m in Sources */ = {isa = PBXBuildFile; fileRef = A04893831F99D75600CAD676 /* TCell_Image.m */; };
 		A060125F1EEA7DFA00F54150 /* CartCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A060125E1EEA7DFA00F54150 /* CartCell.m */; };
 		A06012621EEA7FB800F54150 /* GoodsDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A06012611EEA7FB800F54150 /* GoodsDetailVC.m */; };
 		A06012661EEA7FCE00F54150 /* CollectionNotify.m in Sources */ = {isa = PBXBuildFile; fileRef = A06012651EEA7FCE00F54150 /* CollectionNotify.m */; };
@@ -59,6 +60,9 @@
 		A0AB5D301E306D4900FFF956 /* Auth.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0AB5D2F1E306D4900FFF956 /* Auth.xcassets */; };
 		A0AB5D371E3076F300FFF956 /* URLHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AB5D361E3076F300FFF956 /* URLHelper.m */; };
 		A0AB5D3B1E3078F600FFF956 /* URLUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AB5D3A1E3078F600FFF956 /* URLUtil.m */; };
+		A0B309C41F9AE3B300AB6E51 /* SettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A0B309C31F9AE3B300AB6E51 /* SettingVC.m */; };
+		A0B309C61F9AE7AA00AB6E51 /* Setting.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0B309C51F9AE7AA00AB6E51 /* Setting.xcassets */; };
+		A0B309C91F9AEC9E00AB6E51 /* NotifyListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A0B309C81F9AEC9E00AB6E51 /* NotifyListVC.m */; };
 		A0DF024E1EDE8B2900507F31 /* main.json in Resources */ = {isa = PBXBuildFile; fileRef = A0DF024D1EDE8B2900507F31 /* main.json */; };
 		A0DF02581EDE8C1A00507F31 /* Login_Post.m in Sources */ = {isa = PBXBuildFile; fileRef = A0DF02571EDE8C1A00507F31 /* Login_Post.m */; };
 		A0DF025B1EDE8C2E00507F31 /* Main_Get.m in Sources */ = {isa = PBXBuildFile; fileRef = A0DF025A1EDE8C2E00507F31 /* Main_Get.m */; };
@@ -180,6 +184,8 @@
 		A046BB421EE792BD006CD36C /* AppPreference.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppPreference.h; sourceTree = "<group>"; };
 		A046BB431EE792BD006CD36C /* AppPreference.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppPreference.m; sourceTree = "<group>"; };
 		A046BB451EE793E3006CD36C /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		A04893821F99D75600CAD676 /* TCell_Image.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TCell_Image.h; sourceTree = "<group>"; };
+		A04893831F99D75600CAD676 /* TCell_Image.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TCell_Image.m; sourceTree = "<group>"; };
 		A060125D1EEA7DFA00F54150 /* CartCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CartCell.h; sourceTree = "<group>"; };
 		A060125E1EEA7DFA00F54150 /* CartCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CartCell.m; sourceTree = "<group>"; };
 		A06012601EEA7FB800F54150 /* GoodsDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoodsDetailVC.h; sourceTree = "<group>"; };
@@ -214,6 +220,11 @@
 		A0AB5D361E3076F300FFF956 /* URLHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = URLHelper.m; sourceTree = "<group>"; };
 		A0AB5D391E3078F600FFF956 /* URLUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URLUtil.h; sourceTree = "<group>"; };
 		A0AB5D3A1E3078F600FFF956 /* URLUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = URLUtil.m; sourceTree = "<group>"; };
+		A0B309C21F9AE3B300AB6E51 /* SettingVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingVC.h; sourceTree = "<group>"; };
+		A0B309C31F9AE3B300AB6E51 /* SettingVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingVC.m; sourceTree = "<group>"; };
+		A0B309C51F9AE7AA00AB6E51 /* Setting.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Setting.xcassets; sourceTree = "<group>"; };
+		A0B309C71F9AEC9E00AB6E51 /* NotifyListVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotifyListVC.h; sourceTree = "<group>"; };
+		A0B309C81F9AEC9E00AB6E51 /* NotifyListVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotifyListVC.m; sourceTree = "<group>"; };
 		A0DF024D1EDE8B2900507F31 /* main.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = main.json; sourceTree = "<group>"; };
 		A0DF02561EDE8C1A00507F31 /* Login_Post.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Login_Post.h; sourceTree = "<group>"; };
 		A0DF02571EDE8C1A00507F31 /* Login_Post.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Login_Post.m; sourceTree = "<group>"; };
@@ -544,6 +555,18 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		A0B309C11F9AE3A000AB6E51 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				A0B309C21F9AE3B300AB6E51 /* SettingVC.h */,
+				A0B309C31F9AE3B300AB6E51 /* SettingVC.m */,
+				A0B309C71F9AEC9E00AB6E51 /* NotifyListVC.h */,
+				A0B309C81F9AEC9E00AB6E51 /* NotifyListVC.m */,
+				A0B309C51F9AE7AA00AB6E51 /* Setting.xcassets */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
 		A0DF02521EDE8C0B00507F31 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
@@ -749,6 +772,7 @@
 				A0EF53951E0259C000DE645C /* Library */,
 				A098999F1EE69C560095F293 /* Cart */,
 				A0EF53971E0259C000DE645C /* Mine */,
+				A0B309C11F9AE3A000AB6E51 /* Setting */,
 			);
 			path = VCs;
 			sourceTree = "<group>";
@@ -824,6 +848,8 @@
 			children = (
 				A0EF53BE1E025CEF00DE645C /* BaseTCell.h */,
 				A0EF53BF1E025CEF00DE645C /* BaseTCell.m */,
+				A04893821F99D75600CAD676 /* TCell_Image.h */,
+				A04893831F99D75600CAD676 /* TCell_Image.m */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -964,7 +990,7 @@
 				TargetAttributes = {
 					A0EF53551E0258D500DE645C = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = 7UKRYGQ5G9;
+						DevelopmentTeam = WW4F3PAUH4;
 						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
@@ -1015,6 +1041,7 @@
 				A09899981EE6889E0095F293 /* 3.jpg in Resources */,
 				A0E1EC2A1EE65F5200AE29D6 /* market.json in Resources */,
 				A0AB5D301E306D4900FFF956 /* Auth.xcassets in Resources */,
+				A0B309C61F9AE7AA00AB6E51 /* Setting.xcassets in Resources */,
 				A098999B1EE6908D0095F293 /* Library.xcassets in Resources */,
 				A044429B1E2DEEE800B4A5E9 /* Tabbar.xcassets in Resources */,
 				A04223BD1EF53B250015B1B3 /* goods.html in Resources */,
@@ -1122,6 +1149,7 @@
 				A0EF53DA1E025E0800DE645C /* MainVC.m in Sources */,
 				8A4673501F7DFB930089670E /* XCDFormInputAccessoryView.m in Sources */,
 				A0F9EE2D1EE67D0D009CF3B7 /* ActivityInfo.m in Sources */,
+				A0B309C41F9AE3B300AB6E51 /* SettingVC.m in Sources */,
 				A046BB3D1EE79227006CD36C /* ResourceHelper.m in Sources */,
 				A06012661EEA7FCE00F54150 /* CollectionNotify.m in Sources */,
 				A009B5821EE82A9E00CC3946 /* LogInView.m in Sources */,
@@ -1131,6 +1159,7 @@
 				A0EF53A41E025BE200DE645C /* API_UnitTest.m in Sources */,
 				A0F9EE391EE67FBF009CF3B7 /* Activity_Get.m in Sources */,
 				A0EF53BD1E025CC500DE645C /* BaseVC.m in Sources */,
+				A0B309C91F9AEC9E00AB6E51 /* NotifyListVC.m in Sources */,
 				A0EF535E1E0258D500DE645C /* AppDelegate.m in Sources */,
 				A046BB441EE792BD006CD36C /* AppPreference.m in Sources */,
 				A009B5881EE82AE000CC3946 /* MineCell.m in Sources */,
@@ -1156,6 +1185,7 @@
 				A0F9EE361EE67E47009CF3B7 /* Foods_Get.m in Sources */,
 				A0AB5D3B1E3078F600FFF956 /* URLUtil.m in Sources */,
 				8A4673551F7DFBB30089670E /* BaseFormGroupTC.m in Sources */,
+				A04893841F99D75600CAD676 /* TCell_Image.m in Sources */,
 				A098999E1EE69BA20095F293 /* SearchVC.m in Sources */,
 				A0DF02711EDEAE5200507F31 /* NSArray+Swizzling.m in Sources */,
 				A06671261EE91FF2007ED190 /* CollectionVC.m in Sources */,
@@ -1307,7 +1337,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9DF5DDB6C508D638FA3E5FBD /* Pods-TemplateCocoa.debug.xcconfig */;
 			buildSettings = {
-				DEVELOPMENT_TEAM = 7UKRYGQ5G9;
+				DEVELOPMENT_TEAM = WW4F3PAUH4;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/PrefixHeader.pch";
 				INFOPLIST_FILE = TemplateCocoa/Info.plist;
@@ -1323,7 +1353,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 711E8E9C51665DD06224824D /* Pods-TemplateCocoa.release.xcconfig */;
 			buildSettings = {
-				DEVELOPMENT_TEAM = 7UKRYGQ5G9;
+				DEVELOPMENT_TEAM = WW4F3PAUH4;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/PrefixHeader.pch";
 				INFOPLIST_FILE = TemplateCocoa/Info.plist;

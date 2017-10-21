@@ -32,6 +32,11 @@
 /* 右边导航按钮事件(如果存在) */
 - (void)goNext;
 
+/* 子类重载该的方法 */
+- (void)setupUI;
+- (void)setupLayout;
+
+
 #pragma mark - SVProgressHUD
 /**
  *  显示加载HUD

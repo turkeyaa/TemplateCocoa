@@ -52,12 +52,16 @@
     }
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 20.0;
+}
+
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     
-    UIView *headerView = [[UIView alloc] initWithFrame:CGRectZero];
-    headerView.backgroundColor = [UIColor blueColor];
+    UIView *headerView = tableView.tableHeaderView;
     return headerView;
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

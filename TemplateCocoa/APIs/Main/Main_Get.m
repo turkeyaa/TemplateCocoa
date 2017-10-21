@@ -43,6 +43,10 @@
     return self.dataSource && self.dataSource.count;
 }
 
+- (id)queryObjData {
+    return self.dataSource;
+}
+
 - (MockType)mockType {
     return MockFile;
 }

@@ -93,22 +93,30 @@
 #pragma mark - 加载数据
 - (void)loadData {
     
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+    // 同步
+//    [GCDUtil runInGlobalQueue:^{
+//        Main_Get *mainApi = [[Main_Get alloc] init];
+//        [mainApi call];
+//        [GCDUtil runInMainQueue:^{
+//            if (mainApi.code == RestApi_OK) {
+//                self.dataSource = mainApi.dataSource;
+//                [self.tableView reloadData];
+//            }
+//            else {
+//                [self showErrorMessage:@"加载失败"];
+//            }
+//        }];
+//    }];
+    
+    // 异步
+    [GCDUtil runInGlobalQueue:^{
         
         Main_Get *mainApi = [[Main_Get alloc] init];
-        [mainApi call];
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            
-            if (mainApi.code == RestApi_OK) {
-                self.dataSource = mainApi.dataSource;
-                [self.tableView reloadData];
-            }
-            else {
-                [self showErrorMessage:@"加载失败"];
-            }
-        });
-    });
+        [mainApi callWithAsync:^(id data) {
+            self.dataSource = data;
+            [self.tableView reloadData];
+        }];
+    }];
 }
 
 #pragma mark -

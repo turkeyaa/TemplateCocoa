@@ -34,7 +34,7 @@
             tableView.dataSource = self;
             tableView.backgroundColor = [UIColor clearColor];
             tableView.tableFooterView = [[UIView alloc] init];
-            tableView.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, DEVICE_WIDTH, 10)];
+            tableView.tableHeaderView = [[UIView alloc] init];
             tableView;
         });
     }

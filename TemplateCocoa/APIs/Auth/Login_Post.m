@@ -46,7 +46,6 @@
         // 这里处理登录成功返回的JSON数据...
         self.userInfo = [UserModel yy_modelWithJSON:data];
     }
-    
     return self.userInfo && self.userInfo.user_id.length > 0;
 }
 
