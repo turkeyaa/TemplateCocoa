@@ -25,18 +25,26 @@
     
     self.leftImage = [UIImage imageNamed:@"app_back"];
     self.title = @"首页";
-    [self setupUI];
 }
 
-- (void)setupUI {
-    [super setupUI];
-    self.titles = @[@"首页",@"商品"];
-    
+- (NSArray *)swipeViewTitles {
+    return @[@"首页",@"商品",@"Three",@"Four"];
+}
+
+- (NSArray *)swipeViewControllers {
     MainVC *mainVc = [[MainVC alloc] init];
     LibraryVC *libraryVc = [[LibraryVC alloc] init];
+    BaseVC *vc3 = [[BaseVC alloc] init];
+    vc3.view.layer.borderColor = [UIColor redColor].CGColor;
+    vc3.view.layer.borderWidth = 5.0;
     
-    self.vcs = @[mainVc,libraryVc];
+    BaseVC *vc4 = [[BaseVC alloc] init];
+    vc4.view.layer.borderColor = [UIColor blueColor].CGColor;
+    vc4.view.layer.borderWidth = 5.0;
+    
+    return @[mainVc,libraryVc,vc3,vc4];
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

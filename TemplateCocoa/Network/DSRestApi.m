@@ -1,16 +1,14 @@
 //
-//  RestApi.m
+//  DSRestApi.m
 //  TemplateCocoa
 //
-//  Created by yuwenhua on 2016/12/15.
-//  Copyright © 2016年 DS. All rights reserved.
+//  Created by yuwenhua on 2017/10/30.
+//  Copyright © 2017年 DS. All rights reserved.
 //
 
-#import "RestApi.h"
+#import "DSRestApi.h"
 
-static NSTimeInterval kNetworkTimeout = 10;
-
-@interface RestApi ()
+@interface DSRestApi ()
 
 {
     NSString *_url;
@@ -23,37 +21,7 @@ static NSTimeInterval kNetworkTimeout = 10;
 
 @end
 
-@implementation RestApi
-
-- (id)initWithURL:(NSString *)url httpMethods:(HttpMethods)httpMethod {
-    if (self = [super init]) {
-        _url = url;
-        _httpMethod = httpMethod;
-        
-        _isCancel = NO;
-    }
-    return self;
-}
-
-- (void)dealloc {
-    [self cancel];
-}
-
-- (void)raiseException:(NSString *)exception {
-    [NSException raise:exception format:@"Exception"];
-}
-
-- (void)call {
-    [self callWithTimeout:kNetworkTimeout];
-}
-
-- (void)callWithTimeout:(NSTimeInterval)timeout {
-    [self callWithTimeout:timeout async:nil];
-}
-
-- (void)callWithAsync:(BlockJsonData)result {
-    [self callWithTimeout:kNetworkTimeout async:result];
-}
+@implementation DSRestApi
 
 #pragma mark - 初始化方法
 - (void)callWithTimeout:(NSTimeInterval)timeout
@@ -137,7 +105,7 @@ static NSTimeInterval kNetworkTimeout = 10;
             
             if (error) {
                 
-                [weakSelf doFailure:error];
+//                [weakSelf doFailure:error];
             }
             else {
                 [weakSelf doSuccess:data];
@@ -155,30 +123,6 @@ static NSTimeInterval kNetworkTimeout = 10;
             [condition wait];
             [condition unlock];
         }
-    }
-}
-
-- (void)cancel {
-    if (!_isCancel) {
-        
-        [_task cancel];
-        _isCancel = YES;
-    }
-}
-- (void)setRequestHeader:(NSMutableURLRequest *)request {}
-
-- (NSString*)getHttpMethod {
-    switch (_httpMethod) {
-        case HttpMethods_Get:
-            return @"GET";
-        case HttpMethods_Post:
-            return @"POST";
-        case HttpMethods_Put:
-            return @"PUT";
-        case HttpMethods_Delete:
-            return @"DELETE";
-        default:
-            return nil;
     }
 }
 
@@ -200,28 +144,5 @@ static NSTimeInterval kNetworkTimeout = 10;
     
     [self onSuccessed];
 }
-
-- (void)onSuccessed {
-    
-    // TODO:成功日志
-}
-
-- (void)onFailed {
-    // TODO:失败日志
-}
-- (void)onCancelled {
-    // TODO:取消日志
-}
-- (void)onTimeout {
-    // TODO: 超时日志
-}
-- (void)onError:(NSError *)error {
-    // TODO: 错误日志
-}
-
-- (NSData *)queryPostData { return nil; }
-- (NSDictionary *)queryGetParameters { return nil; }
-
-
 
 @end

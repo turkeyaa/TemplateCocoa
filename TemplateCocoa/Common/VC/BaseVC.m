@@ -10,6 +10,7 @@
 
 #import "SVProgressHUD.h"
 #import "BaseNavView.h"
+#import "BSEmptyView.h"
 
 @interface BaseVC ()
 
@@ -17,7 +18,7 @@
 @property (nonatomic, strong) UIButton *leftBtn;
 
 @property (nonatomic, strong) BaseNavView *navView;
-
+@property (nonatomic, strong) BSEmptyView *emptyView;
 
 @end
 
@@ -50,7 +51,18 @@
     }
     return _navView;
 }
-
+- (BSEmptyView *)emptyView {
+    if (!_emptyView) {
+        _emptyView = ({
+            BSEmptyView *view = [[BSEmptyView alloc] initWithFrame:CGRectMake(0, 0, DEVICE_WIDTH, DEVICE_HEIGHT-STATUS_HEIGHT-NAV_HEIGHT-TAB_HEIGHT)];
+            view.backgroundColor = [UIColor whiteColor];
+            UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(refreshEvent:)];
+            [view addGestureRecognizer:tap];
+            view;
+        });
+    }
+    return _emptyView;
+}
 - (void)setIsSetNav:(BOOL)isSetNav {
     _isSetNav = isSetNav;
     
@@ -160,6 +172,17 @@
     [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeClear];
     [SVProgressHUD setMinimumDismissTimeInterval:2];
 }
+
+- (void)refreshEvent:(UIGestureRecognizer *)gesture {
+    [self baseEmptyRefresh];
+}
+
+#pragma mark - 空页面提示：有子类提供数据
+- (UIImage *)baseEmptyImage {return [UIImage imageNamed:@"app_emptyView"];}
+- (NSString *)baseEmptyTitle {return @"暂无内容";}
+- (NSString *)baseEmptySecondTitle {return @"";}
+- (CGRect)baseEmptyViewFrame {return CGRectZero;}
+- (void)baseEmptyRefresh {}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
