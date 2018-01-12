@@ -22,10 +22,6 @@
     return self;
 }
 
-- (void)p_customUI {
-    
-}
-
 - (void)setTitlesArray:(NSArray *)titlesArray {
     _titlesArray = titlesArray;
     

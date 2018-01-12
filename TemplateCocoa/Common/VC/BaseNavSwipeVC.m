@@ -33,6 +33,11 @@
     
     self.edgesForExtendedLayout = UIRectEdgeNone;
 }
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    
+    [self removeNavTitleView];
+}
 
 #pragma mark - 界面
 - (void)setupUI {
@@ -95,6 +100,13 @@
         });
     }
     return _navView;
+}
+
+- (void)removeNavTitleView {
+    if (_navView) {
+        [_navView removeFromSuperview];
+        _navView = nil;
+    }
 }
 
 /** 更新索引，默认从0开始,否则调用该方法 */
