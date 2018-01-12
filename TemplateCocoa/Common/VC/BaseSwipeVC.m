@@ -34,6 +34,7 @@ static const CGFloat kTitleIndexViewHeight = 40.0;
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    self.edgesForExtendedLayout = UIRectEdgeNone;
 }
 
 #pragma mark - 界面
@@ -117,8 +118,9 @@ static const CGFloat kTitleIndexViewHeight = 40.0;
     else {
         _isFastIndex = NO;
     }
-    
+
     self.currentIndex = index;
+    _isFastIndex = NO;
 }
 
 - (void)setCurrentIndex:(NSInteger)currentIndex {

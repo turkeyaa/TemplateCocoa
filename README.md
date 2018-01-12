@@ -37,46 +37,51 @@
 
 #### 在ViewController中，登录接口就是这样：
 
-		// 在 LoginVC.m 中实现登录
-		Login_Post *loginApi = [[Login_Post alloc] initWithAccount:account password:password];
-		[loginApi call];
+```
+// 在 LoginVC.m 中实现登录
+Login_Post *loginApi = [[Login_Post alloc] initWithAccount:account password:password];
+[loginApi call];
 
-		if (loginApi.code == RestApi_OK) {
-			// 登录成功，赋值，其他处理....
-			UserInfo *userInfo = loginApi.userInfo;
+if (loginApi.code == RestApi_OK) {
+	// 登录成功，赋值，其他处理....
+	UserInfo *userInfo = loginApi.userInfo;
 
-		}
-		else {
-			// 登录失败
-			[self showErrorMessage:loginApi.errorMessage];
-		}
+}
+else {
+	// 登录失败
+	[self showErrorMessage:loginApi.errorMessage];
+}
+```
 
 
 #### 一般的网络请求方法步骤：
 
-		// 1. 创建url
-		NSString *urlStr = @"http://192.169.1.88/loging?account=turkey&password=123456";
-		NSURL *url = [NSURL URLWithString:urlStr];
+```
+// 1. 创建url
+NSString *urlStr = @"http://192.169.1.88/loging?account=turkey&password=123456";
+NSURL *url = [NSURL URLWithString:urlStr];
 
-		// 2. 创建请求
-		NSURLRequest *request = [NSURLRequest requestWithURL:url];
+// 2. 创建请求
+NSURLRequest *request = [NSURLRequest requestWithURL:url];
 
-		// 3. 创建会话（这里使用了一个全局会话）
-		NSURLSession *session = [NSURLSession sharedSession];
+// 3. 创建会话（这里使用了一个全局会话）
+NSURLSession *session = [NSURLSession sharedSession];
 
-		// 4. 通过会话创建任务
-		NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request 
+// 4. 通过会话创建任务
+NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request 
 		completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-		if (!error) {
-			NSString *dataStr = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-			NSLog(@"%@",dataStr);
-		}else{
-			NSLog(@"error is :%@",error.localizedDescription);
-		}
-		}];
+	if (!error) {
+		NSString *dataStr = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+		NSLog(@"%@",dataStr);
+	}else{
+		NSLog(@"error is :%@",error.localizedDescription);
+	}
+}];
 
-		// 5. 每一个任务默认都是挂起的，需要调用 resume 方法启动任务
-		[dataTask resume];
+// 5. 每一个任务默认都是挂起的，需要调用 resume 方法启动任务
+[dataTask resume];
+
+```
 
 #### 这些方法是通用的，不同的只是参数、请求方式(GET/POST/PUT...)、接口路径、返回的数据。那我们是不是可以把不同的参数通过多态(重写父类的方法)来实现。而请求数据完成，通过block、代理或重载来处理不同的结果。这里的结果一般的是json数据，同时就可以把json转换成model传递给相应的控制器对象。你会发现我们的请求过程会特别的简单、方便。流程图：
 
@@ -88,31 +93,34 @@
 
 #### 在RestApi，中实现网络请求、回调，也可以处理一些统计分析、异常等处理。在BaseRestApi中会有相应的错误码，是否成功，提示客户。在LoginApi中得到回调，并解析，传递给相应的控制器。
 
-		// 1. 定义一个枚举，请求方式
-		typedef NS_ENUM(NSInteger, HttpMethods) {
-			HttpMethods_Get = 1,
-			HttpMethods_Post = 2,
-			HttpMethods_Delete = 3,
-			HttpMethods_Put = 4,
-		};
+```
+// 1. 定义一个枚举，请求方式
+typedef NS_ENUM(NSInteger, HttpMethods) {
+	HttpMethods_Get = 1,
+	HttpMethods_Post = 2,
+	HttpMethods_Delete = 3,
+	HttpMethods_Put = 4,
+};
 
-		// 2. 初始化方法
-		- (id)initWithURL:(NSString *)url httpMethod:(HttpMethods)httpMethod;
+// 2. 初始化方法
+- (id)initWithURL:(NSString *)url httpMethod:(HttpMethods)httpMethod;
 
-		// 3. 执行和取消
-		- (void)call:(BOOL)async;
-		- (void)cancel;
+// 3. 执行和取消
+- (void)call:(BOOL)async;
+- (void)cancel;
 
-		// 3. 参数：Get、Post方式，
-		- (NSData *)requestData;                // Post
-		- (NSDictionary *)queryParameters;      // Get
+// 3. 参数：Get、Post方式，
+- (NSData *)requestData;                // Post
+- (NSDictionary *)queryParameters;      // Get
 
-		// 4. 回调，需要子类重写
-		- (void)onSuccessed;
-		- (void)onFailed;
-		- (void)onCancelled;
-		- (void)onTimeout;
-		- (void)onError:(NSError *)error;
+// 4. 回调，需要子类重写
+- (void)onSuccessed;
+- (void)onFailed;
+- (void)onCancelled;
+- (void)onTimeout;
+- (void)onError:(NSError *)error;
+
+```		
 
 #### 重点是 call：方法
 

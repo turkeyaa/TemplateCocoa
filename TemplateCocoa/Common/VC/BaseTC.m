@@ -22,6 +22,8 @@
     
     self.dataSource = [[NSMutableArray alloc] init];
     [self.view addSubview:self.tableView];
+    
+    [self setupLayout];
 }
 
 - (UITableView *)tableView {

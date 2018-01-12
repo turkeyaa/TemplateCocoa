@@ -37,7 +37,6 @@
             [self showSuccessMessage:@"支付成功"];
         }];
     }];
-    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -49,6 +48,9 @@
 
 #pragma mark -
 #pragma mark - TableView delegate and dataSource
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.dataSource.count;
+}
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return [CartCell classCellHeight];
 }

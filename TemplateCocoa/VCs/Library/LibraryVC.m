@@ -79,7 +79,6 @@
     _tableView.tableFooterView = [[UIView alloc] init];
     _tableView.tableHeaderView = [[UIView alloc] init];
     [self.view addSubview:_tableView];
-    
 }
     
 - (void)loadData {
@@ -164,10 +163,6 @@
     cell.clickAddBlock = ^(NSInteger index) {
         
         FoodCell *cell = (FoodCell *)[tableView cellForRowAtIndexPath:indexPath];
-        
-        NSLog(@"IndexPath = %@",indexPath);
-        NSLog(@"Cell = %@",cell);
-        NSLog(@"tableView = %@",tableView);
         
         CGFloat cellY = cell.frame.origin.y;
         CGFloat offsetY = tableView.contentOffset.y;
@@ -271,7 +266,7 @@
     
     UIBezierPath *bezier = [UIBezierPath bezierPath];
     [bezier moveToPoint:CGPointMake(_cartLayer.position.x, _cartLayer.position.y)];
-    [bezier addCurveToPoint:CGPointMake(DEVICE_WIDTH/4*3-30, DEVICE_HEIGHT-TAB_HEIGHT) controlPoint1:CGPointMake(_cartLayer.position.x+50, _cartLayer.position.y-20) controlPoint2:CGPointMake(_cartLayer.position.x+100, _cartLayer.position.y)];
+    [bezier addCurveToPoint:CGPointMake(DEVICE_WIDTH/5*3-30, DEVICE_HEIGHT-TAB_HEIGHT) controlPoint1:CGPointMake(_cartLayer.position.x+50, _cartLayer.position.y-20) controlPoint2:CGPointMake(_cartLayer.position.x+100, _cartLayer.position.y)];
     keyframeAnimation.path = bezier.CGPath;
     keyframeAnimation.duration = 1.0;
     

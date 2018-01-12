@@ -25,6 +25,7 @@
     self.leftImage = [UIImage imageNamed:@"app_back"];
     
     self.dataSource = [Workspace getInstance].collectionArray;
+    [self.tableView reloadData];
 }
 
 #pragma mark -

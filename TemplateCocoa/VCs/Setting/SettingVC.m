@@ -11,12 +11,17 @@
 // VC
 #import "SettingDetailVC.h"
 #import "NotifyListVC.h"
+#import "NewsVC.h"
+#import "MessageVC.h"
 
 @interface SettingVC ()
 
 @property (nonatomic, strong) TCell_Image *cellUser;
 @property (nonatomic, strong) TCell_Image *cellVersion;
 @property (nonatomic, strong) TCell_Image *cellAbout;
+
+@property (nonatomic, strong) TCell_Image *cellNews;
+@property (nonatomic, strong) TCell_Image *cellMessages;
 
 @end
 
@@ -39,7 +44,7 @@
     _cellUser.title = @"设置";
     _cellUser.value = @"详情";
     _cellUser.click = ^(NSIndexPath *indexPath, BaseTCell *cell) {
-        [weakSelf gotoSettingDetailVC];
+//        [weakSelf gotoSettingDetailVC];
     };
     _cellVersion = [TCell_Image tcell:self.tableView reuse:NO];
     _cellVersion.icon = [UIImage imageNamed:@"s_setting"];
@@ -57,7 +62,21 @@
         [weakSelf gotoNotifyListVC];
     };
     
-    self.cells = @[@[_cellUser],@[_cellAbout,_cellVersion]];
+    // 多视图控制器切换(支持空页面)
+    _cellNews = [TCell_Image tcell:self.tableView reuse:NO];
+    _cellNews.icon = [UIImage imageNamed:@"s_notify"];
+    _cellNews.title = @"新闻";
+    _cellNews.click = ^(NSIndexPath *indexPath, BaseTCell *cell) {
+        [weakSelf gotoNewsVC];
+    };
+    _cellMessages = [TCell_Image tcell:self.tableView reuse:NO];
+    _cellMessages.icon = [UIImage imageNamed:@"s_notify"];
+    _cellMessages.title = @"消息";
+    _cellMessages.click = ^(NSIndexPath *indexPath, BaseTCell *cell) {
+        [weakSelf gotoMessageVC];
+    };
+    
+    self.cells = @[@[_cellUser],@[_cellAbout,_cellVersion],@[_cellNews,_cellMessages]];
 }
 
 #pragma mark - 消息列表
@@ -69,6 +88,18 @@
 #pragma mark - 设置详情
 - (void)gotoSettingDetailVC {
     SettingDetailVC *vc = [[SettingDetailVC alloc] init];
+    vc.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:vc animated:YES];
+}
+#pragma mark - 新闻
+- (void)gotoNewsVC {
+    NewsVC *vc = [[NewsVC alloc] init];
+    vc.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:vc animated:YES];
+}
+#pragma mark - 消息
+- (void)gotoMessageVC {
+    MessageVC *vc = [[MessageVC alloc] init];
     vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
 }
