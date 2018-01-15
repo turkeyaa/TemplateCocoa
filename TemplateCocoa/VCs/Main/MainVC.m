@@ -19,10 +19,7 @@
 #import "MainCell.h"
 
 
-@interface MainVC () <UITableViewDelegate,UITableViewDataSource>
-
-@property (nonatomic, strong) UITableView *tableView;
-@property (nonatomic, strong) NSMutableArray *dataSource;
+@interface MainVC ()
 
 @end
 
@@ -32,15 +29,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    // 初始化界面
+    self.title = @"首页";
     
     [self setupSettingUI];
-    self.title = @"首页";
-    [self.view addSubview:self.tableView];
-    
-    
-    // 加载数据
-    [self loadData];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -75,59 +66,15 @@
     }
 }
 
-- (UITableView *)tableView {
-    if (!_tableView) {
-        _tableView = ({
-            UITableView *table = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
-            table.delegate = self;
-            table.dataSource = self;
-            table.tableHeaderView = [[UIView alloc] init];
-            table.tableFooterView = [[UIView alloc] init];
-            table;
-        });
-    }
-    return _tableView;
-}
-
-
 #pragma mark - 加载数据
-- (void)loadData {
-    
-    // 同步
-//    [GCDUtil runInGlobalQueue:^{
-//        Main_Get *mainApi = [[Main_Get alloc] init];
-//        [mainApi call];
-//        [GCDUtil runInMainQueue:^{
-//            if (mainApi.code == RestApi_OK) {
-//                self.dataSource = mainApi.dataSource;
-//                [self.tableView reloadData];
-//            }
-//            else {
-//                [self showErrorMessage:@"加载失败"];
-//            }
-//        }];
-//    }];
-    
-    // 异步
-    [GCDUtil runInGlobalQueue:^{
-
-        Main_Get *mainApi = [[Main_Get alloc] init];
-        [mainApi callWithAsync:^(id data) {
-            self.dataSource = data;
-            [self.tableView reloadData];
-        }];
-    }];
-    
+- (NSMutableArray *)loadDataPageNum:(NSInteger)pageNum pageSize:(NSInteger)pageSize {
+    Main_Get *mainApi = [[Main_Get alloc] init];
+    [mainApi call];
+    return mainApi.dataSource;
 }
 
 #pragma mark -
 #pragma mark - UITableView delegate and dataSource
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
-}
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.dataSource.count;
-}
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return [MainCell classCellHeight];
 }

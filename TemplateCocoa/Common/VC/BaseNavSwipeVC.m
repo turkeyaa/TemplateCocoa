@@ -51,7 +51,7 @@
         return;
     }
     
-    [self.navigationController.navigationBar insertSubview:self.navView atIndex:2];
+    [self.navigationController.navigationBar addSubview:self.navView];
     
     [self.view addSubview:self.scrollerView];
     

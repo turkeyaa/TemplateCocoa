@@ -6,8 +6,8 @@
 //  Copyright © 2016年 DS. All rights reserved.
 //
 
-#import "BaseVC.h"
+#import "BaseLoadTC.h"
 
-@interface MainVC : BaseVC
+@interface MainVC : BaseLoadTC
 
 @end
