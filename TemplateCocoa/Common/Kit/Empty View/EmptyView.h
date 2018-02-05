@@ -1,5 +1,5 @@
 //
-//  BSEmptyView.h
+//  EmptyView.h
 //  HealthCloud
 //
 //  Created by yuwenhua on 2017/10/30.
@@ -15,7 +15,7 @@ typedef NS_ENUM(NSInteger, EmptyType) {
     EmptyType_NoNavAndTab,  // 导航栏和标签栏之间
 };
 
-@interface BSEmptyView : UIView
+@interface EmptyView : UIView
 
 /** 空页面图片 */
 @property (nonatomic, strong) UIImage *emptyImage;

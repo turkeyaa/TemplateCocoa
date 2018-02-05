@@ -8,8 +8,6 @@
 
 #import "BaseFormGroupTC.h"
 
-#import "TCell_Image.h"
-
 @interface SettingVC : BaseFormGroupTC
 
 @end

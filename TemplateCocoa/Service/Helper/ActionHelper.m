@@ -25,7 +25,7 @@ static DismissAction _dismissBlock;
                message:(NSString *)message
                actions:(NSArray *)actions
                     vc:(UIViewController *)vc
-                 block:(BlockItem)clickItemBlock {
+                 block:(DismissAction)clickItemBlock {
     
     _dismissBlock = clickItemBlock;
     
@@ -55,7 +55,7 @@ static DismissAction _dismissBlock;
 + (void)showSheetTitle:(NSString *)title
                actions:(NSArray *)actions
                     vc:(UIViewController *)vc
-                 block:(BlockItem)clickItemBlock {
+                 block:(DismissAction)clickItemBlock {
     
     _dismissBlock = clickItemBlock;
     

@@ -8,6 +8,8 @@
 
 #import "BaseTCell.h"
 
+#import "TPKeyboardAvoidingTableView.h"
+
 @interface BaseTCell ()
 
 {
@@ -103,6 +105,13 @@
     _showIndicator = showIndicator;
     
     _indicatorImgView.hidden = !showIndicator;
+}
+
+- (void)scrollToActiveTextField {
+    if ([self.tableView isKindOfClass:TPKeyboardAvoidingTableView.class]) {
+        TPKeyboardAvoidingTableView *tv = (TPKeyboardAvoidingTableView *)self.tableView;
+        [tv scrollToActiveTextField];
+    }
 }
 
 - (CGFloat)height {

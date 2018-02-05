@@ -7,7 +7,7 @@
 //
 
 #import "BaseSwipeVC.h"
-#import "BSTitleIndexView.h"
+#import "TitleIndexView.h"
 static const CGFloat kTitleIndexViewHeight = 40.0;
 
 @interface BaseSwipeVC () <UIScrollViewDelegate>
@@ -22,7 +22,7 @@ static const CGFloat kTitleIndexViewHeight = 40.0;
 }
 
 @property (nonatomic, strong) UIScrollView *scrollerView;
-@property (nonatomic, strong) BSTitleIndexView *indexView;
+@property (nonatomic, strong) TitleIndexView *indexView;
 
 @property (nonatomic, assign) NSInteger currentIndex;
 
@@ -60,12 +60,12 @@ static const CGFloat kTitleIndexViewHeight = 40.0;
     [self reloadUI];
 }
 
-- (BSTitleIndexView *)indexView {
+- (TitleIndexView *)indexView {
     if (!_indexView) {
         _indexView = ({
             
             WEAKSELF
-            BSTitleIndexView *view = [[BSTitleIndexView alloc] initWithFrame:CGRectMake(0, 0, DEVICE_WIDTH, kTitleIndexViewHeight) titles:[self swipeViewTitles] titleColor:_normalTitleColor selectTitleColor:_selectTitleColor];
+            TitleIndexView *view = [[TitleIndexView alloc] initWithFrame:CGRectMake(0, 0, DEVICE_WIDTH, kTitleIndexViewHeight) titles:[self swipeViewTitles] titleColor:_normalTitleColor selectTitleColor:_selectTitleColor];
             view.backgroundColor = [UIColor whiteColor];
             view.titleLineColor = _titleLineColor;
             view.isShowTitleLine = _isShowTitleLine;

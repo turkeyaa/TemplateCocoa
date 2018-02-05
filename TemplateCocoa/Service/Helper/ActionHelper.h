@@ -28,7 +28,7 @@ typedef void(^DismissAction)(NSInteger buttonIndex);
           message:(NSString *)message
            actions:(NSArray *)actions
                vc:(UIViewController *)vc
-            block:(BlockItem)clickItemBlock;
+            block:(DismissAction)clickItemBlock;
 
 /**
  *  自定义 SheetView
@@ -41,7 +41,7 @@ typedef void(^DismissAction)(NSInteger buttonIndex);
 + (void)showSheetTitle:(NSString *)title
                actions:(NSArray *)actions
                     vc:(UIViewController *)vc
-                 block:(BlockItem)clickItemBlock;
+                 block:(DismissAction)clickItemBlock;
 
 
 

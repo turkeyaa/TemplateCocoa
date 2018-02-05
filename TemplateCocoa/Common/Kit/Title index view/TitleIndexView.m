@@ -1,14 +1,14 @@
 //
-//  BSTitleIndexView.m
+//  TitleIndexView.m
 //  HealthCloud
 //
 //  Created by yuwenhua on 2017/10/31.
 //  Copyright © 2017年 www.bsoft.com. All rights reserved.
 //
 
-#import "BSTitleIndexView.h"
+#import "TitleIndexView.h"
 
-@interface BSTitleIndexView ()
+@interface TitleIndexView ()
 
 {
     NSArray *_titles;
@@ -26,7 +26,7 @@
 
 @end
 
-@implementation BSTitleIndexView
+@implementation TitleIndexView
 
 - (id)initWithFrame:(CGRect)frame titles:(NSArray<NSString *> *)titles titleColor:(UIColor *)titleColor selectTitleColor:(UIColor *)selectTitleColor {
     if (self = [super initWithFrame:frame]) {

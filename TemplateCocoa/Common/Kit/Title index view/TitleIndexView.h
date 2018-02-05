@@ -1,5 +1,5 @@
 //
-//  BSTitleIndexView.h
+//  TitleIndexView.h
 //  HealthCloud
 //
 //  Created by yuwenhua on 2017/10/31.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BSTitleIndexView : UIView
+@interface TitleIndexView : UIView
 
 
 /**

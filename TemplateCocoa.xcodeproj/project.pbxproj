@@ -40,7 +40,6 @@
 		A046BB401EE7924B006CD36C /* ActionHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A046BB3F1EE7924B006CD36C /* ActionHelper.m */; };
 		A046BB441EE792BD006CD36C /* AppPreference.m in Sources */ = {isa = PBXBuildFile; fileRef = A046BB431EE792BD006CD36C /* AppPreference.m */; };
 		A046BB461EE793E3006CD36C /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A046BB451EE793E3006CD36C /* libsqlite3.tbd */; };
-		A04893841F99D75600CAD676 /* TCell_Image.m in Sources */ = {isa = PBXBuildFile; fileRef = A04893831F99D75600CAD676 /* TCell_Image.m */; };
 		A054EB7B1F9B545700F3E160 /* BaseWebVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A054EB791F9B545600F3E160 /* BaseWebVC.m */; };
 		A054EB7E1F9B552300F3E160 /* BaseSwipeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A054EB7D1F9B552300F3E160 /* BaseSwipeVC.m */; };
 		A054EB811F9B557300F3E160 /* BaseNavSwipeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A054EB801F9B557300F3E160 /* BaseNavSwipeVC.m */; };
@@ -52,8 +51,8 @@
 		A06671261EE91FF2007ED190 /* CollectionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A06671251EE91FF2007ED190 /* CollectionVC.m */; };
 		A066712C1EE92509007ED190 /* CollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A066712B1EE92509007ED190 /* CollectionCell.m */; };
 		A06C514B1EE6616F002E119F /* activity.json in Resources */ = {isa = PBXBuildFile; fileRef = A06C514A1EE6616F002E119F /* activity.json */; };
-		A07311C91FC5220500BC6973 /* BSTitleIndexView.m in Sources */ = {isa = PBXBuildFile; fileRef = A07311C41FC5220500BC6973 /* BSTitleIndexView.m */; };
-		A07311CA1FC5220500BC6973 /* BSEmptyView.m in Sources */ = {isa = PBXBuildFile; fileRef = A07311C71FC5220500BC6973 /* BSEmptyView.m */; };
+		A07311C91FC5220500BC6973 /* TitleIndexView.m in Sources */ = {isa = PBXBuildFile; fileRef = A07311C41FC5220500BC6973 /* TitleIndexView.m */; };
+		A07311CA1FC5220500BC6973 /* EmptyView.m in Sources */ = {isa = PBXBuildFile; fileRef = A07311C71FC5220500BC6973 /* EmptyView.m */; };
 		A07916C81F9CD2B0005659C2 /* TabSwitchScroll.m in Sources */ = {isa = PBXBuildFile; fileRef = A07916C61F9CD2B0005659C2 /* TabSwitchScroll.m */; };
 		A07916CB1F9D11AE005659C2 /* TabSwitchView.m in Sources */ = {isa = PBXBuildFile; fileRef = A07916CA1F9D11AE005659C2 /* TabSwitchView.m */; };
 		A09899961EE6889E0095F293 /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A09899911EE6889E0095F293 /* 1.jpg */; };
@@ -119,6 +118,10 @@
 		C6AFDCCE2008A3A20013664D /* NewsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C6AFDCCD2008A3A20013664D /* NewsVC.m */; };
 		C6AFDCD12008A3BF0013664D /* MessageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C6AFDCD02008A3BF0013664D /* MessageVC.m */; };
 		C6AFDCD62008B1020013664D /* RootNavView.m in Sources */ = {isa = PBXBuildFile; fileRef = C6AFDCD52008B1020013664D /* RootNavView.m */; };
+		C6FA2F932027E806002D10FC /* TCell_Image.m in Sources */ = {isa = PBXBuildFile; fileRef = C6FA2F922027E806002D10FC /* TCell_Image.m */; };
+		C6FA2F9A2027E8A2002D10FC /* TCell_Notify.m in Sources */ = {isa = PBXBuildFile; fileRef = C6FA2F942027E8A2002D10FC /* TCell_Notify.m */; };
+		C6FA2F9B2027E8A2002D10FC /* TCell_Input.m in Sources */ = {isa = PBXBuildFile; fileRef = C6FA2F962027E8A2002D10FC /* TCell_Input.m */; };
+		C6FA2F9C2027E8A2002D10FC /* TCell_Label.m in Sources */ = {isa = PBXBuildFile; fileRef = C6FA2F992027E8A2002D10FC /* TCell_Label.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -200,8 +203,6 @@
 		A046BB421EE792BD006CD36C /* AppPreference.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppPreference.h; sourceTree = "<group>"; };
 		A046BB431EE792BD006CD36C /* AppPreference.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppPreference.m; sourceTree = "<group>"; };
 		A046BB451EE793E3006CD36C /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
-		A04893821F99D75600CAD676 /* TCell_Image.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TCell_Image.h; sourceTree = "<group>"; };
-		A04893831F99D75600CAD676 /* TCell_Image.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TCell_Image.m; sourceTree = "<group>"; };
 		A054EB791F9B545600F3E160 /* BaseWebVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseWebVC.m; sourceTree = "<group>"; };
 		A054EB7A1F9B545600F3E160 /* BaseWebVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseWebVC.h; sourceTree = "<group>"; };
 		A054EB7C1F9B552300F3E160 /* BaseSwipeVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseSwipeVC.h; sourceTree = "<group>"; };
@@ -223,10 +224,10 @@
 		A066712A1EE92509007ED190 /* CollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionCell.h; sourceTree = "<group>"; };
 		A066712B1EE92509007ED190 /* CollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionCell.m; sourceTree = "<group>"; };
 		A06C514A1EE6616F002E119F /* activity.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = activity.json; sourceTree = "<group>"; };
-		A07311C41FC5220500BC6973 /* BSTitleIndexView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSTitleIndexView.m; sourceTree = "<group>"; };
-		A07311C51FC5220500BC6973 /* BSTitleIndexView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSTitleIndexView.h; sourceTree = "<group>"; };
-		A07311C71FC5220500BC6973 /* BSEmptyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSEmptyView.m; sourceTree = "<group>"; };
-		A07311C81FC5220500BC6973 /* BSEmptyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSEmptyView.h; sourceTree = "<group>"; };
+		A07311C41FC5220500BC6973 /* TitleIndexView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TitleIndexView.m; sourceTree = "<group>"; };
+		A07311C51FC5220500BC6973 /* TitleIndexView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TitleIndexView.h; sourceTree = "<group>"; };
+		A07311C71FC5220500BC6973 /* EmptyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmptyView.m; sourceTree = "<group>"; };
+		A07311C81FC5220500BC6973 /* EmptyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmptyView.h; sourceTree = "<group>"; };
 		A07916C61F9CD2B0005659C2 /* TabSwitchScroll.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TabSwitchScroll.m; sourceTree = "<group>"; };
 		A07916C71F9CD2B0005659C2 /* TabSwitchScroll.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TabSwitchScroll.h; sourceTree = "<group>"; };
 		A07916C91F9D11AD005659C2 /* TabSwitchView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TabSwitchView.h; sourceTree = "<group>"; };
@@ -351,6 +352,14 @@
 		C6AFDCD02008A3BF0013664D /* MessageVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageVC.m; sourceTree = "<group>"; };
 		C6AFDCD32008AD910013664D /* RootNavView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootNavView.h; sourceTree = "<group>"; };
 		C6AFDCD52008B1020013664D /* RootNavView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootNavView.m; sourceTree = "<group>"; };
+		C6FA2F912027E806002D10FC /* TCell_Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCell_Image.h; sourceTree = "<group>"; };
+		C6FA2F922027E806002D10FC /* TCell_Image.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCell_Image.m; sourceTree = "<group>"; };
+		C6FA2F942027E8A2002D10FC /* TCell_Notify.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCell_Notify.m; sourceTree = "<group>"; };
+		C6FA2F952027E8A2002D10FC /* TCell_Notify.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCell_Notify.h; sourceTree = "<group>"; };
+		C6FA2F962027E8A2002D10FC /* TCell_Input.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCell_Input.m; sourceTree = "<group>"; };
+		C6FA2F972027E8A2002D10FC /* TCell_Input.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCell_Input.h; sourceTree = "<group>"; };
+		C6FA2F982027E8A2002D10FC /* TCell_Label.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCell_Label.h; sourceTree = "<group>"; };
+		C6FA2F992027E8A2002D10FC /* TCell_Label.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCell_Label.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -527,6 +536,7 @@
 		A07311C21FC521FA00BC6973 /* Kit */ = {
 			isa = PBXGroup;
 			children = (
+				C6FA2F902027E7D7002D10FC /* Table view cell */,
 				A07311C61FC5220500BC6973 /* Empty View */,
 				A07311C31FC5220500BC6973 /* Title index view */,
 			);
@@ -536,8 +546,8 @@
 		A07311C31FC5220500BC6973 /* Title index view */ = {
 			isa = PBXGroup;
 			children = (
-				A07311C41FC5220500BC6973 /* BSTitleIndexView.m */,
-				A07311C51FC5220500BC6973 /* BSTitleIndexView.h */,
+				A07311C41FC5220500BC6973 /* TitleIndexView.m */,
+				A07311C51FC5220500BC6973 /* TitleIndexView.h */,
 			);
 			path = "Title index view";
 			sourceTree = "<group>";
@@ -545,8 +555,8 @@
 		A07311C61FC5220500BC6973 /* Empty View */ = {
 			isa = PBXGroup;
 			children = (
-				A07311C71FC5220500BC6973 /* BSEmptyView.m */,
-				A07311C81FC5220500BC6973 /* BSEmptyView.h */,
+				A07311C71FC5220500BC6973 /* EmptyView.m */,
+				A07311C81FC5220500BC6973 /* EmptyView.h */,
 			);
 			path = "Empty View";
 			sourceTree = "<group>";
@@ -936,8 +946,6 @@
 			children = (
 				A0EF53BE1E025CEF00DE645C /* BaseTCell.h */,
 				A0EF53BF1E025CEF00DE645C /* BaseTCell.m */,
-				A04893821F99D75600CAD676 /* TCell_Image.h */,
-				A04893831F99D75600CAD676 /* TCell_Image.m */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -1020,6 +1028,21 @@
 				A0A3A13A1EE79A8C005611DB /* NetworkMonitor.m */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		C6FA2F902027E7D7002D10FC /* Table view cell */ = {
+			isa = PBXGroup;
+			children = (
+				C6FA2F912027E806002D10FC /* TCell_Image.h */,
+				C6FA2F922027E806002D10FC /* TCell_Image.m */,
+				C6FA2F972027E8A2002D10FC /* TCell_Input.h */,
+				C6FA2F962027E8A2002D10FC /* TCell_Input.m */,
+				C6FA2F982027E8A2002D10FC /* TCell_Label.h */,
+				C6FA2F992027E8A2002D10FC /* TCell_Label.m */,
+				C6FA2F952027E8A2002D10FC /* TCell_Notify.h */,
+				C6FA2F942027E8A2002D10FC /* TCell_Notify.m */,
+			);
+			path = "Table view cell";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1282,14 +1305,17 @@
 				A046BB401EE7924B006CD36C /* ActionHelper.m in Sources */,
 				A009B5851EE82AA900CC3946 /* LogOutView.m in Sources */,
 				A0EF53CD1E025D7C00DE645C /* UserModel.m in Sources */,
+				C6FA2F9A2027E8A2002D10FC /* TCell_Notify.m in Sources */,
 				A0DF02731EDEAE5200507F31 /* NSString+JudgeString.m in Sources */,
+				C6FA2F9C2027E8A2002D10FC /* TCell_Label.m in Sources */,
 				A0F9EE261EE67C7E009CF3B7 /* UserInfoVC.m in Sources */,
 				A0DF02721EDEAE5200507F31 /* NSObject+Property.m in Sources */,
 				A054EB811F9B557300F3E160 /* BaseNavSwipeVC.m in Sources */,
-				A07311C91FC5220500BC6973 /* BSTitleIndexView.m in Sources */,
+				A07311C91FC5220500BC6973 /* TitleIndexView.m in Sources */,
 				8A46734E1F7DFB930089670E /* TPKeyboardAvoidingTableView.m in Sources */,
+				C6FA2F932027E806002D10FC /* TCell_Image.m in Sources */,
 				A060125F1EEA7DFA00F54150 /* CartCell.m in Sources */,
-				A07311CA1FC5220500BC6973 /* BSEmptyView.m in Sources */,
+				A07311CA1FC5220500BC6973 /* EmptyView.m in Sources */,
 				A0EF53D11E025DB900DE645C /* Workspace.m in Sources */,
 				A054EB7B1F9B545700F3E160 /* BaseWebVC.m in Sources */,
 				A0EF53BC1E025CC500DE645C /* BaseTC.m in Sources */,
@@ -1299,7 +1325,6 @@
 				A0AB5D3B1E3078F600FFF956 /* URLUtil.m in Sources */,
 				8A4673551F7DFBB30089670E /* BaseFormGroupTC.m in Sources */,
 				A031F4131E187EFB00671F08 /* SegmentedView.m in Sources */,
-				A04893841F99D75600CAD676 /* TCell_Image.m in Sources */,
 				A098999E1EE69BA20095F293 /* SearchVC.m in Sources */,
 				A0DF02711EDEAE5200507F31 /* NSArray+Swizzling.m in Sources */,
 				A06671261EE91FF2007ED190 /* CollectionVC.m in Sources */,
@@ -1308,6 +1333,7 @@
 				A0FF71751E309ACA0022E59A /* GCDUtil.m in Sources */,
 				A0EF53CA1E025D6F00DE645C /* JSONModel.m in Sources */,
 				A046BB2A1EE79141006CD36C /* FileManager.m in Sources */,
+				C6FA2F9B2027E8A2002D10FC /* TCell_Input.m in Sources */,
 				A0DF025B1EDE8C2E00507F31 /* Main_Get.m in Sources */,
 				C6AFDCCE2008A3A20013664D /* NewsVC.m in Sources */,
 				A0F9EE3C1EE68239009CF3B7 /* FoodCell.m in Sources */,

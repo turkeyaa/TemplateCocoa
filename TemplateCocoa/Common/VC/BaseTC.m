@@ -28,17 +28,19 @@
 
 - (UITableView *)tableView {
     if (!_tableView) {
-        _tableView = ({
-            UITableView *tableView = [[UITableView alloc] init];
-            tableView.delegate = self;
-            tableView.dataSource = self;
-            tableView.backgroundColor = [UIColor clearColor];
-            tableView.tableFooterView = [[UIView alloc] init];
-            tableView.tableHeaderView = [[UIView alloc] init];
-            tableView;
-        });
+        _tableView = [self createTableView];
     }
     return _tableView;
+}
+
+- (UITableView *)createTableView {
+    UITableView *tableView = [[UITableView alloc] init];
+    tableView.delegate = self;
+    tableView.dataSource = self;
+    tableView.backgroundColor = [UIColor clearColor];
+    tableView.tableFooterView = [[UIView alloc] init];
+    tableView.tableHeaderView = [[UIView alloc] init];
+    return tableView;
 }
 
 #pragma mark - 

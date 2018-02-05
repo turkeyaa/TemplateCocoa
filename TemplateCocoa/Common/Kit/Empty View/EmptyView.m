@@ -1,14 +1,14 @@
 //
-//  BSEmptyView.m
+//  EmptyView.m
 //  HealthCloud
 //
 //  Created by yuwenhua on 2017/10/30.
 //  Copyright © 2017年 www.bsoft.com. All rights reserved.
 //
 
-#import "BSEmptyView.h"
+#import "EmptyView.h"
 
-@interface BSEmptyView()
+@interface EmptyView()
 
 @property (nonatomic, strong) UIImageView *iconView;
 @property (nonatomic, strong) UILabel *titleLabel;
@@ -16,7 +16,7 @@
 
 @end
 
-@implementation BSEmptyView
+@implementation EmptyView
 
 - (id)init {
     if (self = [super init]) {

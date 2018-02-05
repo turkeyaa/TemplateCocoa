@@ -26,6 +26,8 @@ typedef void(^ClickEventBlock)(NSIndexPath *indexPath, BaseTCell *cell);
 
 - (void)setupUI;
 
+- (void)scrollToActiveTextField;
+
 #pragma mark - Subclass
 - (void)setupSubViews;
 - (void)setupLayout;

@@ -51,7 +51,7 @@ static CGFloat kMsgViewHeight = 8.0;
         _cTitleLabel = ({
             UILabel *label = [[UILabel alloc] init];
             label.textColor = [UIColor whiteColor];
-            label.font = FONT(15);
+            label.font = FONT(16);
             label.textAlignment = NSTextAlignmentCenter;
             label.textColor = RGB(33, 33, 33);
             label;
@@ -65,8 +65,8 @@ static CGFloat kMsgViewHeight = 8.0;
             UILabel *label = [[UILabel alloc] init];
             label.textColor = [UIColor whiteColor];
             label.font = FONT(15);
-            label.textAlignment = NSTextAlignmentCenter;
-            label.textColor = RGB(66, 66, 66);
+            label.textAlignment = NSTextAlignmentLeft;
+            label.textColor = RGB(99, 99, 99);
             label;
         });
     }
@@ -97,6 +97,7 @@ static CGFloat kMsgViewHeight = 8.0;
         make.left.mas_equalTo(_cIconView.mas_right).offset(10);
         make.top.offset(10);
         make.bottom.offset(-10);
+        make.width.offset(50);
     }];
     [_cMsgView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(_cTitleLabel.mas_right).offset(5);
