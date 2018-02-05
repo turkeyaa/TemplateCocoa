@@ -50,7 +50,7 @@
     [self.view addSubview:self.loginBtn];
     
     // 默认账号
-    _accountField.text = @"18688888888";
+    _accountField.text = @"186xxxxxxxx";
     _passwordField.text = @"123456";
 }
 - (void)p_setupLayout {

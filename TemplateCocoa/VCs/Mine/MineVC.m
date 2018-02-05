@@ -42,6 +42,9 @@
     // Do any additional setup after loading the view.
     self.title = @"我的";
     
+//    self.isHideNav = YES;
+//    self.isSetCustomNav = YES;
+    
     _titleArr = @[@"我的收藏",@"购买记录"];
     
     [self.view addSubview:self.tableView];

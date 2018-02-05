@@ -8,13 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
+#import "BaseNavView.h"
+
 @interface BaseVC : UIViewController
 
-/* 是否隐藏导航条 */
+/* 是否隐藏系统导航条 */
 @property (nonatomic, assign) BOOL isHideNav;
 
 /* 自定义导航栏 */
-@property (nonatomic, assign) BOOL isSetNav;
+@property (nonatomic, strong) BaseNavView *baseNavView;   // 可以为空，系统会添加默认导航栏。
+@property (nonatomic, assign) BOOL isSetCustomNav;
 
 /* 导航左边标题 */
 @property (nonatomic, strong) NSString *leftTitle;

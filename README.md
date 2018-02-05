@@ -1,4 +1,8 @@
-` 本教程旨在让我们更加快速、高效的开发移动app `
+# Objective-C 项目实战
+
+> 面向对象编程三大特性：封装、继承、多态，这篇文章会在实际项目编码中介绍这些特性，提高编码水平和质量。
+
+> 根据实际项目开发总结，旨在让我们更加快速、高效的开发移动app
 
 1. 目录结构
 2. 接口封装
@@ -7,12 +11,29 @@
 5. 对象组合
 6. 工具类
 
-#### 面向对象编程三大特性：封装、继承、多态，这篇文章会在实际项目编码中介绍这些特性，提高编码水平和质量。
-
-```效果图```
-
 ![动图](Resource/TemplateCocoa.gif)
 
+`功能列表`
+
+### 包含不限于下列功能：
+
+1. UIViewController控制器封装(包含：BaseVC、BaseWebVC、BaseTC、BaseLoadTC、BaseFormTC、BaseFormGroupTC、BaseSwipeVC、BaseNavSwipeVC)。支持导航栏标题和图标设置、自定义导航栏、左右标题事件、HUD功能、空页面提示和交互功能、html5页面访问功能、表视图控制器功能、自定义约束、下拉刷新和上拉加载交互功能、表单和分组表视图控制器功能、仿新闻多视图切换控制器功能、导航多视图切换控制器功能。查看`Common/VC`目录
+2. 接口封装(包含：RestApi、BaseRestApi、API_UnitTest、Login_Post......等)。自定义网络库，支持同步和异步访问接口、取消任务、配置路劲和参数、模拟本地接口、数据解析和回调。查看`API`目录
+3. UITableViewCell界面封装(包含：TCell_Image、TCell_Input、TCell_Label、TCell_Notify...等)，可以扩展新的组件。支持图片、输入框、通知、文本的表单元格式，每个Cell都是一个独立的组件，封装了各自的交互逻辑。查看`Common/Cell`和`Common/Kit/Table view cell`目录
+4. 模型封装(JSONModel)，支持模型和JSON的相互转化，也可以使用第三方库(YYModel、MJExtension)。查看`Model`目录
+5. 组件封装(包含：表单元、空视图、导航栏、多标题视图......等)，你可以扩展新的组件。查看`Common/Kit`目录
+6. 服务模块(包含：Workspace、FileManager...等)。支持用户管理、APP配置管理、远程配置管理、数据库访问、日期管理、正则表达式、运行时系统、Action接口管理、谓词...等接口封装，基于外观模式设计。访问`Service`目录
+7. 基于`WKWebView`类，JavaScript和原生数据交互
+8. 宏定义、枚举、block定义
+9. 动画，基于`CAAnimation`和`UIBezierPath`的购物车动画
+10. 设计模式：单例模式、适配器模式、外观模式、对象去耦(中介者和观察者模式)、组合模式、模板方法...等设计模式的使用。[个人总结的iOS开发设计模式](https://turkeyaa.github.io/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/2016/09/10/iOS%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F.html)
+
+### TODO
+
+1. 基于上传图片的`BaseUploadApi`，支持一张和多张图片的上传
+2. 工具类总结
+3. 基于Swift语言的项目实战[TemplateSwift](https://github.com/turkeyaa/TemplateSwift)
+4. 基于Perfect服务端项目实战[SwiftCN](https://github.com/SwiftCN/SwiftCN)
 
 #### 1. 目录结构图
 ![目录结构图](http://turkeyaa.github.io/assets/2015/product_structure.png)
@@ -352,6 +373,31 @@ self.rightImage = [UIImage imageNamed:@"app_icon"];
 [self showSuccessMessage:@"加载成功"];
 [self showErrorMessage:@"加载失败"];
 [self showInfoMessage:@"其他失败"];
+
+// 空页面
+self.isShowEmptyView = YES;
+
+/** 可选，子类已实现 */
+- (UIImage *)baseEmptyImage {
+    return [UIImage imageNamed:@"app_emptyView"];
+}
+- (NSString *)baseEmptyTitle {
+    return @"暂无内容";
+}
+- (NSString *)baseEmptySecondTitle {
+    return @"暂无子标题";
+}
+- (void)baseEmptyRefresh {
+    [self showLoadingHUD:@"刷新空页面"];
+    [GCDUtil runInGlobalQueue:^{
+        sleep(1);
+        [GCDUtil runInMainQueue:^{
+            [self showSuccessMessage:@"刷新成功"];
+            self.isShowEmptyView = NO;
+        }];
+    }];
+}
+
 
 ```
 

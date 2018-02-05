@@ -9,10 +9,9 @@
 #import "SettingVC.h"
 
 // VC
-#import "SettingDetailVC.h"
-#import "NotifyListVC.h"
 #import "NewsVC.h"
 #import "MessageVC.h"
+#import "EmptyVC.h"
 
 // Cell
 #import "TCell_Image.h"
@@ -35,6 +34,8 @@
 @property (nonatomic, strong) TCell_Input *nameCell;
 @property (nonatomic, strong) TCell_Input *cardCell;
 
+@property (nonatomic, strong) TCell_Label *emptyCell;
+
 @end
 
 @implementation SettingVC
@@ -44,7 +45,21 @@
     // Do any additional setup after loading the view.
     
     self.title = @"设置";
+    // 自定义导航栏
+    self.isHideNav = YES;
+    self.isSetCustomNav = YES;
+    self.view.backgroundColor = Color_Nav;
+    
     [self setupUI];
+}
+
+/** 自定义导航栏时需要更新表视图约束 */
+- (void)setupLayout {
+    [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.left.offset(0);
+        make.top.offset(NAV_HEIGHT+STATUS_HEIGHT);
+        make.bottom.offset(-TAB_HEIGHT);
+    }];
 }
 
 - (void)setupUI {
@@ -55,9 +70,7 @@
     _cellUser.icon = [UIImage imageNamed:@"s_info"];
     _cellUser.title = @"设置";
     _cellUser.value = @"详情";
-//    _cellUser.click = ^(NSIndexPath *indexPath, BaseTCell *cell) {
-//        [weakSelf gotoSettingDetailVC];
-//    };
+    
     _cellVersion = [TCell_Image tcell:self.tableView reuse:NO];
     _cellVersion.icon = [UIImage imageNamed:@"s_setting"];
     _cellVersion.title = @"版本";
@@ -68,9 +81,6 @@
     _cellAbout.title = @"消息";
     _cellAbout.value = @"更多消息";
     _cellVersion.hasMsg = YES;
-//    _cellAbout.click = ^(NSIndexPath *indexPath, BaseTCell *cell) {
-//        [weakSelf gotoNotifyListVC];
-//    };
     
     // 多视图控制器切换(支持空页面)
     _cellNews = [TCell_Image tcell:self.tableView reuse:NO];
@@ -111,21 +121,16 @@
     _networkCell.isNotifyOpened = YES;
     [_networkCell addSwitchTarget:self selector:@selector(switchEvent:)];
     
-    self.cells = @[@[_cellUser],@[_cellAbout,_cellVersion],@[_cellNews,_cellMessages],@[_notifyCell,_networkCell],@[_nameCell,_cardCell]];
+    _emptyCell = [TCell_Label tcell:self.tableView reuse:YES];
+    _emptyCell.title = @"空页面";
+    _emptyCell.value = @"测试空页面";
+    _emptyCell.click = ^(NSIndexPath *indexPath, BaseTCell *cell) {
+        [weakSelf gotoEmptyVC];
+    };
+    
+    self.cells = @[@[_cellUser],@[_cellAbout,_cellVersion],@[_cellNews,_cellMessages],@[_notifyCell,_networkCell],@[_nameCell,_cardCell],@[_emptyCell]];
 }
 
-#pragma mark - 消息列表
-- (void)gotoNotifyListVC {
-    NotifyListVC *vc = [[NotifyListVC alloc] init];
-    vc.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:vc animated:YES];
-}
-#pragma mark - 设置详情
-- (void)gotoSettingDetailVC {
-    SettingDetailVC *vc = [[SettingDetailVC alloc] init];
-    vc.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:vc animated:YES];
-}
 #pragma mark - 新闻
 - (void)gotoNewsVC {
     NewsVC *vc = [[NewsVC alloc] init];
@@ -138,14 +143,20 @@
     vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
 }
+#pragma mark - 空页面
+- (void)gotoEmptyVC {
+    EmptyVC *vc = [[EmptyVC alloc] init];
+    vc.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:vc animated:YES];
+}
 
 #pragma mark - Switch 事件
 - (void)switchEvent:(UISwitch *)aSwitch {
     if (aSwitch.isOn) {
-        [self showInfoMessage:@"打开"];
+        [self showInfoMessage:@"打开开关"];
     }
     else {
-        [self showInfoMessage:@"关闭"];
+        [self showInfoMessage:@"关闭开关"];
     }
 }
 

@@ -52,7 +52,7 @@ static CGFloat kMsgViewHeight = 8.0;
             UILabel *label = [[UILabel alloc] init];
             label.textColor = [UIColor whiteColor];
             label.font = FONT(16);
-            label.textAlignment = NSTextAlignmentCenter;
+            label.textAlignment = NSTextAlignmentLeft;
             label.textColor = RGB(33, 33, 33);
             label;
         });

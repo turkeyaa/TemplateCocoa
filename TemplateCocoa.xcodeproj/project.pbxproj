@@ -122,6 +122,7 @@
 		C6FA2F9A2027E8A2002D10FC /* TCell_Notify.m in Sources */ = {isa = PBXBuildFile; fileRef = C6FA2F942027E8A2002D10FC /* TCell_Notify.m */; };
 		C6FA2F9B2027E8A2002D10FC /* TCell_Input.m in Sources */ = {isa = PBXBuildFile; fileRef = C6FA2F962027E8A2002D10FC /* TCell_Input.m */; };
 		C6FA2F9C2027E8A2002D10FC /* TCell_Label.m in Sources */ = {isa = PBXBuildFile; fileRef = C6FA2F992027E8A2002D10FC /* TCell_Label.m */; };
+		C6FA2F9F20280642002D10FC /* EmptyVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C6FA2F9E20280642002D10FC /* EmptyVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -360,6 +361,8 @@
 		C6FA2F972027E8A2002D10FC /* TCell_Input.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCell_Input.h; sourceTree = "<group>"; };
 		C6FA2F982027E8A2002D10FC /* TCell_Label.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCell_Label.h; sourceTree = "<group>"; };
 		C6FA2F992027E8A2002D10FC /* TCell_Label.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCell_Label.m; sourceTree = "<group>"; };
+		C6FA2F9D20280642002D10FC /* EmptyVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EmptyVC.h; sourceTree = "<group>"; };
+		C6FA2F9E20280642002D10FC /* EmptyVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EmptyVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -650,6 +653,8 @@
 			children = (
 				A0B309C21F9AE3B300AB6E51 /* SettingVC.h */,
 				A0B309C31F9AE3B300AB6E51 /* SettingVC.m */,
+				C6FA2F9D20280642002D10FC /* EmptyVC.h */,
+				C6FA2F9E20280642002D10FC /* EmptyVC.m */,
 				A0B309C71F9AEC9E00AB6E51 /* NotifyListVC.h */,
 				A0B309C81F9AEC9E00AB6E51 /* NotifyListVC.m */,
 				A054EB821F9B664A00F3E160 /* SettingDetailVC.h */,
@@ -1276,6 +1281,7 @@
 				A0EF53D71E025E0000DE645C /* LibraryVC.m in Sources */,
 				A0EF53DA1E025E0800DE645C /* MainVC.m in Sources */,
 				8A4673501F7DFB930089670E /* XCDFormInputAccessoryView.m in Sources */,
+				C6FA2F9F20280642002D10FC /* EmptyVC.m in Sources */,
 				A0F9EE2D1EE67D0D009CF3B7 /* ActivityInfo.m in Sources */,
 				A0B309C41F9AE3B300AB6E51 /* SettingVC.m in Sources */,
 				A046BB3D1EE79227006CD36C /* ResourceHelper.m in Sources */,

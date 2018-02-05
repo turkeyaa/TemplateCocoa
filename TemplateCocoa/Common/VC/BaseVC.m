@@ -9,7 +9,6 @@
 #import "BaseVC.h"
 
 #import "SVProgressHUD.h"
-#import "BaseNavView.h"
 #import "EmptyView.h"
 
 @interface BaseVC ()
@@ -63,11 +62,17 @@
     }
     return _emptyView;
 }
-- (void)setIsSetNav:(BOOL)isSetNav {
-    _isSetNav = isSetNav;
+- (void)setIsSetCustomNav:(BOOL)isSetCustomNav {
+    _isSetCustomNav = isSetCustomNav;
     
-    if (_isHideNav && isSetNav) {
-        [self.view addSubview:self.navView];
+    if (_isHideNav && isSetCustomNav) {
+        if (_baseNavView) {
+            _navView = _baseNavView;
+            [self.view addSubview:_baseNavView];
+        }
+        else {
+            [self.view addSubview:self.navView];
+        }
     }
 }
 
@@ -79,6 +84,13 @@
     }
     else {
         [self.navigationController setNavigationBarHidden:NO animated:NO];
+    }
+}
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    if (_isShowEmptyView) {
+        [_emptyView removeFromSuperview];
+        _emptyView;
     }
 }
 
@@ -171,6 +183,26 @@
     [SVProgressHUD setDefaultStyle:SVProgressHUDStyleDark];
     [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeClear];
     [SVProgressHUD setMinimumDismissTimeInterval:2];
+}
+
+
+- (void)setIsShowEmptyView:(BOOL)isShowEmptyView {
+    _isShowEmptyView = isShowEmptyView;
+    
+    if (isShowEmptyView) {
+        [self.view addSubview:self.emptyView];
+        self.emptyView.emptyImage = [self baseEmptyImage];
+        self.emptyView.emptyTitle = [self baseEmptyTitle];
+        self.emptyView.emptySecondTitle = [self baseEmptySecondTitle];
+        self.emptyView.emptyType = EmptyType_NoNavAndTab;
+        [self.emptyView updateEmptyViewFrame:[self baseEmptyViewFrame]];
+    }
+    else {
+        if (_emptyView) {
+            [_emptyView removeFromSuperview];
+            _emptyView = nil;
+        }
+    }
 }
 
 - (void)refreshEvent:(UIGestureRecognizer *)gesture {

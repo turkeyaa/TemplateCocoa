@@ -36,7 +36,7 @@
             UILabel *label = [[UILabel alloc] init];
             label.textColor = [UIColor whiteColor];
             label.textAlignment = NSTextAlignmentLeft;
-            label.font = FONT(15);
+            label.font = FONT(16);
             label.textColor = RGB(33, 33, 33);
             label;
         });
@@ -49,8 +49,8 @@
             UILabel *label = [[UILabel alloc] init];
             label.textColor = [UIColor whiteColor];
             label.textAlignment = NSTextAlignmentCenter;
-            label.font = FONT(16);
-            label.textColor = RGB(33, 33, 33);
+            label.font = FONT(15);
+            label.textColor = RGB(99, 99, 99);
             label;
         });
     }
@@ -65,7 +65,7 @@
         make.width.offset(50);
     }];
     [_cValueLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.offset(80);
+        make.left.mas_equalTo(_cTitleLabel.mas_right).offset(10);
         make.top.offset(10);
         make.bottom.offset(-10);
     }];

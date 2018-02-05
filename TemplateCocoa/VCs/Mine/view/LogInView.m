@@ -27,6 +27,7 @@
 
 - (void)setupUI {
     
+    self.backgroundColor = Color_Nav;
     [self addSubview:self.iconView];
     [self addSubview:self.nameLabel];
     
