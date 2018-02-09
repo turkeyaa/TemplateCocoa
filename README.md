@@ -8,8 +8,9 @@
 2. 接口封装
 3. 界面封装
 4. 模型封装
-5. 对象组合
-6. 工具类
+5. 组件封装
+6. 对象组合
+7. 工具类
 
 ![动图](Resource/TemplateCocoa.gif)
 
@@ -18,7 +19,7 @@
 ### 包含不限于下列功能：
 
 1. UIViewController控制器封装(包含：BaseVC、BaseWebVC、BaseTC、BaseLoadTC、BaseFormTC、BaseFormGroupTC、BaseSwipeVC、BaseNavSwipeVC)。支持导航栏标题和图标设置、自定义导航栏、左右标题事件、HUD功能、空页面提示和交互功能、html5页面访问功能、表视图控制器功能、自定义约束、下拉刷新和上拉加载交互功能、表单和分组表视图控制器功能、仿新闻多视图切换控制器功能、导航多视图切换控制器功能。查看`Common/VC`目录
-2. 接口封装(包含：RestApi、BaseRestApi、API_UnitTest、Login_Post......等)。自定义网络库，支持同步和异步访问接口、取消任务、配置路劲和参数、模拟本地接口、数据解析和回调。查看`API`目录
+2. 接口封装(包含：RestApi、BaseRestApi、API_UnitTest、Login_Post......等)。自定义网络库，支持同步和异步访问接口、取消任务、配置路径和参数、模拟本地接口、数据解析和回调。查看`API`目录
 3. UITableViewCell界面封装(包含：TCell_Image、TCell_Input、TCell_Label、TCell_Notify...等)，可以扩展新的组件。支持图片、输入框、通知、文本的表单元格式，每个Cell都是一个独立的组件，封装了各自的交互逻辑。查看`Common/Cell`和`Common/Kit/Table view cell`目录
 4. 模型封装(JSONModel)，支持模型和JSON的相互转化，也可以使用第三方库(YYModel、MJExtension)。查看`Model`目录
 5. 组件封装(包含：表单元、空视图、导航栏、多标题视图......等)，你可以扩展新的组件。查看`Common/Kit`目录
@@ -30,10 +31,12 @@
 
 ### TODO
 
-1. 基于上传图片的`BaseUploadApi`，支持一张和多张图片的上传
-2. 工具类总结
+1. 基于上传图片基类：`BaseUploadApi`，支持一张和多张图片的上传
+2. 工具类、开发技巧
 3. 基于Swift语言的项目实战[TemplateSwift](https://github.com/turkeyaa/TemplateSwift)
 4. 基于Perfect服务端项目实战[SwiftCN](https://github.com/SwiftCN/SwiftCN)
+
+***
 
 #### 1. 目录结构图
 ![目录结构图](http://turkeyaa.github.io/assets/2015/product_structure.png)
@@ -570,8 +573,26 @@ MainInfo *mainInfo = [NSKeyedUnarchiver unarchiveObjectWithFile:path];
 	
 ```	
 
-### TODO
+#### 5. 组件封装
 
-#### 5. 对象组合
 
-#### 6. 工具类
+#### 6. 对象组合
+
+> 组合模式：将对象组合成树形结构以表示”部分-整体”的层次结构。组合使得用户对单个对象和组合对象的使用具有一致性
+
+![对象组合模式](https://turkeyaa.github.io/assets/2015/design/Composite.png)
+
+基接口是定义了`Leaf`类和`Composite`类的共同操作的Component
+
+每个节点代表一个叶节点或组合体节点。`Leaf`节点与`Composite`节点的主要区别在于，`Leaf`节点不包含同类型的子节点，而`Composite`则包含。`Composite`包含同一类型的子节点。由于`Leaf`类与`Composite`类有同样的接口，任何对`Component`类型的操作也能安全地应用到`Leaf`和`Composite`。客户端就不需要根据确切类型的is-else语句
+
+`Composite`需要方法来管理子节点，比如`add:component`和`remove:component`。因为`Leaf`和`Composize`有共同的接口，这些方法必须也是接口的一部分。而向`Leaf`对象发送组合体操作消息则没有意义，也不起作用，只有默认的实现
+
+##### 使用场景
+
+1. 想获得对象抽象的树形表示(部分-整体层次结构)
+2. 想让客户端统一处理组合结构中的所有对象
+
+
+
+#### 7. 工具类

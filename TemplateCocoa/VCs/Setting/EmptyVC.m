@@ -28,7 +28,7 @@
     self.isShowEmptyView = YES;
 }
 
-/** 可选，子类已实现 */
+/** 可选，父类已实现 */
 - (UIImage *)baseEmptyImage {
     return [UIImage imageNamed:@"app_emptyView"];
 }
