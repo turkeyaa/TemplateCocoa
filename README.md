@@ -575,6 +575,146 @@ MainInfo *mainInfo = [NSKeyedUnarchiver unarchiveObjectWithFile:path];
 
 #### 5. 组件封装
 
+![效果图](Resource/Kit.png)`效果图`
+
+##### 上面包含了五种Cell，每个Cell都是独立的模块，并且完成各自的功能和交互逻辑。如：图片、文字、通知、输入框等功能。每个组件之间通过接口来访问
+
+##### 如何实现？
+
+首先定义了基类：**BaseTCell**，定义了通用的接口，然后在子类中来设计特定的实现。
+
+接口定义如下：
+
+```
+@class BaseTCell;
+
+typedef void(^ClickEventBlock)(NSIndexPath *indexPath, BaseTCell *cell);
+
+@interface BaseTCell : UITableViewCell
+
++ (CGFloat)classCellHeight;
+
++ (instancetype)tcell:(UITableView *)tableView reuse:(BOOL)reuse;
+
+@property (nonatomic, weak) UITableView *tableView;
+@property (nonatomic, assign) BOOL showIndicator;
+@property (nonatomic, strong) ClickEventBlock click;
+
+- (CGFloat)height;
+
+- (void)setupUI;
+
+- (void)scrollToActiveTextField;
+
+#pragma mark - Subclass
+- (void)setupSubViews;
+- (void)setupLayout;
+
+@end
+
+```
+
+然后在子类中，实现相应的逻辑。比如：**TCell_Input**类，该类实现了输入框的交互逻辑。支持手机号、密码、符号的输入，同时实现了键盘的点击背景的隐藏事件、最大输入长度、颜色、图标......等。
+
+接口设计如下：
+
+```
+@interface TCell_Input : BaseTCell
+
+/** 图片 */
+@property (nonatomic, strong) UIImage *icon;
+/** 标题 */
+@property (nonatomic, strong) NSString *title;
+/** 标题颜色 */
+@property (nonatomic, strong) UIColor *titleColor;
+/** 输入框文本 */
+@property (nonatomic, strong) NSString *text;
+/** 输入框占位符 */
+@property (nonatomic, strong) NSString *placeholder;
+
+/** 支持可输入的最大长度，默认为11 */
+@property (nonatomic, assign) NSInteger limitMaxLength;
+
+/** 输入框类型：字符 */
++ (instancetype)stringInputCell;
+/** 输入框类型：数字 */
++ (instancetype)numberInputCell;
+/** 输入框类型：密码 */
++ (instancetype)passwordInputCell;
+
+@end
+
+```
+
+客户端代码如下：
+
+```
+WEAKSELF
+    _cellUser = [TCell_Image tcell:self.tableView reuse:NO];
+    _cellUser.icon = [UIImage imageNamed:@"s_info"];
+    _cellUser.title = @"设置";
+    _cellUser.value = @"详情";
+    
+    _cellVersion = [TCell_Image tcell:self.tableView reuse:NO];
+    _cellVersion.icon = [UIImage imageNamed:@"s_setting"];
+    _cellVersion.title = @"版本";
+    _cellVersion.value = @"V1.0";
+    
+    _cellAbout = [TCell_Image tcell:self.tableView reuse:NO];
+    _cellAbout.icon = [UIImage imageNamed:@"s_notify"];
+    _cellAbout.title = @"消息";
+    _cellAbout.value = @"更多消息";
+    _cellVersion.hasMsg = YES;
+    
+    // 多视图控制器切换(支持空页面)
+    _cellNews = [TCell_Image tcell:self.tableView reuse:NO];
+    _cellNews.icon = [UIImage imageNamed:@"s_notify"];
+    _cellNews.title = @"新闻";
+    _cellNews.click = ^(NSIndexPath *indexPath, BaseTCell *cell) {
+        [weakSelf gotoNewsVC];
+    };
+    _cellMessages = [TCell_Image tcell:self.tableView reuse:NO];
+    _cellMessages.icon = [UIImage imageNamed:@"s_notify"];
+    _cellMessages.title = @"消息";
+    _cellMessages.click = ^(NSIndexPath *indexPath, BaseTCell *cell) {
+        [weakSelf gotoMessageVC];
+    };
+    
+    _nameCell = [TCell_Input stringInputCell];
+    _nameCell.icon = [UIImage imageNamed:@"business_nor"];
+    _nameCell.title = @"姓名";
+    _nameCell.showIndicator = NO;
+    _nameCell.limitMaxLength = 12;
+    _nameCell.placeholder = @"请输入姓名";
+    
+    _cardCell = [TCell_Input numberInputCell];
+    _cardCell.title = @"身份证";
+    _cardCell.showIndicator = NO;
+    _cardCell.limitMaxLength = 20;
+    _cardCell.placeholder = @"请输入身份证号码";
+    
+    _notifyCell =  [TCell_Notify tcell:self.tableView reuse:YES];
+    _notifyCell.title = @"通知";
+    _notifyCell.showIndicator = NO;
+    _notifyCell.isNotifyOpened = NO;
+    [_notifyCell addSwitchTarget:self selector:@selector(switchEvent:)];
+    
+    _networkCell = [TCell_Notify tcell:self.tableView reuse:YES];
+    _networkCell.title = @"WIFI";
+    _networkCell.showIndicator = NO;
+    _networkCell.isNotifyOpened = YES;
+    [_networkCell addSwitchTarget:self selector:@selector(switchEvent:)];
+    
+    _emptyCell = [TCell_Label tcell:self.tableView reuse:YES];
+    _emptyCell.title = @"空页面";
+    _emptyCell.value = @"测试空页面";
+    _emptyCell.click = ^(NSIndexPath *indexPath, BaseTCell *cell) {
+        [weakSelf gotoEmptyVC];
+    };
+    
+    self.cells = @[@[_cellUser],@[_cellAbout,_cellVersion],@[_cellNews,_cellMessages],@[_notifyCell,_networkCell],@[_nameCell,_cardCell],@[_emptyCell]];
+    
+```
 
 #### 6. 对象组合
 

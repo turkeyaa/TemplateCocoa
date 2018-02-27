@@ -64,25 +64,25 @@
     }];
      */
     
-    [GCDUtil runInGlobalQueue:^{
-        
-        int(^blockOne)(int count) = ^(int count) {
-            for (int index=0; index<count; index++) {
-                NSLog(@"1----%d",index);
-            }
-            NSLog(@"1=========>%@",[NSThread currentThread]);
-            return 1;
-        };
-        int(^blockTwo)(int count) = ^(int count) {
-            for (int index=0; index<count; index++) {
-                NSLog(@"1++++%d",index);
-            }
-            NSLog(@"2=========>%@",[NSThread currentThread]);
-            return 2;
-        };
-        NSInteger rs1 = blockOne(200);
-        NSInteger rs2 = blockTwo(200);
-    }];
+//    [GCDUtil runInGlobalQueue:^{
+//
+//        int(^blockOne)(int count) = ^(int count) {
+//            for (int index=0; index<count; index++) {
+//                NSLog(@"1----%d",index);
+//            }
+//            NSLog(@"1=========>%@",[NSThread currentThread]);
+//            return 1;
+//        };
+//        int(^blockTwo)(int count) = ^(int count) {
+//            for (int index=0; index<count; index++) {
+//                NSLog(@"1++++%d",index);
+//            }
+//            NSLog(@"2=========>%@",[NSThread currentThread]);
+//            return 2;
+//        };
+//        NSInteger rs1 = blockOne(200);
+//        NSInteger rs2 = blockTwo(200);
+//    }];
 }
 
 

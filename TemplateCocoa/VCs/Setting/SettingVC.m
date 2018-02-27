@@ -48,7 +48,7 @@
     // 自定义导航栏
     self.isHideNav = YES;
     self.isSetCustomNav = YES;
-    self.view.backgroundColor = Color_Nav;
+//    self.view.backgroundColor = Color_Nav;
     
     [self setupUI];
 }

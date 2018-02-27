@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>method</key>
+	<string>app-store</string>
+	<key>provisioningProfiles</key>
+	<dict>
+		<key>com.bsoft.mhealthp.wuhan</key>
+		<string>dis_wuhan_health_bsoft</string>
+	</dict>
+	<key>signingCertificate</key>
+	<string>55A055A55A7B281AA75E975C73D39C2372A668F0</string>
+	<key>signingStyle</key>
+	<string>manual</string>
+	<key>stripSwiftSymbols</key>
+	<true/>
+	<key>teamID</key>
+	<string>TCHK9N4NLS</string>
+	<key>uploadSymbols</key>
+	<true/>
+</dict>
+</plist>
