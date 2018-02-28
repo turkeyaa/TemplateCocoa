@@ -10,7 +10,7 @@
 4. 模型封装
 5. 组件封装
 6. 对象组合
-7. 工具类
+7. 宏定义、工具类
 
 ![动图](Resource/TemplateCocoa.gif)
 
@@ -735,4 +735,117 @@ WEAKSELF
 
 
 
-#### 7. 工具类
+#### 7. 宏定义、工具类
+
+> 一般项目开发中，我们会频繁的使用某些功能。比如：颜色、字体、设备型号、日志系统、图片拉伸、正则表达式、文件系统、数据库访问......等功能。可以把这些通用的功能封装成函数，或者宏定义方式访问。方便了以后的维护和扩展。
+
+在`AppMacro.h`，定义了设备型号和系统版本号。代码如下：
+
+```
+#define is_iPhone5 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 1136), [[UIScreen mainScreen] currentMode].size) : NO)
+#define is_iPhone6 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(750, 1334), [[UIScreen mainScreen] currentMode].size) : NO)
+#define is_iPhone6Plus ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1242, 2208), [[UIScreen mainScreen] currentMode].size) : NO)
+
+#define IOS6_OR_LATER ([[[UIDevice currentDevice] systemVersion] floatValue] >=6.0?YES:NO)
+#define IOS7_OR_LATER ([[[UIDevice currentDevice] systemVersion] floatValue] >=7.0?YES:NO)
+#define IOS8_OR_LATER ([[[UIDevice currentDevice] systemVersion] floatValue] >=8.0?YES:NO)
+```
+
+在`BlockMacro.h`中定义了通用的block。代码如下：
+
+```
+typedef void(^BlockHttpData)(id respose, NSError *error);
+typedef void(^BlockJsonData)(id data);
+typedef void(^BlockCompletion)(BOOL flag, NSError *error);
+
+typedef void(^BlockTableSection)(NSInteger section, NSInteger row);
+
+typedef void(^BlockItem)(NSInteger index);
+typedef void(^BlockResult) (BOOL flag);
+```
+
+在`UIMacro.h`中定义了样式相关的宏定义。代码如下：
+
+```
+///设备宽高
+#define DEVICE_HEIGHT   ([[UIScreen mainScreen]bounds].size.height)
+#define DEVICE_WIDTH    ([[UIScreen mainScreen]bounds].size.width)
+
+#define TAB_HEIGHT 49
+#define NAV_HEIGHT 44
+#define STATUS_HEIGHT 20
+
+// 常用字体
+#define FONT(fontsize)                [UIFont systemFontOfSize:fontsize]
+#define FONT_BOLD(fontsize)           [UIFont boldSystemFontOfSize:fontsize]
+
+// 粗体
+#define FONT_H(fontsize)              [UIFont fontWithName:@"Helvetica" size:fontsize]
+#define FONT_H_B(fontsize)            [UIFont fontWithName:@"Helvetica-Bold" size:fontsize]
+
+// 字体大小
+#define FONT_TEXT_BIG               FONT_H(19)        // A
+#define FONT_TEXT_NORMAL            FONT_H(17)        // B
+#define FONT_TEXT_SMALL             FONT_H(15)        // C
+#define FONT_TEXT_SMALL2            FONT_H(13)        // D
+#define FONT_TEXT_SMALL3            FONT_H(11)        // E
+#define FONT_TEXT_SMALL4            FONT_H(9)         // F
+
+// App 配置
+#define Color_Nav                   RGB(0,123,252)
+#define Color_Tab                   RGB(240,240,240)
+#define Color_AppBackground         RGB(235, 236, 237)
+
+#define Color_Alert_BackgroundLayer [UIColor colorWithWhite:.5f alpha:0.5f]
+
+#define RGB(Red,Green,Blue)         [UIColor colorWithRed:Red/255.0 green:Green/255.0 blue:Blue/255.0 alpha:1.0]
+#define RGBA(Red,Green,Blue,Alpha)  [UIColor colorWithRed:Red/255.0 green:Green/255.0 blue:Blue/255.0 alpha:Alpha]
+```
+
+在`UtilsMacro.h`中定义了一些函数相关的宏定义：
+
+```
+#define SharedApp ((AppDelegate*)[[UIApplication sharedApplication] delegate])
+
+#define kHarpyCurrentVersion      [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]
+
+// block self
+#define WEAKSELF typeof(self) __weak weakSelf = self;
+#define STRONGSELF typeof(weakSelf) __strong strongSelf = weakSelf;
+
+// 图片拉伸
+#define IM_STRETCH_IMAGE(image, edgeInsets) ([image resizableImageWithCapInsets:edgeInsets resizingMode:UIImageResizingModeStretch])
+
+```
+
+你也可以扩展更多功能。
+
+一般的我们需要访问设备文件系统。在`FileManager.h`中接口，定义如下：
+
+```
+///<>/Documents/config.plist
+//程序设置信息
++ (NSString*)remotePreferenceFile;
+
+///<>/Documents/Crash/crashLog.txt
+// 错误日志
++ (NSString *)crashFile;
+
+///<>/Library/Caches/mobile.sqlite
+// 用户数据库文件
++ (NSString *)fmdbFileWithMobile:(NSString *)mobile;
+
+///<><Application_Home>/Documents/app.sqlite
+// App数据库文件
++ (NSString *)fmdbFile;
+
+///<>/Library/Preferences/Icons
+// 用户头像信息（自己头像，朋友头像）
++ (NSString *)userImageFileWithMobile:(NSString *)mobile;
+
+///<>/Library/Preferences/<Phonenumber>/user.plist
+//程序设置信息
++ (NSString*)userPreferenceFile:(NSString*)phoneNumber;
+```
+
+类`NSString+JudgeString`添加了对字符串的正则表达式封装，类`AppPreference`实现了对`NSUserDefault`的二次封装......等。所有的工具类在`Service`模块。

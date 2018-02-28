@@ -558,8 +558,8 @@
 		A07311C61FC5220500BC6973 /* Empty View */ = {
 			isa = PBXGroup;
 			children = (
-				A07311C71FC5220500BC6973 /* EmptyView.m */,
 				A07311C81FC5220500BC6973 /* EmptyView.h */,
+				A07311C71FC5220500BC6973 /* EmptyView.m */,
 			);
 			path = "Empty View";
 			sourceTree = "<group>";
