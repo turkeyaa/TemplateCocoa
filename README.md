@@ -33,8 +33,8 @@
 
 1. 基于上传图片基类：`BaseUploadApi`，支持一张和多张图片的上传
 2. 工具类、开发技巧
-3. 基于Swift语言的项目实战[TemplateSwift](https://github.com/turkeyaa/TemplateSwift)
-4. 基于Perfect服务端项目实战[SwiftCN](https://github.com/SwiftCN/SwiftCN)
+3. 基于Swift语言的项目实战[TemplateSwiftAPP](https://github.com/turkeyaa/TemplateSwiftAPP)
+4. 基于Vapor服务端项目实战[SwiftCN](https://github.com/SwiftCN/SwiftCN)
 
 ***
 
