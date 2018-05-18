@@ -62,8 +62,6 @@
 		A098999B1EE6908D0095F293 /* Library.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A098999A1EE6908D0095F293 /* Library.xcassets */; };
 		A098999E1EE69BA20095F293 /* SearchVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A098999D1EE69BA20095F293 /* SearchVC.m */; };
 		A09899A21EE69C5F0095F293 /* CartVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A09899A11EE69C5F0095F293 /* CartVC.m */; };
-		A09FC5301FA70393008E2A33 /* DSNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = A09FC52F1FA70393008E2A33 /* DSNetwork.m */; };
-		A09FC5331FA70522008E2A33 /* DSRestApi.m in Sources */ = {isa = PBXBuildFile; fileRef = A09FC5321FA70522008E2A33 /* DSRestApi.m */; };
 		A0A3A13B1EE79A8C005611DB /* NetworkMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A3A13A1EE79A8C005611DB /* NetworkMonitor.m */; };
 		A0A3A13E1EE79A9A005611DB /* SQLiteHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A3A13D1EE79A9A005611DB /* SQLiteHelper.m */; };
 		A0AB5D2D1E305EB400FFF956 /* RegisterVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AB5D2C1E305EB300FFF956 /* RegisterVC.m */; };
@@ -243,10 +241,6 @@
 		A098999D1EE69BA20095F293 /* SearchVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchVC.m; sourceTree = "<group>"; };
 		A09899A01EE69C5F0095F293 /* CartVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CartVC.h; sourceTree = "<group>"; };
 		A09899A11EE69C5F0095F293 /* CartVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CartVC.m; sourceTree = "<group>"; };
-		A09FC52E1FA70393008E2A33 /* DSNetwork.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSNetwork.h; sourceTree = "<group>"; };
-		A09FC52F1FA70393008E2A33 /* DSNetwork.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSNetwork.m; sourceTree = "<group>"; };
-		A09FC5311FA70522008E2A33 /* DSRestApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSRestApi.h; sourceTree = "<group>"; };
-		A09FC5321FA70522008E2A33 /* DSRestApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSRestApi.m; sourceTree = "<group>"; };
 		A0A3A1391EE79A8C005611DB /* NetworkMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkMonitor.h; sourceTree = "<group>"; };
 		A0A3A13A1EE79A8C005611DB /* NetworkMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkMonitor.m; sourceTree = "<group>"; };
 		A0A3A13C1EE79A9A005611DB /* SQLiteHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLiteHelper.h; sourceTree = "<group>"; };
@@ -596,17 +590,6 @@
 			path = Cart;
 			sourceTree = "<group>";
 		};
-		A09FC52D1FA70293008E2A33 /* Network */ = {
-			isa = PBXGroup;
-			children = (
-				A09FC52E1FA70393008E2A33 /* DSNetwork.h */,
-				A09FC52F1FA70393008E2A33 /* DSNetwork.m */,
-				A09FC5311FA70522008E2A33 /* DSRestApi.h */,
-				A09FC5321FA70522008E2A33 /* DSRestApi.m */,
-			);
-			path = Network;
-			sourceTree = "<group>";
-		};
 		A0A3A1381EE79744005611DB /* SQLite */ = {
 			isa = PBXGroup;
 			children = (
@@ -697,13 +680,6 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
-		A0DF02551EDE8C0B00507F31 /* Mine */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Mine;
-			sourceTree = "<group>";
-		};
 		A0DF025F1EDE90FB00507F31 /* cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -763,7 +739,6 @@
 			children = (
 				A0EF535C1E0258D500DE645C /* AppDelegate.h */,
 				A0EF535D1E0258D500DE645C /* AppDelegate.m */,
-				A09FC52D1FA70293008E2A33 /* Network */,
 				A0EF538C1E0259C000DE645C /* APIs */,
 				A0EF538D1E0259C000DE645C /* Common */,
 				A0EF538F1E0259C000DE645C /* Macro */,
@@ -821,7 +796,6 @@
 				A0DF02521EDE8C0B00507F31 /* Auth */,
 				A0DF02531EDE8C0B00507F31 /* Library */,
 				A0DF02541EDE8C0B00507F31 /* Main */,
-				A0DF02551EDE8C0B00507F31 /* Mine */,
 			);
 			path = APIs;
 			sourceTree = "<group>";
@@ -1115,7 +1089,7 @@
 		A0EF534E1E0258D500DE645C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0810;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = DS;
 				TargetAttributes = {
 					A0EF53551E0258D500DE645C = {
@@ -1276,7 +1250,6 @@
 				A06012621EEA7FB800F54150 /* GoodsDetailVC.m in Sources */,
 				C6AFDCD12008A3BF0013664D /* MessageVC.m in Sources */,
 				A009B58B1EE82F6B00CC3946 /* MineHeaderView.m in Sources */,
-				A09FC5331FA70522008E2A33 /* DSRestApi.m in Sources */,
 				A09899A21EE69C5F0095F293 /* CartVC.m in Sources */,
 				A0EF53D71E025E0000DE645C /* LibraryVC.m in Sources */,
 				A0EF53DA1E025E0800DE645C /* MainVC.m in Sources */,
@@ -1327,7 +1300,6 @@
 				A0EF53BC1E025CC500DE645C /* BaseTC.m in Sources */,
 				8A46734C1F7DFB930089670E /* TPKeyboardAvoidingCollectionView.m in Sources */,
 				A0F9EE361EE67E47009CF3B7 /* Foods_Get.m in Sources */,
-				A09FC5301FA70393008E2A33 /* DSNetwork.m in Sources */,
 				A0AB5D3B1E3078F600FFF956 /* URLUtil.m in Sources */,
 				8A4673551F7DFBB30089670E /* BaseFormGroupTC.m in Sources */,
 				A031F4131E187EFB00671F08 /* SegmentedView.m in Sources */,
@@ -1402,15 +1374,24 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -1449,15 +1430,24 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
