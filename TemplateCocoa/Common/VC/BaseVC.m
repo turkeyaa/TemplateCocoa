@@ -11,6 +11,8 @@
 #import "SVProgressHUD.h"
 #import "EmptyView.h"
 
+#import "FileManager.h"
+
 @interface BaseVC ()
 
 @property (nonatomic, strong) UIButton *rightBtn;
@@ -32,6 +34,9 @@
     
     _leftTitle = @"";
     _rightTitle = @"";
+    
+//    NSString *path = [FileManager remotePreferenceFile];
+//    NSLog(@"%@",path);
     
     [self setupUI];
 }

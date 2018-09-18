@@ -27,19 +27,19 @@
 7. 基于`WKWebView`类，JavaScript和原生数据交互
 8. 宏定义、枚举、block定义
 9. 动画，基于`CAAnimation`和`UIBezierPath`的购物车动画
-10. 设计模式：单例模式、适配器模式、外观模式、对象去耦(中介者和观察者模式)、组合模式、模板方法...等设计模式的使用。[个人总结的iOS开发设计模式](https://turkeyaa.github.io/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/2016/09/10/iOS%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F.html)
+10. 设计模式：单例模式、适配器模式、外观模式、对象去耦(中介者和观察者模式)、组合模式、模板方法...等设计模式的使用。[个人总结的iOS开发设计模式](https://www.jianshu.com/p/f4f8318d51c9)
+11. 基于Swift语言的项目实战[TemplateSwiftAPP](https://github.com/turkeyaa/TemplateSwiftAPP)
 
 ### TODO
 
 1. 基于上传图片基类：`BaseUploadApi`，支持一张和多张图片的上传
 2. 工具类、开发技巧
-3. 基于Swift语言的项目实战[TemplateSwiftAPP](https://github.com/turkeyaa/TemplateSwiftAPP)
-4. 基于Vapor服务端项目实战[SwiftCN](https://github.com/SwiftCN/SwiftCN)
+3. 基于Vapor服务端项目实战[SwiftCN](https://github.com/SwiftCN/SwiftCN)
 
 ***
 
 #### 1. 目录结构图
-![目录结构图](http://turkeyaa.github.io/assets/2015/product_structure.png)
+![目录结构图](Resource/Structure.png)
 
 ##### 说明
 

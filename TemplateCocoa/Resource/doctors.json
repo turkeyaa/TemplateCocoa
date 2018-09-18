@@ -1,0 +1,195 @@
+
+{
+    "body": [
+             {
+             "doctor": {
+             "introduce": "现任武汉市防痨协会理事长，中华医学会武汉分会呼吸专业学会副主委，是肺部疾病和结核病防治知名专家。从事肺部疾病、结核病及呼吸疾病临床诊疗、科研工作近30年。",
+             "status": "1",
+             "level": "231",
+             "imageUrl": "http://app.whhealth.gov.cn/yyzlWS/getImage.action?imageName=nolevel441628856%40%23%40145",
+             "levelText": "主任医师",
+             "sex": "2",
+             "name": "符志军"
+             },
+             "workNo": "145",
+             "regDeptId": "2269",
+             "signSoure": 1,
+             "orgId": "38bcce85-f171-46ca-8e51-f2dfcaedfc2f",
+             "orgFullName": "武汉市肺科医院",
+             "regDeptName": "结核专家门诊",
+             "localDoctorId": "145",
+             "doctSpeciality": "呼吸系统疑难疾病的诊断与鉴别诊断，耐多药结核病的治疗，尤其是多系统疾病合并结核病的治疗。",
+             "localDeptId": "2269",
+             "hosOrgCode": "44162885601"
+             },
+             {
+             "doctor": {
+             "introduce": "国际防痨协会会员,中国防痨协会武汉分会原秘书长，中华医学会武汉分会呼吸专业学会副主任委员。从事肺部疾病及结核病临床科研工作50余年，是肺部疾病和结核病防治领域的知名专家。曾被评为\"人民好医生、中国医师奖、结核病防治终身成就奖\"。",
+             "status": "1",
+             "level": "231",
+             "imageUrl": "http://app.whhealth.gov.cn/yyzlWS/getImage.action?imageName=nolevel441628856%40%23%40314",
+             "levelText": "主任医师",
+             "sex": "1",
+             "name": "张和武"
+             },
+             "workNo": "314",
+             "regDeptId": "2269",
+             "signSoure": 1,
+             "orgId": "38bcce85-f171-46ca-8e51-f2dfcaedfc2f",
+             "orgFullName": "武汉市肺科医院",
+             "regDeptName": "结核专家门诊",
+             "localDoctorId": "314",
+             "doctSpeciality": "肺部疑难疾病的诊断与鉴别诊断，结核病及耐多药结核病的治疗、多系统疾病合并结核病诊断与治疗。",
+             "localDeptId": "2269",
+             "hosOrgCode": "44162885601"
+             },
+             {
+             "doctor": {
+             "introduce": "武汉市防痨协会理事。从事肺部疾病和结核病诊疗工作30余年，是肺部疾病和结核病防治知名专家。",
+             "status": "1",
+             "level": "231",
+             "imageUrl": "http://app.whhealth.gov.cn/yyzlWS/getImage.action?imageName=nolevel441628856%40%23%4011",
+             "levelText": "主任医师",
+             "sex": "2",
+             "name": "阮汉利"
+             },
+             "workNo": "11",
+             "regDeptId": "2269",
+             "signSoure": 1,
+             "orgId": "38bcce85-f171-46ca-8e51-f2dfcaedfc2f",
+             "orgFullName": "武汉市肺科医院",
+             "regDeptName": "结核专家门诊",
+             "localDoctorId": "11",
+             "doctSpeciality": "糖尿病合并结核病、各种耐药结核病、妊娠结核病、结核病合并艾滋病的诊断和治疗",
+             "localDeptId": "2269",
+             "hosOrgCode": "44162885601"
+             },
+             {
+             "doctor": {
+             "introduce": "华中科技大学同济医学院公卫学院兼职教授,中国防痨协会临床专业委员，中国CTCTC临床专家组成员,武汉医生协会呼吸专业副主委,武汉市防痨学会常务理事兼秘书长;从事呼吸疾病及结核病诊疗工作20余年。",
+             "status": "1",
+             "level": "231",
+             "imageUrl": "http://app.whhealth.gov.cn/yyzlWS/getImage.action?imageName=nolevel441628856%40%23%4032",
+             "levelText": "主任医师",
+             "sex": "2",
+             "name": "杜荣辉"
+             },
+             "workNo": "32",
+             "regDeptId": "2269",
+             "signSoure": 1,
+             "orgId": "38bcce85-f171-46ca-8e51-f2dfcaedfc2f",
+             "orgFullName": "武汉市肺科医院",
+             "regDeptName": "结核专家门诊",
+             "localDoctorId": "32",
+             "doctSpeciality": "胸膜疾病、肺部结节样病变、肺部弥漫性病变以及肺部疑难疾病的诊断与鉴别诊断。",
+             "localDeptId": "2269",
+             "hosOrgCode": "44162885601"
+             },
+             {
+             "doctor": {
+             "introduce": "中华医学会结核病分会临床学组委员，中国结核病临床试验专业委员会委员，湖北省防痨协会理事，武汉市卫计委课题评审专家库专家。",
+             "status": "1",
+             "level": "232",
+             "imageUrl": "http://app.whhealth.gov.cn/yyzlWS/getImage.action?imageName=nolevel441628856%40%23%4051",
+             "levelText": "副主任医师",
+             "sex": "1",
+             "name": "李佺"
+             },
+             "workNo": "51",
+             "regDeptId": "2269",
+             "signSoure": 1,
+             "orgId": "38bcce85-f171-46ca-8e51-f2dfcaedfc2f",
+             "orgFullName": "武汉市肺科医院",
+             "regDeptName": "结核专家门诊",
+             "localDoctorId": "51",
+             "doctSpeciality": "各型结核病的诊治，尤其在糖尿病并发结核病、妊娠结核病、耐药结核病等疑难病例的诊断与处理。",
+             "localDeptId": "2269",
+             "hosOrgCode": "44162885601"
+             },
+             {
+             "doctor": {
+             "introduce": "现任武汉市医师协会呼吸科医师分会委员，武汉市医师协会内分泌代谢科医师分会委员，武汉市防痨协会理事，湖北省青年医师协会会员。",
+             "status": "1",
+             "level": "232",
+             "imageUrl": "http://app.whhealth.gov.cn/yyzlWS/getImage.action?imageName=nolevel441628856%40%23%403",
+             "levelText": "副主任医师",
+             "sex": "1",
+             "name": "郑春兰"
+             },
+             "workNo": "3",
+             "regDeptId": "2269",
+             "signSoure": 1,
+             "orgId": "38bcce85-f171-46ca-8e51-f2dfcaedfc2f",
+             "orgFullName": "武汉市肺科医院",
+             "regDeptName": "结核专家门诊",
+             "localDoctorId": "3",
+             "doctSpeciality": "对重症结核病、结核病合并糖尿病、呼吸系统疾病鉴别诊断等有着丰富的临床经验。",
+             "localDeptId": "2269",
+             "hosOrgCode": "44162885601"
+             },
+             {
+             "doctor": {
+             "introduce": "湖北医科大学中国防痨协会武汉分会会员，现任武汉市肺科医院、省结核病临床中心办公室副主任。",
+             "status": "1",
+             "level": "232",
+             "imageUrl": "http://app.whhealth.gov.cn/yyzlWS/getImage.action?imageName=nolevel441628856%40%23%40119",
+             "levelText": "副主任医师",
+             "sex": "2",
+             "name": "王婷萍"
+             },
+             "workNo": "119",
+             "regDeptId": "2269",
+             "signSoure": 1,
+             "orgId": "38bcce85-f171-46ca-8e51-f2dfcaedfc2f",
+             "orgFullName": "武汉市肺科医院",
+             "regDeptName": "结核专家门诊",
+             "localDoctorId": "119",
+             "doctSpeciality": "结核病与相关疾病的诊断与鉴别诊断、及难治性肺结核的治疗。",
+             "localDeptId": "2269",
+             "hosOrgCode": "44162885601"
+             },
+             {
+             "doctor": {
+             "introduce": "武汉市呼吸协会理事，中国防痨协会会员。从事呼吸以及结核疾病诊疗工作20余年，长期从事胸膜疾病的临床研究和治疗，以及肺部疾病的鉴别诊断；对经皮肺活检对疑难病例的诊断，微创引流治疗胸腔积液及难治性包裹性积液，结核性脓胸的内科治疗有丰富的经验，并形成了自己的特色与优势。主持、参加结核性胸膜炎和恶性胸腔积液的多中心临床试验、艾滋病与结核病等多项科研课题研究。",
+             "status": "1",
+             "level": "232",
+             "imageUrl": "http://app.whhealth.gov.cn/yyzlWS/getImage.action?imageName=nolevel441628856%40%23%4010",
+             "levelText": "副主任医师",
+             "sex": "2",
+             "name": "朱琦"
+             },
+             "workNo": "10",
+             "regDeptId": "2269",
+             "signSoure": 1,
+             "orgId": "38bcce85-f171-46ca-8e51-f2dfcaedfc2f",
+             "orgFullName": "武汉市肺科医院",
+             "regDeptName": "结核专家门诊",
+             "localDoctorId": "10",
+             "doctSpeciality": "擅长肺部疾病及其疑难疾病诊断与鉴别诊断及治疗、多系统疾病并存结核病诊断与治疗。",
+             "localDeptId": "2269",
+             "hosOrgCode": "44162885601"
+             },
+             {
+             "doctor": {
+             "introduce": "从事临床工作近20年，具有丰富的结核病相关临床工作经验。",
+             "status": "1",
+             "level": "232",
+             "imageUrl": "http://app.whhealth.gov.cn/yyzlWS/getImage.action?imageName=nolevel441628856%40%23%4013",
+             "levelText": "副主任医师",
+             "sex": "1",
+             "name": "孙学智"
+             },
+             "workNo": "13",
+             "regDeptId": "2269",
+             "signSoure": 1,
+             "orgId": "38bcce85-f171-46ca-8e51-f2dfcaedfc2f",
+             "orgFullName": "武汉市肺科医院",
+             "regDeptName": "结核专家门诊",
+             "localDoctorId": "13",
+             "doctSpeciality": "结核病与相关疾病诊断、疾病诊断及治疗；咯血DSA介入治疗。",
+             "localDeptId": "2269",
+             "hosOrgCode": "44162885601"
+             }
+             ],
+    "code": 200
+}

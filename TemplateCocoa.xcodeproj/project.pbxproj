@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		602B5EAD2117F8FE00ADE31E /* doctors.json in Resources */ = {isa = PBXBuildFile; fileRef = 602B5EAC2117F8FE00ADE31E /* doctors.json */; };
 		8A46734C1F7DFB930089670E /* TPKeyboardAvoidingCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A4673421F7DFB930089670E /* TPKeyboardAvoidingCollectionView.m */; };
 		8A46734D1F7DFB930089670E /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A4673441F7DFB930089670E /* TPKeyboardAvoidingScrollView.m */; };
 		8A46734E1F7DFB930089670E /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A4673461F7DFB930089670E /* TPKeyboardAvoidingTableView.m */; };
@@ -141,6 +142,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		602B5EAC2117F8FE00ADE31E /* doctors.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = doctors.json; sourceTree = "<group>"; };
 		711E8E9C51665DD06224824D /* Pods-TemplateCocoa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TemplateCocoa.release.xcconfig"; path = "Pods/Target Support Files/Pods-TemplateCocoa/Pods-TemplateCocoa.release.xcconfig"; sourceTree = "<group>"; };
 		860C5DCEB263ACFB76FFB63B /* Pods_TemplateCocoa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TemplateCocoa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A4673411F7DFB930089670E /* TPKeyboardAvoidingCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingCollectionView.h; sourceTree = "<group>"; };
@@ -470,6 +472,7 @@
 				A0E1EC271EE65BEF00AE29D6 /* foods.json */,
 				A0E1EC291EE65F5200AE29D6 /* market.json */,
 				A04223BC1EF53B250015B1B3 /* goods.html */,
+				602B5EAC2117F8FE00ADE31E /* doctors.json */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -1147,6 +1150,7 @@
 				A0AB5D301E306D4900FFF956 /* Auth.xcassets in Resources */,
 				A0B309C61F9AE7AA00AB6E51 /* Setting.xcassets in Resources */,
 				A098999B1EE6908D0095F293 /* Library.xcassets in Resources */,
+				602B5EAD2117F8FE00ADE31E /* doctors.json in Resources */,
 				A044429B1E2DEEE800B4A5E9 /* Tabbar.xcassets in Resources */,
 				A04223BD1EF53B250015B1B3 /* goods.html in Resources */,
 				A02529E81E8CD73B00AB49E0 /* login.json in Resources */,

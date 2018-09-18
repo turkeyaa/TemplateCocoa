@@ -93,8 +93,23 @@
     _spellLabel.text = mainInfo.name_spell;
     
     NSString *avatar_url = mainInfo.avatar_url;
+    NSLog(@"%@",mainInfo.avatar_url);
 //    [_iconView setPlaceHolderImageName:@"avator.png" iconURL:[NSURL URLWithString:avatar_url]];
-    [_iconView sd_setImageWithURL:[NSURL URLWithString:avatar_url] placeholderImage:[UIImage imageNamed:@"avator.png"]];
+//    [_iconView sd_setImageWithURL:[NSURL URLWithString:avatar_url] placeholderImage:[UIImage imageNamed:@"avator.png"] options:SDWebImageRefreshCached];
+//    [_iconView sd_setImageWithURL:[NSURL URLWithString:avatar_url] placeholderImage:[UIImage imageNamed:@"avator.png"]];
+    
+    [GCDUtil runInGlobalQueue:^{
+        NSURL *url = [NSURL URLWithString:avatar_url];
+        NSData *data=[NSData dataWithContentsOfURL:url];
+        //将网络数据初始化为UIImage对象
+        UIImage *image=[UIImage imageWithData:data];
+        if (image != nil) {
+            [GCDUtil runInMainQueue:^{
+                self->_iconView.image = image;
+            }];
+        }
+    }];
+
 }
 
 /*
