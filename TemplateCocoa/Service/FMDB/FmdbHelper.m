@@ -125,7 +125,7 @@
             NSDictionary *dict = (NSDictionary *)json;
             
             [_dbQueue inDeferredTransaction:^(FMDatabase *db, BOOL *rollback) {
-                rs = [_db executeUpdate:sql withParameterDictionary:dict];
+                rs = [self->_db executeUpdate:sql withParameterDictionary:dict];
                 if (!rs) {
                     *rollback = YES;
                 }
@@ -138,7 +138,7 @@
             [_dbQueue inDeferredTransaction:^(FMDatabase *db, BOOL *rollback) {
                 
                 for (NSDictionary *dict in arra) {
-                    rs = [_db executeUpdate:sql withParameterDictionary:dict];
+                    rs = [self->_db executeUpdate:sql withParameterDictionary:dict];
                     if (!rs) {
                         *rollback = YES;
                     }

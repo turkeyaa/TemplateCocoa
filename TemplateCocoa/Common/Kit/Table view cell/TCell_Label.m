@@ -65,7 +65,7 @@
         make.width.offset(50);
     }];
     [_cValueLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(_cTitleLabel.mas_right).offset(10);
+        make.left.mas_equalTo(self.cTitleLabel.mas_right).offset(10);
         make.top.offset(10);
         make.bottom.offset(-10);
     }];

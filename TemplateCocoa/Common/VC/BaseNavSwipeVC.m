@@ -102,6 +102,9 @@
     return _navView;
 }
 
+- (NSArray *)swipeViewControllers { return nil; }
+- (NSArray *)swipeViewTitles { return nil; }
+
 - (void)removeNavTitleView {
     if (_navView) {
         [_navView removeFromSuperview];

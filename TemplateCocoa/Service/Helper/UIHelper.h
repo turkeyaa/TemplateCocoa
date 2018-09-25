@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 
-typedef void(^Action)();
+typedef void(^Action)(void);
 
 @interface UIHelper : NSObject
 

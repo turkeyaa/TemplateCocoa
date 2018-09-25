@@ -60,6 +60,9 @@ static const CGFloat kTitleIndexViewHeight = 40.0;
     [self reloadUI];
 }
 
+- (NSArray *)swipeViewControllers { return nil; }
+- (NSArray *)swipeViewTitles { return nil; }
+
 - (TitleIndexView *)indexView {
     if (!_indexView) {
         _indexView = ({

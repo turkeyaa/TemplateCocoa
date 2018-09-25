@@ -10,4 +10,8 @@
 
 @implementation NetworkMonitor
 
+- (void)startMonitoring {}
+
+- (void)stopMonitoring {}
+
 @end

@@ -11,22 +11,22 @@
 @implementation GCDUtil
 
 // 并发队列
-+ (void)runInGlobalQueue:(void (^)())queue {
++ (void)runInGlobalQueue:(void (^)(void))queue {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), queue);
 }
 
 // 主队列
-+ (void)runInMainQueue:(void (^)())queue {
++ (void)runInMainQueue:(void (^)(void))queue {
     dispatch_async(dispatch_get_main_queue(), queue);
 }
 
 // 延迟调用
-+ (void)runAfterSecs:(float)secs block:(void (^)())queue {
++ (void)runAfterSecs:(float)secs block:(void (^)(void))queue {
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, secs * NSEC_PER_SEC), dispatch_get_main_queue(), queue);
 }
 
 // 自定义串行队列
-+(void)runSerialQueueParallel:(void (^)())queue charIden:(const char *)identifier {
++(void)runSerialQueueParallel:(void (^)(void))queue charIden:(const char *)identifier {
     dispatch_async(dispatch_queue_create(identifier, DISPATCH_QUEUE_SERIAL), queue);
 }
 

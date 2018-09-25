@@ -117,11 +117,7 @@ static const int kScrollLineHeight = 3;
         button.selected = button.tag==self.index;
     }
     
-    void (^block)() = ^ {
-        //[self removeConstraint:self.scrollLineXConstraint];
-        //self.scrollLineXConstraint = [self XConstraint:self.index forView:self.scrollLine];
-        //[self addConstraint:self.scrollLineXConstraint];
-        //[self setNeedsUpdateConstraints];
+    void (^block)(void) = ^ {
         
         CGFloat width = self.frame.size.width / self.buttons.count;
         self.scrollLine.frame = CGRectMake(width * self.index, self.frame.size.height - kScrollLineHeight, width, kScrollLineHeight);

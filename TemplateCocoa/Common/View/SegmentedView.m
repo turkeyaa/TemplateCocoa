@@ -200,7 +200,7 @@
         
     }else{
         [UIView animateWithDuration:0.3 animations:^{
-            self.bgImage.frame = CGRectMake(index * (self.frame.size.width/_btnTitles.count), self.frame.size.height-2, self.frame.size.width/_btnTitles.count, 2);
+            self.bgImage.frame = CGRectMake(index * (self.frame.size.width/self.btnTitles.count), self.frame.size.height-2, self.frame.size.width/self.btnTitles.count, 2);
         }];
     }
 }

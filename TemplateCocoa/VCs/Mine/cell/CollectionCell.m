@@ -68,17 +68,17 @@
         make.left.offset(5);
         make.top.offset(5);
         make.bottom.offset(-5);
-        make.width.mas_equalTo(_iconView.mas_height);
+        make.width.mas_equalTo(self.iconView.mas_height);
     }];
     [_nameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.offset(5);
-        make.left.mas_equalTo(_iconView.mas_right).offset(5);
+        make.left.mas_equalTo(self.iconView.mas_right).offset(5);
         make.right.offset(-10);
         make.height.offset(50);
     }];
     [_specificsLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(_nameLabel.mas_bottom).offset(10);
-        make.left.mas_equalTo(_iconView.mas_right).offset(5);
+        make.top.mas_equalTo(self.nameLabel.mas_bottom).offset(10);
+        make.left.mas_equalTo(self.iconView.mas_right).offset(5);
         make.right.offset(-10);
         make.height.offset(30);
     }];

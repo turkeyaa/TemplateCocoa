@@ -112,13 +112,13 @@
     [_cTitleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.offset(5);
         make.bottom.offset(-5);
-        make.left.mas_equalTo(_cIconView.mas_right).offset(10);
+        make.left.mas_equalTo(self.cIconView.mas_right).offset(10);
         make.width.offset(50);
     }];
     [_cInputTextFiled mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.offset(5);
         make.bottom.offset(-5);
-        make.left.mas_equalTo(_cTitleLabel.mas_right).offset(10);
+        make.left.mas_equalTo(self.cTitleLabel.mas_right).offset(10);
         make.right.offset(-40);
     }];
 }

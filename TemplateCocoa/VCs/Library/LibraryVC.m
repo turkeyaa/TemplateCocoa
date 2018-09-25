@@ -109,7 +109,7 @@
         [foodApi call];
         if (foodApi.code == RestApi_OK) {
             // 赋值，更新表视图数据
-            _dataSource = foodApi.dataSource;
+            self.dataSource = foodApi.dataSource;
         }
         
         [GCDUtil runInMainQueue:^{

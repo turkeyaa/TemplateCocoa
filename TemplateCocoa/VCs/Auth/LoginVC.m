@@ -62,23 +62,23 @@
     }];
     
     [_accountField mas_makeConstraints:^(MASConstraintMaker *make) {
-        
         make.left.offset(20);
         make.right.offset(-20);
         make.top.offset(100);
         make.height.offset(40);
     }];
+    
     [_passwordField mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.offset(20);
         make.right.offset(-20);
-        make.top.mas_equalTo(_accountField.mas_bottom).offset(10);
+        make.top.mas_equalTo(self.accountField.mas_bottom).offset(10);
         make.height.offset(40);
     }];
     
     [_loginBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.offset(20);
         make.right.offset(-20);
-        make.top.mas_equalTo(_passwordField.mas_bottom).offset(30);
+        make.top.mas_equalTo(self.passwordField.mas_bottom).offset(30);
         make.height.offset(40);
     }];
 }
@@ -176,7 +176,7 @@
             
             if (loginApi.code == RestApi_OK) {
                 // 登录成功
-                _promptLabel.text = [NSString stringWithFormat:@"登录成功,当前用户为:%@",loginApi.userInfo.user_name];
+                self.promptLabel.text = [NSString stringWithFormat:@"登录成功,当前用户为:%@",loginApi.userInfo.user_name];
                 
                 // 登录成功配置
                 [[Workspace getInstance] onLogIn:loginApi];

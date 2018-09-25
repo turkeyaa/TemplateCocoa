@@ -81,8 +81,8 @@
         _headerView = [[LogOutView alloc] initWithFrame:CGRectMake(0, 0, DEVICE_WIDTH, 200)];
     }
     
-    _headerView.clickItemBlock = ^(NSInteger index) {
-        WEAKSELF
+    WEAKSELF
+    self.headerView.clickItemBlock = ^(NSInteger index) {
         [weakSelf enterUserInfo];
     };
     self.tableView.tableHeaderView = _headerView;

@@ -91,17 +91,17 @@ static CGFloat kMsgViewHeight = 8.0;
     [_cIconView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.top.offset(10);
         make.bottom.offset(-10);
-        make.width.equalTo(_cIconView.mas_height);
+        make.width.equalTo(self.cIconView.mas_height);
     }];
     [_cTitleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(_cIconView.mas_right).offset(10);
+        make.left.mas_equalTo(self.cIconView.mas_right).offset(10);
         make.top.offset(10);
         make.bottom.offset(-10);
         make.width.offset(50);
     }];
     [_cMsgView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(_cTitleLabel.mas_right).offset(5);
-        make.top.mas_equalTo(_cTitleLabel.mas_top).offset(5);
+        make.left.mas_equalTo(self.cTitleLabel.mas_right).offset(5);
+        make.top.mas_equalTo(self.cTitleLabel.mas_top).offset(5);
         make.width.height.offset(kMsgViewHeight);
     }];
     [_cValueLabel mas_makeConstraints:^(MASConstraintMaker *make) {

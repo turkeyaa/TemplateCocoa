@@ -127,7 +127,7 @@ typedef enum {
  *  构造方法
  *
  *  @param imageArray    图片数组
- *  @param describeArray 图片描述数组
+ *  @param frame 图片描述数组
  *
  */
 - (instancetype)initWithFrame:(CGRect)frame imageArray:(NSArray *)imageArray;
@@ -156,7 +156,7 @@ typedef enum {
  *  两个图片必须同时设置，否则设置无效
  *  不设置则为系统默认
  *
- *  @param pageImage    其他页码的图片
+ *  @param image    其他页码的图片
  *  @param currentImage 当前页码的图片
  */
 - (void)setPageImage:(UIImage *)image andCurrentPageImage:(UIImage *)currentImage;

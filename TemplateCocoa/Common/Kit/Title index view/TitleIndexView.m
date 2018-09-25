@@ -146,21 +146,21 @@
     
     [UIView animateWithDuration:0.4 animations:^{
         
-        _titleLineView.frame = CGRectMake(pointX, self.frame.size.height-2, btnWidth, 2);
+        self.titleLineView.frame = CGRectMake(pointX, self.frame.size.height-2, btnWidth, 2);
         
-        if (_currentIndex <= 2) {
-            _scrollerView.contentOffset = CGPointMake(0, 0);
+        if (self.currentIndex <= 2) {
+            self.scrollerView.contentOffset = CGPointMake(0, 0);
         }
-        else if (_currentIndex >= _titles.count-3) {
-            _scrollerView.contentOffset = CGPointMake(_totalWidth-self.frame.size.width, 0);
+        else if (self.currentIndex >= self->_titles.count-3) {
+            self.scrollerView.contentOffset = CGPointMake(self->_totalWidth-self.frame.size.width, 0);
         }
         else {
             // 居中
             if (x > self.frame.size.width/2) {
-                _scrollerView.contentOffset = CGPointMake(x-self.frame.size.width/2, 0);
+                self.scrollerView.contentOffset = CGPointMake(x-self.frame.size.width/2, 0);
             }
             else {
-                _scrollerView.contentOffset = CGPointMake(0, 0);
+                self.scrollerView.contentOffset = CGPointMake(0, 0);
             }
         }
     }];

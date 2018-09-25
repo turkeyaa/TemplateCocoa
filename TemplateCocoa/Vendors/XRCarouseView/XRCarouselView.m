@@ -301,7 +301,7 @@
         [UIView animateWithDuration:1.2 animations:^{
             self.currImageView.alpha = 0;
             self.otherImageView.alpha = 1;
-            self.pageControl.currentPage = _nextIndex;
+            self.pageControl.currentPage = self.nextIndex;
         } completion:^(BOOL finished) {
             [self changeToNext];
         }];
@@ -353,7 +353,7 @@
         if (image) {
             self.images[index] = image;
             //如果下载的图片为当前要显示的图片，直接到主线程给imageView赋值，否则要等到下一轮才会显示
-            if (_currIndex == index) [_currImageView performSelectorOnMainThread:@selector(setImage:) withObject:image waitUntilDone:NO];
+            if (self.currIndex == index) [self.currImageView performSelectorOnMainThread:@selector(setImage:) withObject:image waitUntilDone:NO];
             [data writeToFile:path atomically:YES];
         }
     }];

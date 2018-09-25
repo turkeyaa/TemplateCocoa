@@ -58,17 +58,17 @@
     
     [GCDUtil runAfterSecs:0.4 block:^{
         // 更新js
-        NSString *name = _foodInfo.name;
-        NSString *desc = _foodInfo.specifics;
-        NSString *stan = _foodInfo.brand_name;
-        NSString *url = _foodInfo.img;
+        NSString *name = self.foodInfo.name;
+        NSString *desc = self.foodInfo.specifics;
+        NSString *stan = self.foodInfo.brand_name;
+        NSString *url = self.foodInfo.img;
         
         NSString *jsString = [NSString stringWithFormat:@"updateJs('%@','%@','%@','%@')",name,desc,stan,url];
         [self.wkWebView evaluateJavaScript:jsString completionHandler:^(id obj, NSError * _Nullable error) {
             
         }];
         
-        if (_foodInfo.collected) {
+        if (self.foodInfo.collected) {
             [self.wkWebView evaluateJavaScript:@"collectionJs()" completionHandler:nil];
         }
     }];

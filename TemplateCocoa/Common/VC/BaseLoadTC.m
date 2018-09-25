@@ -54,6 +54,12 @@ const NSUInteger static kPageSize = 10;
     [self updateData:NO];
 }
 
+- (NSMutableArray *)loadDataPageNum:(NSInteger)pageNum
+                           pageSize:(NSInteger)pageSize {
+    NSAssert(NO, @"子类必须重写改方法");
+    return nil;
+}
+
 - (void)updateData:(BOOL)showLoading {
     
     if (showLoading) {
@@ -62,9 +68,9 @@ const NSUInteger static kPageSize = 10;
     
     [GCDUtil runInGlobalQueue:^{
         
-        NSMutableArray *ret = [self loadDataPageNum:_pageNumber pageSize:kPageSize];
+        NSMutableArray *ret = [self loadDataPageNum:self->_pageNumber pageSize:kPageSize];
         
-        if (_pageNumber == 1) {
+        if (self->_pageNumber == 1) {
             self.dataSource = ret;
         }
         else {

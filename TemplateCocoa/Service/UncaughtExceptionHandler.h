@@ -14,6 +14,6 @@
 
 @interface UncaughtExceptionHandler : NSObject
 
-void InstallUncaughtExceptionHandler();
+void InstallUncaughtExceptionHandler(void);
 
 @end

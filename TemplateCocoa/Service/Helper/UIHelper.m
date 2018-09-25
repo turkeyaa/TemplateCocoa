@@ -10,4 +10,23 @@
 
 @implementation UIHelper
 
++ (instancetype)getInstance {
+    
+    static UIHelper *_instance = nil;
+    
+    static dispatch_once_t onceToken;
+    
+    dispatch_once(&onceToken, ^{
+        _instance = [[UIHelper alloc] init];
+    });
+    
+    return _instance;
+}
+
+- (void)showLoading:(NSString*)message {}
+
+- (void)showLoading {}
+
+- (void)hideLoading {}
+
 @end

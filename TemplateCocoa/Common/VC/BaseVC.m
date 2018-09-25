@@ -95,7 +95,7 @@
     [super viewWillDisappear:animated];
     if (_isShowEmptyView) {
         [_emptyView removeFromSuperview];
-        _emptyView;
+        _emptyView = nil;
     }
 }
 
@@ -106,6 +106,8 @@
     self.navigationItem.leftBarButtonItem = leftItem;
     self.navigationItem.rightBarButtonItem = rightItem;
 }
+
+- (void)setupLayout {}
 
 - (UIButton *)leftBtn {
     if (!_leftBtn) {
@@ -188,6 +190,10 @@
     [SVProgressHUD setDefaultStyle:SVProgressHUDStyleDark];
     [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeClear];
     [SVProgressHUD setMinimumDismissTimeInterval:2];
+}
+
+- (void)showGifLoadingHUD {
+    
 }
 
 

@@ -44,7 +44,7 @@
     [_nameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.offset(0);
         make.height.offset(20);
-        make.top.mas_equalTo(_iconView.mas_bottom).offset(10);
+        make.top.mas_equalTo(self.iconView.mas_bottom).offset(10);
     }];
 }
 

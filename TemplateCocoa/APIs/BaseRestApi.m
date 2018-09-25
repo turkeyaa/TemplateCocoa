@@ -60,7 +60,7 @@
          */
         __weak BaseRestApi *weakSelf = self;
         
-        __block void(^ simulateBlock)() = ^{
+        __block void(^ simulateBlock)(void) = ^{
             
             NSData *responseData = nil;
             
@@ -131,11 +131,14 @@
 
 - (id)queryObjData {
     return self.dataSource;
-//    NSAssert(NO, @"子类必须重写该方法");
-//    return nil;
 }
+
 - (BOOL)parseResponseJson:(NSDictionary *)json {
     return NO;
+}
+
+- (id)prepareRequestData {
+    return nil;
 }
 
 - (NSDictionary *)errorCodeMessage {

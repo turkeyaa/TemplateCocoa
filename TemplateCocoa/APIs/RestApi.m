@@ -218,6 +218,9 @@ static NSTimeInterval kNetworkTimeout = 10;
 - (void)onError:(NSError *)error {
     // TODO: 错误日志
 }
+- (void)doHttpResonse:(id)responseObject error:(NSError *)error block:(BlockJsonData)result {}
+- (id)doHttpResonse:(id)responseObject
+              error:(NSError *)error { return nil; }
 
 - (NSData *)queryPostData { return nil; }
 - (NSDictionary *)queryGetParameters { return nil; }

@@ -86,12 +86,12 @@
     }];
     [_titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.offset(0);
-        make.top.mas_equalTo(_iconView.mas_bottom).offset(10);
+        make.top.mas_equalTo(self.iconView.mas_bottom).offset(10);
         make.height.offset(30);
     }];
     [_secondTitleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.offset(0);
-        make.top.mas_equalTo(_titleLabel.mas_bottom);
+        make.top.mas_equalTo(self.titleLabel.mas_bottom);
         make.height.offset(30);
     }];
 }

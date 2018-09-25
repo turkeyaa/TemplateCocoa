@@ -7,8 +7,7 @@
 //
 
 #import "MainCell.h"
-
-#import <FlyImage/FlyImage.h>
+#import <SDWebImage/UIImageView+WebCache.h>
 
 @interface MainCell ()
 
@@ -37,17 +36,17 @@
         make.top.offset(5);
         make.left.offset(10);
         make.bottom.offset(-5);
-        make.width.mas_equalTo(_iconView.mas_height);
+        make.width.mas_equalTo(self.iconView.mas_height);
     }];
     [self.nameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.offset(10);
-        make.left.mas_equalTo(_iconView.mas_right).offset(10);
+        make.left.mas_equalTo(self.iconView.mas_right).offset(10);
         make.right.offset(10);
         make.height.offset(30);
     }];
     [self.spellLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.offset(50);
-        make.left.mas_equalTo(_iconView.mas_right).offset(10);
+        make.left.mas_equalTo(self.iconView.mas_right).offset(10);
         make.right.offset(10);
         make.height.offset(30);
     }];
@@ -93,10 +92,7 @@
     _spellLabel.text = mainInfo.name_spell;
     
     NSString *avatar_url = mainInfo.avatar_url;
-    NSLog(@"%@",mainInfo.avatar_url);
-//    [_iconView setPlaceHolderImageName:@"avator.png" iconURL:[NSURL URLWithString:avatar_url]];
-//    [_iconView sd_setImageWithURL:[NSURL URLWithString:avatar_url] placeholderImage:[UIImage imageNamed:@"avator.png"] options:SDWebImageRefreshCached];
-//    [_iconView sd_setImageWithURL:[NSURL URLWithString:avatar_url] placeholderImage:[UIImage imageNamed:@"avator.png"]];
+    [_iconView sd_setImageWithURL:[NSURL URLWithString:avatar_url] placeholderImage:[UIImage imageNamed:@"avator.png"]];
     
     [GCDUtil runInGlobalQueue:^{
         NSURL *url = [NSURL URLWithString:avatar_url];

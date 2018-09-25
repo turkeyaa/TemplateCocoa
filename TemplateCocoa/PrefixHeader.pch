@@ -24,7 +24,6 @@
 // Library
 #import "Masonry.h"
 #import "YYModel.h"
-#import "FlyImage.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 
 
