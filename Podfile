@@ -4,7 +4,7 @@ use_frameworks!
 
 target “TemplateCocoa” do
 
-pod 'AFNetworking'
+#pod 'AFNetworking'
 pod 'MJRefresh'
 pod 'SDWebImage'
 pod 'YYModel'

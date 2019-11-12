@@ -1091,7 +1091,7 @@
 		A0EF534E1E0258D500DE645C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0930;
+				LastUpgradeCheck = 1120;
 				ORGANIZATIONNAME = DS;
 				TargetAttributes = {
 					A0EF53551E0258D500DE645C = {
@@ -1116,7 +1116,7 @@
 			};
 			buildConfigurationList = A0EF53511E0258D500DE645C /* Build configuration list for PBXProject "TemplateCocoa" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
@@ -1185,8 +1185,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-TemplateCocoa/Pods-TemplateCocoa-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-TemplateCocoa/Pods-TemplateCocoa-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/FDFullscreenPopGesture/FDFullscreenPopGesture.framework",
 				"${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework",
 				"${BUILT_PRODUCTS_DIR}/JSBadgeView/JSBadgeView.framework",
@@ -1198,7 +1197,6 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FDFullscreenPopGesture.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMDB.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSBadgeView.framework",
@@ -1210,7 +1208,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TemplateCocoa/Pods-TemplateCocoa-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TemplateCocoa/Pods-TemplateCocoa-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A96AC59FACAAD8615B39C4C0 /* [CP] Check Pods Manifest.lock */ = {
@@ -1379,6 +1377,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -1435,6 +1434,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -1485,9 +1485,24 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9DF5DDB6C508D638FA3E5FBD /* Pods-TemplateCocoa.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				DEVELOPMENT_TEAM = TCHK9N4NLS;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/PrefixHeader.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/AFNetworking/AFNetworking.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FDFullscreenPopGesture/FDFullscreenPopGesture.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FMDB/FMDB.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/JSBadgeView/JSBadgeView.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/MJRefresh/MJRefresh.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Masonry/Masonry.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SDWebImage/SDWebImage.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SVProgressHUD/SVProgressHUD.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/YYModel/YYModel.framework/Headers\"",
+					/Users/wenhua/Desktop/open,
+					source/TemplateCocoa,
+				);
 				INFOPLIST_FILE = TemplateCocoa/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1501,9 +1516,24 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 711E8E9C51665DD06224824D /* Pods-TemplateCocoa.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				DEVELOPMENT_TEAM = TCHK9N4NLS;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/PrefixHeader.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/AFNetworking/AFNetworking.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FDFullscreenPopGesture/FDFullscreenPopGesture.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FMDB/FMDB.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/JSBadgeView/JSBadgeView.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/MJRefresh/MJRefresh.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Masonry/Masonry.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SDWebImage/SDWebImage.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SVProgressHUD/SVProgressHUD.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/YYModel/YYModel.framework/Headers\"",
+					/Users/wenhua/Desktop/open,
+					source/TemplateCocoa,
+				);
 				INFOPLIST_FILE = TemplateCocoa/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
